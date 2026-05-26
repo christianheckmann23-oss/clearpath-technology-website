@@ -1,0 +1,68 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/Clearpath%20Website",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/Clearpath%20Website.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/case-study",
+      "destination": "/case-studies/just-windows/",
+      "permanent": true
+    },
+    {
+      "source": "/services/website-seo",
+      "destination": "/services/seo-optimization/",
+      "permanent": true
+    },
+    {
+      "source": "/services/website-seo/",
+      "destination": "/services/seo-optimization/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/(robots.txt|sitemap.xml|site.webmanifest)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
+      ]
+    }
+  ]
+}

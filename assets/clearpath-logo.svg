@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
+  <title id="title">ClearPath Technology Partners logo</title>
+  <desc id="desc">Blue square logo mark with the letters CP.</desc>
+  <rect width="512" height="512" rx="104" fill="#2563EB"/>
+  <path d="M180 337c-49 0-86-36-86-82s37-82 86-82c30 0 57 14 72 37l-35 25c-8-13-21-21-37-21-24 0-42 17-42 41s18 41 42 41c16 0 30-8 38-22l35 25c-16 24-42 38-73 38Z" fill="#fff"/>
+  <path d="M277 177h71c43 0 72 25 72 63s-29 64-72 64h-28v29h-43V177Zm68 89c19 0 31-10 31-26s-12-25-31-25h-25v51h25Z" fill="#fff"/>
+</svg>

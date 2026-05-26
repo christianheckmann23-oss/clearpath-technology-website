@@ -1,0 +1,19 @@
+# PDFs and sensitive documents
+*.pdf
+
+# Lead reports (sensitive prospect data)
+lead-reports/
+
+# Large icon asset packs (not needed for deployment)
+Azure_Public_Service_Icons_V23/
+official-icon-downloads/
+
+# Claude Code workspace files
+.claude/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
