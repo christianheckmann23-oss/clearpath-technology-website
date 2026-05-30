@@ -101,6 +101,8 @@
             <label>Email <input type="email" name="email" autocomplete="email" placeholder="jane@acmecorp.com" required></label>
           </div>
 
+          <label>Industry <input type="text" name="industry" placeholder="e.g. Construction, Healthcare, Retail"></label>
+
           <label>
             Services you&rsquo;re interested in
             <div class="services-grid">
@@ -169,6 +171,7 @@
         company:  form.company.value.trim(),
         phone:    form.phone.value.trim(),
         email:    form.email.value.trim(),
+        industry: form.industry.value.trim(),
         services: Array.from(form.querySelectorAll('input[name="services"]:checked')).map(c => c.value),
         message:  form.message.value.trim(),
         submittedAt: new Date().toISOString()
