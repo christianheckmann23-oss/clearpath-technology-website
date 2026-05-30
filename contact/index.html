@@ -91,7 +91,7 @@
         <h2>Tell us about your business</h2>
         <p>Fill out the form and a ClearPath advisor will follow up within one business day with a no-obligation audit of your current setup.</p>
 
-        <form class="cf" name="clearpath-audit" method="POST" action="/contact/thank-you/" netlify>
+        <form class="cf" id="audit-form">
           <div class="cf-row">
             <label>Your name <input type="text" name="name" autocomplete="name" placeholder="Jane Smith" required></label>
             <label>Company <input type="text" name="company" autocomplete="organization" placeholder="Acme Corp"></label>
@@ -151,5 +151,49 @@
   </div>
 
   <footer class="footer"><div class="wrap">ClearPath Technology Partners LLC &middot; Microsoft Cloud Managed Services</div></footer>
+
+  <script>
+    const MAKE_WEBHOOK = 'https://hook.us1.make.com/YOUR_WEBHOOK_ID';
+
+    document.getElementById('audit-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('.btn-submit');
+      const note = form.querySelector('.form-note');
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      const data = {
+        name:     form.name.value.trim(),
+        company:  form.company.value.trim(),
+        phone:    form.phone.value.trim(),
+        email:    form.email.value.trim(),
+        services: Array.from(form.querySelectorAll('input[name="services"]:checked')).map(c => c.value),
+        message:  form.message.value.trim(),
+        submittedAt: new Date().toISOString()
+      };
+
+      try {
+        const res = await fetch(MAKE_WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (!res.ok) throw new Error('Server error');
+
+        form.innerHTML = '<div style="padding:40px 0;text-align:center"><p style="font-size:22px;font-weight:800;color:#111;margin:0 0 10px">Request received.</p><p style="color:#555;font-size:15px;margin:0">A ClearPath advisor will follow up within one business day.</p></div>';
+      } catch {
+        btn.disabled = false;
+        btn.textContent = 'Send Audit Request';
+        note.style.color = '#dc2626';
+        note.textContent = 'Something went wrong. Please email us directly at hello@clearpathtechnology.com';
+      }
+    });
+
+    document.querySelectorAll('.svc-chip').forEach(chip => {
+      chip.addEventListener('change', () => {});
+    });
+  </script>
 </body>
 </html>
