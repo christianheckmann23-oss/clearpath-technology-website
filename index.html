@@ -1404,64 +1404,40 @@
   <div class="container">
     <span class="case-eyebrow" data-aos="fade-up">Live Case Study</span>
     <h2 data-aos="fade-up" data-aos-delay="50">
-      $487/mo hosting.<br/>Dropped to <em>zero.</em><br/>Zero traffic lost.
+      232 SEO issues.<br/>Cleared in <em>4 days.</em><br/>Leads automated.
     </h2>
     <div class="case-grid">
       <div data-aos="fade-up" data-aos-duration="700">
         <p class="case-client-name">Just Windows USA · Mentor, OH · Window Contractor</p>
-        <p class="case-text">Just Windows USA was paying $487/month for a WordPress site on WP Engine. Mobile page load averaged 4.2 seconds — a direct penalty against a decade of local SEO history.</p>
-        <p class="case-text">We migrated their entire site to Azure Static Web Apps and Azure Functions, preserving every historical keyword mapping with 301 permanent redirects. Corporate mail moved to Microsoft 365 Business. The live website never went down.</p>
+        <p class="case-text">Just Windows USA had a WordPress site carrying 235 SEO issues — 7 pages with no H1, 8 pages Google couldn't read, and a quote form with no automated follow-up. Every unanswered lead was a potential job going to a competitor.</p>
+        <p class="case-text">ClearPath rebuilt the site as a clean static HTML site on Azure, ran a Semrush-driven SEO optimization across all 7 pages, and wired up a Power Automate flow that sends an instant confirmation to every customer and an instant alert to the owner the moment a form is submitted.</p>
         <div class="case-metrics">
           <div class="metric-box">
-            <div class="metric-big blue">~$0</div>
-            <div class="metric-desc">Monthly hosting after migration (was $487)</div>
+            <div class="metric-big blue">232</div>
+            <div class="metric-desc">SEO issues resolved — 235 down to 3 in 4 days</div>
           </div>
           <div class="metric-box">
-            <div class="metric-big">0.8s</div>
-            <div class="metric-desc">Mobile load time (down from 4.2s)</div>
+            <div class="metric-big">97%</div>
+            <div class="metric-desc">Semrush site health score after rebuild</div>
           </div>
           <div class="metric-box">
-            <div class="metric-big">0%</div>
-            <div class="metric-desc">Organic traffic lost — 301s preserved all signals</div>
+            <div class="metric-big blue">$20</div>
+            <div class="metric-desc">Monthly hosting on Azure (down from $75/mo)</div>
           </div>
           <div class="metric-box">
-            <div class="metric-big blue">0</div>
-            <div class="metric-desc">Minutes of website downtime during migration</div>
+            <div class="metric-big">0s</div>
+            <div class="metric-desc">Lead response delay — Power Automate fires instantly on every form submission</div>
           </div>
         </div>
+        <a href="/case-studies/just-windows/" style="display:inline-flex;align-items:center;gap:8px;margin-top:32px;font-size:14px;font-weight:700;color:var(--blue-lt);letter-spacing:.3px;text-decoration:none">Read the full case study &rarr;</a>
       </div>
       <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
-        <div class="case-code-block">
+        <div class="case-code-block" style="overflow:hidden;border-radius:12px;border:1px solid #222">
           <div class="code-bar">
             <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
-            <span class="code-filename">staticwebapp.config.json</span>
+            <span class="code-filename">justwindowsusa.com</span>
           </div>
-          <div class="code-body">
-<span class="cc">// 301 redirect map — SEO signal preservation</span><br/>
-<span class="cc">// 1992 keyword signals mapped to new paths</span><br/>
-{<br/>
-&nbsp;&nbsp;<span class="ck">"routes"</span>: [<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"route"</span>: <span class="cs">"/window-installation"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"redirect"</span>: <span class="cs">"/services/installation"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"statusCode"</span>: <span class="cv">301</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"route"</span>: <span class="cs">"/replacement-windows"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"redirect"</span>: <span class="cs">"/services/replacement"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"statusCode"</span>: <span class="cv">301</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;],<br/>
-&nbsp;&nbsp;<span class="ck">"globalHeaders"</span>: {<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"Cache-Control"</span>: <span class="cs">"max-age=31536000"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"X-Frame-Options"</span>: <span class="cs">"DENY"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"X-Content-Type-Options"</span>: <span class="cs">"nosniff"</span><br/>
-&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;<span class="ck">"navigationFallback"</span>: {<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"rewrite"</span>: <span class="cs">"/index.html"</span><br/>
-&nbsp;&nbsp;}<br/>
-}
-          </div>
+          <img src="/assets/case-jw-hero.jpg" alt="Just Windows USA website — homepage hero with quote form" style="width:100%;display:block;border-top:1px solid #222"/>
         </div>
       </div>
     </div>
