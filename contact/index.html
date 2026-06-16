@@ -2,20 +2,201 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Contact ClearPath Technology Partners | Free IT Audit</title>
+  <title>Contact ClearPath Technology Partners | Free Assessment</title>
   <meta name="description" content="Contact ClearPath Technology Partners for a free Microsoft Cloud, Azure migration, automation, security, or website performance audit.">
   <link rel="canonical" href="https://www.clearpathtechnology.com/contact/">
   <link rel="stylesheet" href="/assets/site-pages.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","url":"https://www.clearpathtechnology.com/contact/","name":"Contact ClearPath Technology Partners","mainEntity":{"@type":"Organization","name":"ClearPath Technology Partners","email":"hello@clearpathtechnology.com","telephone":"+1-888-000-0000"}}</script>
+  <style>
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 56px;
+      padding: 10px 0 84px;
+      align-items: start;
+    }
+    @media (max-width: 900px) { .contact-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    .form-section h2 { font-size: 28px; letter-spacing: -.6px; margin: 0 0 8px; }
+    .form-section > p { color: #555; line-height: 1.7; font-size: 15px; margin: 0 0 28px; }
+
+    .cf { display: grid; gap: 18px; }
+    .cf-row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    @media (max-width: 640px) { .cf-row { grid-template-columns: 1fr; } }
+
+    .cf label { display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600; color: #222; }
+    .cf input, .cf select, .cf textarea {
+      font-family: inherit;
+      font-size: 15px;
+      color: #111;
+      background: #fff;
+      border: 1.5px solid #ddd;
+      border-radius: 6px;
+      padding: 11px 14px;
+      outline: none;
+      transition: border-color .15s;
+      width: 100%;
+      box-sizing: border-box;
+    }
+    .cf input:focus, .cf select:focus, .cf textarea:focus { border-color: #2563eb; }
+    .cf textarea { resize: vertical; min-height: 110px; }
+    .cf select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23888' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+
+    .services-grid { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 2px; }
+    .svc-chip { display: flex; align-items: center; gap: 7px; border: 1.5px solid #ddd; border-radius: 6px; padding: 8px 14px; font-size: 13px; font-weight: 600; color: #444; cursor: pointer; transition: border-color .15s, color .15s, background .15s; user-select: none; }
+    .svc-chip input[type="checkbox"] { display: none; }
+    .svc-chip:has(input:checked), .svc-chip.active { border-color: #2563eb; color: #2563eb; background: #eff6ff; }
+
+    .submit-row { display: flex; align-items: center; gap: 20px; margin-top: 4px; }
+    .btn-submit { display: inline-flex; background: #2563eb; color: #fff; padding: 14px 28px; border-radius: 6px; font-size: 15px; font-weight: 800; border: none; cursor: pointer; transition: background .18s; font-family: inherit; }
+    .btn-submit:hover { background: #1d4ed8; }
+    .form-note { font-size: 12px; color: #888; margin: 0; }
+
+    .sidebar-card { background: #f7f7f5; border: 1px solid #e8e8e8; border-radius: 8px; padding: 34px; }
+    .sidebar-card h2 { font-size: 22px; letter-spacing: -.4px; margin: 0 0 20px; }
+    .sidebar-card ul { list-style: none; padding: 0; margin: 0 0 32px; display: grid; gap: 12px; }
+    .sidebar-card li { position: relative; padding-left: 22px; color: #444; font-size: 14px; line-height: 1.6; }
+    .sidebar-card li:before { content: ""; position: absolute; left: 0; top: 9px; width: 7px; height: 7px; background: #2563eb; border-radius: 50%; }
+    .sidebar-divider { border: none; border-top: 1px solid #e0e0e0; margin: 28px 0; }
+    .contact-detail { display: flex; flex-direction: column; gap: 4px; margin-bottom: 18px; }
+    .contact-detail:last-child { margin-bottom: 0; }
+    .contact-detail span { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #888; }
+    .contact-detail a, .contact-detail p { font-size: 14px; font-weight: 600; color: #111; text-decoration: none; margin: 0; }
+    .contact-detail a:hover { color: #2563eb; }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ContactPage","url":"https://www.clearpathtechnology.com/contact/","name":"Contact ClearPath Technology Partners","mainEntity":{"@type":"Organization","name":"ClearPath Technology Partners","email":"info@clearpathtechnology.org","telephone":"+1-888-000-0000"}}</script>
 </head>
 <body>
   <div class="wrap">
-    <nav class="nav"><a class="brand" href="/"><span class="mark">CP</span>ClearPath Technology</a><div class="links"><a href="/services/cloud-migration/">Migration</a><a href="/services/microsoft-365/">Microsoft 365</a><a href="/services/managed-security/">Security</a><a href="/faq/">FAQ</a></div></nav>
+    <nav class="nav">
+      <a class="brand" href="/"><img src="/assets/clearpath-logo.png" alt="ClearPath Technology Partners" height="50" style="display:block"></a>
+      <div class="links">
+        <a href="/services/cloud-migration/">Migration</a>
+        <a href="/services/microsoft-365/">Microsoft 365</a>
+        <a href="/services/managed-security/">Security</a>
+      </div>
+    </nav>
     <div class="breadcrumbs"><a href="/">Home</a> / Contact</div>
-    <section class="hero"><span class="eyebrow">Free IT Audit</span><h1>Get a clear picture of what your stack should cost.</h1><p class="lead">Tell us what you run today. We will review hosting, Microsoft 365, identity, security, automation, and migration opportunities.</p><a class="button" href="mailto:hello@clearpathtechnology.com">Email ClearPath</a></section>
-    <section class="grid"><div class="card"><h2>Email</h2><p><a href="mailto:hello@clearpathtechnology.com">hello@clearpathtechnology.com</a></p></div><div class="card"><h2>Phone</h2><p><a href="tel:+18880000000">1-888-000-0000</a></p></div><div class="card"><h2>Audit</h2><p>60 minutes. Clear findings. No commitment.</p></div></section>
+
+    <section class="hero">
+      <span class="eyebrow">Free Assessment</span>
+      <h1>Get a clear picture of what your stack should cost.</h1>
+      <p class="lead">Tell us what you run today. We will review hosting, Microsoft 365, identity, security, automation, and migration opportunities.</p>
+    </section>
+
+    <div class="contact-grid">
+
+      <div class="form-section">
+        <h2>Tell us about your business</h2>
+        <p>Fill out the form and a ClearPath advisor will follow up within one business day with a no-obligation audit of your current setup.</p>
+
+        <form class="cf" id="audit-form">
+          <div class="cf-row">
+            <label>Your name <input type="text" name="name" autocomplete="name" placeholder="Jane Smith" required></label>
+            <label>Company <input type="text" name="company" autocomplete="organization" placeholder="Acme Corp"></label>
+          </div>
+          <div class="cf-row">
+            <label>Phone <input type="tel" name="phone" autocomplete="tel" placeholder="(555) 000-0000"></label>
+            <label>Email <input type="email" name="email" autocomplete="email" placeholder="jane@acmecorp.com" required></label>
+          </div>
+
+          <label>Industry <input type="text" name="industry" placeholder="e.g. Construction, Healthcare, Retail"></label>
+
+          <label>
+            Services you&rsquo;re interested in
+            <div class="services-grid">
+              <label class="svc-chip"><input type="checkbox" name="services" value="Microsoft 365">Microsoft 365</label>
+              <label class="svc-chip"><input type="checkbox" name="services" value="Azure Migration">Azure Migration</label>
+              <label class="svc-chip"><input type="checkbox" name="services" value="Managed Security">Managed Security</label>
+              <label class="svc-chip"><input type="checkbox" name="services" value="Automation & AI">Automation &amp; AI</label>
+              <label class="svc-chip"><input type="checkbox" name="services" value="Website & SEO">Website &amp; SEO</label>
+              <label class="svc-chip"><input type="checkbox" name="services" value="Not sure">Not sure yet</label>
+            </div>
+          </label>
+
+          <label>Tell us what you&rsquo;re running today <textarea name="message" placeholder="Describe your current setup — hosting provider, email platform, number of users, key pain points, or anything else that helps us prepare for the audit."></textarea></label>
+
+          <div class="submit-row">
+            <button class="btn-submit" type="submit">Send Audit Request</button>
+            <p class="form-note">We respond within one business day.</p>
+          </div>
+        </form>
+      </div>
+
+      <aside class="sidebar-card">
+        <h2>What to expect</h2>
+        <ul>
+          <li>30-minute audit call — no commitment required</li>
+          <li>Review of hosting, licensing, and Microsoft 365 costs</li>
+          <li>Migration and automation opportunities identified</li>
+          <li>Security posture check against Microsoft best practices</li>
+          <li>Written summary of findings delivered after the call</li>
+          <li>Flat-rate pricing — no hourly billing surprises</li>
+        </ul>
+        <hr class="sidebar-divider">
+        <div class="contact-detail">
+          <span>Email</span>
+          <a href="mailto:info@clearpathtechnology.org">info@clearpathtechnology.org</a>
+        </div>
+        <div class="contact-detail">
+          <span>Phone</span>
+          <a href="tel:+18880000000">1-888-000-0000</a>
+        </div>
+        <div class="contact-detail">
+          <span>Availability</span>
+          <p>Mon &ndash; Fri, 9:00 am &ndash; 5:00 pm ET</p>
+        </div>
+      </aside>
+
+    </div>
   </div>
-  <footer class="footer"><div class="wrap">ClearPath Technology Partners LLC · Microsoft Cloud Managed Services</div></footer>
+
+  <footer class="footer"><div class="wrap">ClearPath Technology Partners LLC &middot; Microsoft Cloud Managed Services</div></footer>
+
+  <script>
+    const MAKE_WEBHOOK = 'https://hook.us2.make.com/e4ytnr0cmszo7claksslcnwhjaasrmlz';
+
+    document.getElementById('audit-form').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const form = e.target;
+      const btn = form.querySelector('.btn-submit');
+      const note = form.querySelector('.form-note');
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+
+      const data = {
+        name:     form.name.value.trim(),
+        company:  form.company.value.trim(),
+        phone:    form.phone.value.trim(),
+        email:    form.email.value.trim(),
+        industry: form.industry.value.trim(),
+        services: Array.from(form.querySelectorAll('input[name="services"]:checked')).map(c => c.value),
+        message:  form.message.value.trim(),
+        submittedAt: new Date().toISOString()
+      };
+
+      try {
+        const res = await fetch(MAKE_WEBHOOK, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        if (!res.ok) throw new Error('Server error');
+
+        form.innerHTML = '<div style="padding:40px 0;text-align:center"><p style="font-size:22px;font-weight:800;color:#111;margin:0 0 10px">Request received.</p><p style="color:#555;font-size:15px;margin:0">A ClearPath advisor will follow up within one business day.</p></div>';
+      } catch {
+        btn.disabled = false;
+        btn.textContent = 'Send Audit Request';
+        note.style.color = '#dc2626';
+        note.textContent = 'Something went wrong. Please email us directly at info@clearpathtechnology.org';
+      }
+    });
+
+    document.querySelectorAll('.svc-chip').forEach(chip => {
+      chip.addEventListener('change', () => {});
+    });
+  </script>
 </body>
 </html>

@@ -10,7 +10,8 @@
   <meta name="author" content="ClearPath Technology Partners LLC" />
   <link rel="canonical" href="https://www.clearpathtechnology.com/" />
   <link rel="icon" href="/assets/clearpath-logo.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/assets/clearpath-logo.svg" />
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <link rel="apple-touch-icon" href="/assets/favicon.svg">
   <link rel="manifest" href="/site.webmanifest" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="ClearPath Technology Partners" />
@@ -34,7 +35,7 @@
         "name": "ClearPath Technology Partners LLC",
         "url": "https://www.clearpathtechnology.com/",
         "logo": "https://www.clearpathtechnology.com/assets/clearpath-logo.svg",
-        "email": "hello@clearpathtechnology.com",
+        "email": "info@clearpathtechnology.org",
         "telephone": "+1-888-000-0000",
         "description": "Microsoft Cloud managed services provider specializing in Azure migrations, Microsoft 365, identity, security, automation, and infrastructure as code."
       },
@@ -52,7 +53,7 @@
         "name": "ClearPath Technology Partners",
         "url": "https://www.clearpathtechnology.com/",
         "image": "https://www.clearpathtechnology.com/assets/clearpath-og.svg",
-        "email": "hello@clearpathtechnology.com",
+        "email": "info@clearpathtechnology.org",
         "telephone": "+1-888-000-0000",
         "areaServed": "United States",
         "priceRange": "$$",
@@ -67,36 +68,6 @@
         "serviceType": "Azure migration, Microsoft 365 management, identity, security, automation, and managed IT services",
         "description": "Flat-rate Microsoft Cloud MSP services for regional contractors, logistics firms, and retailers."
       },
-      {
-        "@type": "FAQPage",
-        "@id": "https://www.clearpathtechnology.com/#faq",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "Is static HTML cheaper than WordPress?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Static HTML sites usually cost less to host and maintain because they do not require WordPress hosting, plugin updates, databases, or ongoing security patching."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can Vercel hosting score well in SEO audits?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Vercel can score very well when canonical URLs, sitemap entries, redirects, caching headers, HTTPS, structured data, and asset performance are configured correctly."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What does ClearPath Technology Partners manage?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "ClearPath manages Microsoft Azure migrations, Microsoft 365, Entra ID, Intune, Defender, Sentinel, Power Automate, Azure Lighthouse, and infrastructure as code."
-            }
-          }
-        ]
-      }
     ]
   }
   </script>
@@ -980,40 +951,6 @@
       line-height: 1.75;
     }
 
-    .faq-section {
-      padding: 140px 0;
-      background: var(--off);
-    }
-    .faq-section h2 {
-      font-size: clamp(36px, 5vw, 70px);
-      font-weight: 900;
-      letter-spacing: -2px;
-      line-height: 1;
-      max-width: 720px;
-      margin-bottom: 48px;
-    }
-    .faq-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      background: #DADADA;
-    }
-    @media (max-width: 900px) { .faq-grid { grid-template-columns: 1fr; } }
-    .faq-item {
-      background: var(--off);
-      padding: 36px 32px;
-    }
-    .faq-item h3 {
-      font-size: 18px;
-      font-weight: 800;
-      letter-spacing: -0.4px;
-      margin-bottom: 12px;
-    }
-    .faq-item p {
-      color: var(--gray);
-      font-size: 14px;
-      line-height: 1.7;
-    }
 
     /* ── CTA ─────────────────────────────────── */
     .cta-section {
@@ -1143,21 +1080,6 @@
       font-size: 12px;
       color: rgba(255,255,255,0.25);
     }
-    .footer-ms {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 12px;
-      color: rgba(255,255,255,0.35);
-      border: 1px solid #222;
-      padding: 6px 14px;
-      border-radius: 6px;
-    }
-    .footer-ms img {
-      width: 18px;
-      height: 18px;
-      object-fit: contain;
-    }
 
 </style>
 </head>
@@ -1171,22 +1093,19 @@
     <li><a href="/services/microsoft-cloud/">Microsoft Cloud</a></li>
     <li><a href="/services/workflow-automation-ai/">Automation + AI</a></li>
     <li><a href="/services/seo-optimization/">SEO Optimization</a></li>
-    <li><a href="#case-study">Case Study</a></li>
+    <li><a href="#case-study">Our Work</a></li>
     <li><a href="#process">Our Process</a></li>
     <li><a href="#stack">Microsoft Stack</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Get in Touch</a></li>
+    <li><a href="/contact/">Get in Touch</a></li>
   </ul>
   <div class="fullscreen-menu-footer">
-    <p>Microsoft AI Cloud Partner · E&amp;O Insured</p>
   </div>
 </nav>
 
 <!-- ── NAV ────────────────────────────── -->
 <nav class="site-nav" id="sitenav">
   <a href="/" class="nav-logo" aria-label="ClearPath Technology Partners home">
-    <div class="nav-logo-mark">CP</div>
-    <div class="nav-logo-name">ClearPath <span>Technology</span></div>
+    <img src="/assets/clearpath-logo.png" alt="ClearPath Technology Partners" height="50" style="display:block;border-radius:6px">
   </a>
   <ul class="nav-links">
     <li class="nav-services">
@@ -1226,13 +1145,12 @@
         </div>
       </div>
     </li>
-    <li><a href="#case-study">Case Study</a></li>
+    <li><a href="#case-study">Our Work</a></li>
     <li><a href="#stack">Stack</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="/contact/">Contact</a></li>
   </ul>
   <div style="display:flex;align-items:center;gap:20px;">
-    <a href="#contact" class="nav-cta-btn">Free IT Audit →</a>
+    <a href="/contact/" class="nav-cta-btn">Start the Conversation →</a>
     <button class="hamburger" id="hamburger" type="button" aria-label="Toggle menu" aria-controls="fullscreen-menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -1244,10 +1162,6 @@
 <section class="hero" id="top">
   <div class="hero-glow"></div>
   <div class="hero-inner">
-    <div class="hero-partner-pill">
-      <div class="hero-partner-dot"></div>
-      <strong>Microsoft AI Cloud Partner</strong>&nbsp;· CSP Indirect · E&amp;O Insured
-    </div>
     <h1 data-aos="fade-up" data-aos-duration="700">
       The cloud MSP<br/>built for <em>real</em><br/>businesses.
     </h1>
@@ -1256,7 +1170,7 @@
         We migrate regional <strong>contractors, logistics firms, and retailers</strong> off expensive legacy hosting into the Microsoft Cloud. <strong>Flat monthly pricing.</strong> Zero downtime. Measurable ROI from day one.
       </p>
       <div class="hero-actions" data-aos="fade-up" data-aos-duration="700" data-aos-delay="200">
-        <a href="#contact" class="btn-solid">Book a Free IT Audit →</a>
+        <a href="/contact/" class="btn-solid">Get My Free Assessment →</a>
         <a href="#case-study" class="btn-ghost">See Our Work</a>
       </div>
     </div>
@@ -1404,64 +1318,40 @@
   <div class="container">
     <span class="case-eyebrow" data-aos="fade-up">Live Case Study</span>
     <h2 data-aos="fade-up" data-aos-delay="50">
-      $487/mo hosting.<br/>Dropped to <em>zero.</em><br/>Zero traffic lost.
+      232 SEO issues.<br/>Cleared in <em style="color:var(--blue-lt);-webkit-text-stroke:0">4 days.</em><br/>Leads automated.
     </h2>
     <div class="case-grid">
       <div data-aos="fade-up" data-aos-duration="700">
         <p class="case-client-name">Just Windows USA · Mentor, OH · Window Contractor</p>
-        <p class="case-text">Just Windows USA was paying $487/month for a WordPress site on WP Engine. Mobile page load averaged 4.2 seconds — a direct penalty against a decade of local SEO history.</p>
-        <p class="case-text">We migrated their entire site to Azure Static Web Apps and Azure Functions, preserving every historical keyword mapping with 301 permanent redirects. Corporate mail moved to Microsoft 365 Business. The live website never went down.</p>
+        <p class="case-text">Just Windows USA had a WordPress site carrying 235 SEO issues — 7 pages with no H1, 8 pages Google couldn't read, and a quote form with no automated follow-up. Every unanswered lead was a potential job going to a competitor.</p>
+        <p class="case-text">ClearPath rebuilt the site as a clean static HTML site on Azure, ran a Semrush-driven SEO optimization across all 7 pages, and wired up a Power Automate flow that sends an instant confirmation to every customer and an instant alert to the owner the moment a form is submitted.</p>
         <div class="case-metrics">
           <div class="metric-box">
-            <div class="metric-big blue">~$0</div>
-            <div class="metric-desc">Monthly hosting after migration (was $487)</div>
+            <div class="metric-big blue">232</div>
+            <div class="metric-desc">SEO issues resolved — 235 down to 3 in 4 days</div>
           </div>
           <div class="metric-box">
-            <div class="metric-big">0.8s</div>
-            <div class="metric-desc">Mobile load time (down from 4.2s)</div>
+            <div class="metric-big">97%</div>
+            <div class="metric-desc">Semrush site health score after rebuild</div>
           </div>
           <div class="metric-box">
-            <div class="metric-big">0%</div>
-            <div class="metric-desc">Organic traffic lost — 301s preserved all signals</div>
+            <div class="metric-big blue">$20</div>
+            <div class="metric-desc">Monthly hosting on Azure (down from $75/mo)</div>
           </div>
           <div class="metric-box">
-            <div class="metric-big blue">0</div>
-            <div class="metric-desc">Minutes of website downtime during migration</div>
+            <div class="metric-big">0s</div>
+            <div class="metric-desc">Lead response delay — Power Automate fires instantly on every form submission</div>
           </div>
         </div>
+        <a href="/case-studies/just-windows/" style="display:inline-flex;align-items:center;gap:8px;margin-top:32px;font-size:14px;font-weight:700;color:var(--blue-lt);letter-spacing:.3px;text-decoration:none">Read the full case study &rarr;</a>
       </div>
       <div data-aos="fade-up" data-aos-duration="700" data-aos-delay="150">
-        <div class="case-code-block">
+        <div class="case-code-block" style="overflow:hidden;border-radius:12px;border:1px solid #222">
           <div class="code-bar">
             <div class="dot-r"></div><div class="dot-y"></div><div class="dot-g"></div>
-            <span class="code-filename">staticwebapp.config.json</span>
+            <span class="code-filename">justwindowsusa.com</span>
           </div>
-          <div class="code-body">
-<span class="cc">// 301 redirect map — SEO signal preservation</span><br/>
-<span class="cc">// 1992 keyword signals mapped to new paths</span><br/>
-{<br/>
-&nbsp;&nbsp;<span class="ck">"routes"</span>: [<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"route"</span>: <span class="cs">"/window-installation"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"redirect"</span>: <span class="cs">"/services/installation"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"statusCode"</span>: <span class="cv">301</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;{<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"route"</span>: <span class="cs">"/replacement-windows"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"redirect"</span>: <span class="cs">"/services/replacement"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"statusCode"</span>: <span class="cv">301</span><br/>
-&nbsp;&nbsp;&nbsp;&nbsp;}<br/>
-&nbsp;&nbsp;],<br/>
-&nbsp;&nbsp;<span class="ck">"globalHeaders"</span>: {<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"Cache-Control"</span>: <span class="cs">"max-age=31536000"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"X-Frame-Options"</span>: <span class="cs">"DENY"</span>,<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"X-Content-Type-Options"</span>: <span class="cs">"nosniff"</span><br/>
-&nbsp;&nbsp;},<br/>
-&nbsp;&nbsp;<span class="ck">"navigationFallback"</span>: {<br/>
-&nbsp;&nbsp;&nbsp;&nbsp;<span class="ck">"rewrite"</span>: <span class="cs">"/index.html"</span><br/>
-&nbsp;&nbsp;}<br/>
-}
-          </div>
+          <img src="/assets/case-jw-hero.jpg" alt="Just Windows USA website — homepage hero with quote form" style="width:100%;display:block;border-top:1px solid #222"/>
         </div>
       </div>
     </div>
@@ -1476,8 +1366,8 @@
     <div class="process-steps">
       <div class="process-step" data-aos="fade-up">
         <span class="process-step-num">Phase 01</span>
-        <h3>Free IT Audit</h3>
-        <p>60 minutes mapping your current stack, identifying gaps, and calculating your exact cost reduction opportunity. No commitment required.</p>
+        <h3>Free Assessment</h3>
+        <p>30 minutes mapping your current stack, identifying gaps, and calculating your exact cost reduction opportunity. No commitment required.</p>
       </div>
       <div class="process-step" data-aos="fade-up" data-aos-delay="50">
         <span class="process-step-num">Phase 02</span>
@@ -1544,8 +1434,8 @@
       </div>
       <div class="why-cell" data-aos="fade-up" data-aos-delay="150">
         <span class="why-cell-num">04</span>
-        <h3>Professionally Insured</h3>
-        <p>E&amp;O and Cyber Liability coverage. You're protected. Not every IT shop operating out of a basement can say the same.</p>
+        <h3>No Lock-in Contracts</h3>
+        <p>Month-to-month agreements. If we don't deliver value, you can walk. We keep clients by doing good work, not binding them to multi-year commitments.</p>
       </div>
       <div class="why-cell" data-aos="fade-up" data-aos-delay="50">
         <span class="why-cell-num">05</span>
@@ -1561,26 +1451,6 @@
   </div>
 </section>
 
-<section class="faq-section" id="faq">
-  <div class="container">
-    <span class="eyebrow" data-aos="fade-up">Common Questions</span>
-    <h2 data-aos="fade-up">Built to score well.<br/>Built to stay simple.</h2>
-    <div class="faq-grid">
-      <div class="faq-item" data-aos="fade-up">
-        <h3>Is static HTML cheaper than WordPress?</h3>
-        <p>Usually, yes. Static sites avoid WordPress hosting, plugin renewals, database maintenance, update conflicts, and many security hardening tasks.</p>
-      </div>
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="50">
-        <h3>Can Vercel score well in SEO audits?</h3>
-        <p>Yes. Vercel performs well when canonicals, sitemaps, redirects, HTTPS, schema, cache headers, and clean URLs all point to the same final domain.</p>
-      </div>
-      <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
-        <h3>What does ClearPath manage?</h3>
-        <p>Azure migrations, Microsoft 365, Entra ID, Intune, Defender, Sentinel, Power Automate, Azure Lighthouse, and scripted infrastructure.</p>
-      </div>
-    </div>
-  </div>
-</section>
 
 <!-- ── CTA ─────────────────────────────── -->
 <section class="cta-section" id="contact">
@@ -1589,11 +1459,11 @@
     <h2 data-aos="fade-up">Stop paying for IT<br/>that <em>doesn't work.</em></h2>
     <div class="cta-body">
       <p class="cta-sub" data-aos="fade-up" data-aos-delay="50">
-        Schedule a free 60-minute IT audit. We'll map your current stack, identify every inefficiency, and hand you a written migration plan — no commitment, no sales pressure.
+        Schedule a free 30-minute assessment. We'll map your current stack, identify every inefficiency, and hand you a written migration plan — no commitment, no sales pressure.
       </p>
       <div class="cta-actions-group" data-aos="fade-up" data-aos-delay="100">
-        <a href="mailto:hello@clearpathtechnology.com" class="btn-cta-primary">
-          Book Your Free IT Audit →
+        <a href="/contact/" class="btn-cta-primary">
+          Get My Free Assessment →
         </a>
         <p class="cta-phone">Or call us: <a href="tel:+18880000000">1-888-000-0000</a></p>
         <p class="cta-fine">No commitment. No spam. Just a clear picture of where you can save.</p>
@@ -1610,8 +1480,7 @@
     <div class="footer-top">
       <div>
         <a href="/" class="nav-logo" aria-label="ClearPath Technology Partners home">
-          <div class="nav-logo-mark">CP</div>
-          <div class="nav-logo-name">ClearPath <span>Technology</span></div>
+          <img src="/assets/clearpath-logo.png" alt="ClearPath Technology Partners" height="50" style="display:block;border-radius:6px">
         </a>
         <p class="footer-brand-desc">Microsoft Cloud Managed Services for regional businesses. We migrate, automate, and secure your operations so you can focus on growing.</p>
       </div>
@@ -1638,16 +1507,14 @@
       <div class="footer-col">
         <h4>Resources</h4>
         <ul>
-          <li><a href="/contact/">Free IT Audit</a></li>
+          <li><a href="/contact/">Start the Conversation</a></li>
           <li><a href="/case-studies/just-windows/">Azure Migration Guide</a></li>
-          <li><a href="/faq/">MSP Pricing Guide</a></li>
-          <li><a href="mailto:hello@clearpathtechnology.com">Privacy Policy</a></li>
+          <li><a href="mailto:info@clearpathtechnology.org">Privacy Policy</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>© 2026 ClearPath Technology Partners LLC. All rights reserved. E&amp;O and Cyber Liability Insured.</p>
-      <div class="footer-ms"><img src="assets/microsoft-icons/azure-cloud.svg" alt="" aria-hidden="true" /> Microsoft AI Cloud Partner</div>
+      <p>© 2026 ClearPath Technology Partners LLC. All rights reserved.</p>
     </div>
   </div>
 </footer>
