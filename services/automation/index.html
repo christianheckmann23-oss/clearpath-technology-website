@@ -1,23 +1,232 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Business Automation with Power Automate and Azure | ClearPath</title>
-  <meta name="description" content="Lead response automation, review request automation, AI document OCR, Azure Logic Apps, Power Automate, and Microsoft Cloud workflow design.">
+  <title>Business Automation & AI Agents | ClearPath Technology Partners</title>
+  <meta name="description" content="ClearPath builds custom automations using Make, n8n, Vapi AI voice agents, and OpenAI. Free process consultation - we analyze your workflows and find where automation saves you the most time and money.">
   <link rel="canonical" href="https://www.clearpathtechnology.com/services/automation/">
   <link rel="stylesheet" href="/assets/site-pages.css">
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Microsoft Cloud Business Automation","provider":{"@type":"Organization","name":"ClearPath Technology Partners","url":"https://www.clearpathtechnology.com/"},"serviceType":"Business process automation","areaServed":"United States","url":"https://www.clearpathtechnology.com/services/automation/","description":"Power Automate, Azure Logic Apps, lead response automation, review automation, and AI document OCR."}</script>
+  <style>
+    .tools-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 36px 0 0;
+    }
+    .tool-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1.5px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #222;
+    }
+    .tool-badge-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .consult-banner {
+      background: #0a0a0a;
+      border-radius: 14px;
+      padding: 52px 48px;
+      margin: 60px 0 84px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
+    }
+    @media (max-width: 700px) { .consult-banner { grid-template-columns: 1fr; padding: 36px 28px; gap: 24px; } }
+    .consult-banner h2 { font-size: 30px; font-weight: 900; color: #fff; letter-spacing: -.6px; margin: 0 0 12px; }
+    .consult-banner p { color: rgba(255,255,255,.55); font-size: 15px; line-height: 1.7; margin: 0; max-width: 540px; }
+    .consult-banner .btn-consult {
+      display: inline-flex;
+      white-space: nowrap;
+      background: #2563eb;
+      color: #fff;
+      padding: 14px 26px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 800;
+      transition: background .18s;
+    }
+    .consult-banner .btn-consult:hover { background: #1d4ed8; }
+    .use-cases { padding: 0 0 84px; }
+    .use-cases h2 { font-size: 36px; font-weight: 900; letter-spacing: -1.2px; margin: 0 0 8px; }
+    .use-cases > p { color: #555; font-size: 16px; line-height: 1.7; margin: 0 0 40px; max-width: 680px; }
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: #e0e0e0;
+    }
+    @media (max-width: 900px) { .use-case-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .use-case-grid { grid-template-columns: 1fr; } }
+    .use-case-card {
+      background: #f7f7f5;
+      padding: 32px 28px;
+    }
+    .use-case-tag {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+      color: #2563eb;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .use-case-card h3 { font-size: 18px; font-weight: 800; letter-spacing: -.3px; margin: 0 0 10px; }
+    .use-case-card p { font-size: 14px; color: #555; line-height: 1.7; margin: 0; }
+  </style>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Business Automation and AI Agents","provider":{"@type":"Organization","name":"ClearPath Technology Partners","url":"https://www.clearpathtechnology.com/","telephone":"+1-440-453-6752"},"serviceType":"Business process automation and AI agents","areaServed":"Ohio","url":"https://www.clearpathtechnology.com/services/automation/","description":"Custom workflow automation using Make, n8n, Vapi AI voice agents, and OpenAI. Free process consultation included."}</script>
 </head>
 <body>
   <div class="wrap">
-    <nav class="nav"><a class="brand" href="/"><img src="/assets/clearpath-logo.png" alt="ClearPath Technology Partners" height="48" style="display:block"></a><div class="links"><a href="/services/cloud-migration/">Migration</a><a href="/services/microsoft-365/">Microsoft 365</a><a href="/services/managed-security/">Security</a><a href="/services/seo-optimization/">SEO</a><a href="/contact/">Contact</a></div></nav>
-    <div class="breadcrumbs"><a href="/">Home</a> / Services / Automation</div>
-    <section class="hero"><span class="eyebrow">Automation</span><h1>Stop losing leads to slow follow-up.</h1><p class="lead">We build Microsoft Cloud automations that respond to leads, parse documents, trigger review requests, and keep operational data moving.</p><a class="button" href="/contact/">Automate My Workflow</a></section>
-    <section class="grid"><div class="card"><h2>Lead Response</h2><p>Quote forms can trigger SMS, email, CRM updates, and owner alerts in under 60 seconds.</p></div><div class="card"><h2>Document OCR</h2><p>Azure AI Vision and document intelligence can convert field paperwork into clean structured data.</p></div><div class="card"><h2>Reputation</h2><p>Completed jobs can trigger personalized review requests without adding manual office work.</p></div></section>
+    <nav class="nav">
+      <a class="brand" href="/"><img src="/assets/clearpath-logo.png" alt="ClearPath Technology Partners" height="48" style="display:block"></a>
+      <div class="links">
+        <a href="/services/">Services</a>
+        <a href="/services/managed-security/">Security</a>
+        <a href="/services/seo-optimization/">SEO</a>
+        <a href="/contact/">Contact</a>
+      </div>
+    </nav>
+    <div class="breadcrumbs"><a href="/">Home</a> / <a href="/services/">Services</a> / Automation &amp; AI</div>
+
+    <section class="hero">
+      <span class="eyebrow">Automation &amp; AI Agents</span>
+      <h1>Your business should run while you sleep.</h1>
+      <p class="lead">We analyze your current workflows, find what's slowing you down, and build automations that handle it - lead follow-up, voice calls, document processing, and more. Free consultation included.</p>
+      <a class="button" href="/contact/">Get My Free Process Audit</a>
+      <div class="tools-strip">
+        <span class="tool-badge"><span class="tool-badge-dot" style="background:#e8472e"></span>Make</span>
+        <span class="tool-badge"><span class="tool-badge-dot" style="background:#6366f1"></span>n8n</span>
+        <span class="tool-badge"><span class="tool-badge-dot" style="background:#10b981"></span>Vapi Voice Agents</span>
+        <span class="tool-badge"><span class="tool-badge-dot" style="background:#111"></span>OpenAI GPT-4o</span>
+        <span class="tool-badge"><span class="tool-badge-dot" style="background:#2563eb"></span>Azure AI Vision</span>
+        <span class="tool-badge"><span class="tool-badge-dot" style="background:#888"></span>Webhooks &amp; APIs</span>
+      </div>
+    </section>
+
+    <!-- Free Consultation Banner -->
+    <div class="consult-banner">
+      <div>
+        <h2>We start with a free process consultation.</h2>
+        <p>Before we build anything, we sit down with you and map out how your business actually operates - where leads come in, how jobs get scheduled, how documents move, and where time is being lost. Then we show you exactly what automation can fix and what it would cost.</p>
+      </div>
+      <a href="/contact/" class="btn-consult">Book Free Consultation →</a>
+    </div>
+
+    <!-- What We Build -->
+    <div class="use-cases">
+      <h2>What we automate</h2>
+      <p>Every business is different. These are common wins we find during the consultation - your list will be specific to how your operation runs.</p>
+      <div class="use-case-grid">
+
+        <div class="use-case-card">
+          <span class="use-case-tag">Lead Response</span>
+          <h3>Instant follow-up on every inquiry</h3>
+          <p>Quote forms, website contact forms, and missed calls trigger immediate SMS, email, and CRM updates - under 60 seconds, no staff required.</p>
+        </div>
+
+        <div class="use-case-card">
+          <span class="use-case-tag">AI Voice Agents</span>
+          <h3>A phone agent that never misses a call</h3>
+          <p>Vapi-powered voice agents answer inbound calls, qualify leads, answer FAQs, and book appointments - 24/7. Sounds natural. Works on any number.</p>
+        </div>
+
+        <div class="use-case-card">
+          <span class="use-case-tag">Document Processing</span>
+          <h3>Turn paperwork into structured data</h3>
+          <p>AI reads field reports, invoices, contracts, and intake forms and pushes clean data into your system automatically. No more manual re-entry.</p>
+        </div>
+
+        <div class="use-case-card">
+          <span class="use-case-tag">Reputation</span>
+          <h3>Automatic review requests after every job</h3>
+          <p>When a job closes in your system, a personalized review request goes out to the customer - timed right, on the right channel, without touching it manually.</p>
+        </div>
+
+        <div class="use-case-card">
+          <span class="use-case-tag">Outbound AI Calls</span>
+          <h3>Follow up on estimates automatically</h3>
+          <p>AI voice agents can call back leads who filled out a form but never responded, follow up on open quotes, or confirm appointments without tying up your staff.</p>
+        </div>
+
+        <div class="use-case-card">
+          <span class="use-case-tag">Data &amp; Reporting</span>
+          <h3>Connect your tools, kill the spreadsheets</h3>
+          <p>Make and n8n connect your CRM, scheduling software, accounting platform, and email into one flow. No manual exports. No copy-paste. Data goes where it needs to go.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- How It Works -->
+    <section class="steps">
+      <h2>How the process works</h2>
+      <div class="step-grid">
+        <div class="step">
+          <div class="step-num">Step 01</div>
+          <h3>Free Process Consultation</h3>
+          <p>We map out how your business currently operates - lead flow, job management, communication, and admin. No commitment, no sales pitch. Just a clear picture of where you are.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 02</div>
+          <h3>Identify Automation Wins</h3>
+          <p>We rank opportunities by time saved and ROI. You get a written breakdown of what to automate first, what it would cost, and what the payoff looks like.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 03</div>
+          <h3>Build &amp; Test</h3>
+          <p>We build automations on the right platform for your use case - Make, n8n, Vapi, or OpenAI. Everything is tested against real scenarios before it touches live operations.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">Step 04</div>
+          <h3>Monitor &amp; Improve</h3>
+          <p>Automations are monitored and refined over time. As your business changes, we update the workflows. No "set it and forget it" - it keeps getting better.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What it replaces -->
+    <section class="split">
+      <div>
+        <h2>Why Make and n8n instead of just Power Automate?</h2>
+        <p>Power Automate is solid inside the Microsoft ecosystem. But most businesses have tools that don't live inside Microsoft - a CRM, a scheduling app, a payment processor, a Google workspace. Make and n8n connect to virtually anything via API or webhook, which means your automation isn't limited to what Microsoft supports.</p>
+        <p>We use the right tool for the job. Sometimes that's Make. Sometimes it's n8n for more complex, self-hosted pipelines. Sometimes both, working together. We're not locked into one platform - so you're not either.</p>
+      </div>
+      <div class="panel">
+        <h2>What you get</h2>
+        <ul class="checklist">
+          <li>Free workflow consultation and process map</li>
+          <li>Written automation opportunities report</li>
+          <li>Custom-built automations on your preferred stack</li>
+          <li>AI voice agent setup and testing (if applicable)</li>
+          <li>Ongoing monitoring and workflow updates</li>
+          <li>One flat monthly rate - no per-automation billing</li>
+          <li>Documentation of every workflow we build</li>
+        </ul>
+      </div>
+    </section>
+
   </div>
-  <section class="cta"><div class="wrap"><h2>Find the slowest workflow in your business.</h2><p>We will map it and show where automation saves time.</p><a class="button" href="/contact/">Get My Free Assessment</a></div></section>
-  <footer class="footer"><div class="wrap">ClearPath Technology Partners LLC · Microsoft Cloud Managed Services</div></footer>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Book your free process consultation.</h2>
+      <p>We'll spend 30 minutes mapping your current workflows and come back with a prioritized list of what to automate and what it would save you. No commitment required.</p>
+      <a class="button" href="/contact/">Book Free Consultation</a>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="wrap">
+    ClearPath Technology Partners LLC &middot; <a href="/privacy/" style="color:#999">Privacy Policy</a>
+  </div></footer>
 </body>
 </html>
