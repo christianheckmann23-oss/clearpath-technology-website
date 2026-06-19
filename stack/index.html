@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Our Technology Stack | ClearPath Technology Partners</title>
+  <meta name="description" content="ClearPath builds on the right tools for each outcome - Microsoft Cloud, AI voice agents, Make and n8n automation, Vercel, Google, and more. No platform lock-in.">
+  <link rel="canonical" href="https://www.clearpathtechnology.com/stack/">
+  <link rel="stylesheet" href="/assets/site-pages.css">
+  <style>
+    .stack-intro-section { padding: 20px 0 80px; }
+    .stack-intro-section p { font-size: 18px; color: #555; line-height: 1.75; max-width: 720px; margin: 0 0 16px; }
+
+    .stack-panels {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 80px;
+    }
+    @media (max-width: 900px) { .stack-panels { grid-template-columns: 1fr; } }
+
+    .stack-panel {
+      background: #0a0a0a;
+      border-radius: 14px;
+      border: 1px solid #1c1c1c;
+      display: flex;
+      flex-direction: column;
+      transition: border-color 0.2s;
+      overflow: hidden;
+    }
+    .stack-panel:hover { border-color: #333; }
+    .stack-panel-top {
+      padding: 36px 32px 28px;
+      border-top: 3px solid var(--accent, #2563eb);
+      flex: 1;
+    }
+    .stack-panel-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+      color: var(--accent, #2563eb);
+      display: block;
+      margin-bottom: 14px;
+    }
+    .stack-panel-name {
+      font-size: 26px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: -0.6px;
+      margin: 0 0 14px;
+      line-height: 1.1;
+    }
+    .stack-panel-desc {
+      font-size: 14px;
+      color: rgba(255,255,255,0.45);
+      line-height: 1.75;
+      margin: 0;
+    }
+    .stack-panel-tools {
+      list-style: none;
+      margin: 0;
+      padding: 24px 32px 28px;
+      border-top: 1px solid #1c1c1c;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .stack-panel-tools li {
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.68);
+      padding-left: 16px;
+      position: relative;
+      line-height: 1.4;
+    }
+    .stack-panel-tools li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 5px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent, #2563eb);
+    }
+    .stack-panel-link {
+      display: block;
+      padding: 16px 32px;
+      border-top: 1px solid #1c1c1c;
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.2s;
+    }
+    .stack-panel-link:hover { color: #fff; }
+
+    .philosophy-section {
+      background: #f7f7f5;
+      border-radius: 14px;
+      padding: 56px 52px;
+      margin-bottom: 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+    }
+    @media (max-width: 760px) { .philosophy-section { grid-template-columns: 1fr; padding: 36px 28px; gap: 32px; } }
+    .philosophy-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -.8px; margin: 0 0 18px; }
+    .philosophy-section p { font-size: 15px; color: #444; line-height: 1.8; margin: 0 0 14px; }
+    .philosophy-section p:last-child { margin: 0; }
+    .philosophy-right h3 { font-size: 14px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: #2563eb; margin: 0 0 16px; }
+    .principle-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 14px; }
+    .principle-list li { font-size: 15px; color: #222; padding-left: 20px; position: relative; line-height: 1.6; }
+    .principle-list li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; background: #2563eb; border-radius: 50%; }
+    .principle-list li strong { display: block; font-weight: 700; margin-bottom: 2px; }
+    .principle-list li span { color: #666; font-size: 13px; }
+
+    .all-tools-section { padding: 0 0 80px; }
+    .all-tools-section h2 { font-size: 32px; font-weight: 900; letter-spacing: -.8px; margin: 0 0 8px; }
+    .all-tools-section > p { font-size: 15px; color: #555; margin: 0 0 40px; }
+    .tools-category { margin-bottom: 40px; }
+    .tools-category-label {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+    .tools-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tool-chip {
+      border: 1.5px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: #333;
+      background: #fafafa;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav class="nav">
+      <a class="brand" href="/"><img src="/assets/clearpath-logo.png" alt="ClearPath Technology Partners" height="48" style="display:block"></a>
+      <div class="links"><a href="/">Home</a><a href="/services/">Services</a><a href="/case-studies/just-windows/">Our Work</a><a href="/contact/">Contact</a></div>
+    </nav>
+    <div class="breadcrumbs"><a href="/">Home</a> / Stack</div>
+
+    <section class="hero" style="padding-bottom: 40px">
+      <span class="eyebrow">Our Technology Stack</span>
+      <h1>Best-fit tools.<br/>Deep expertise.</h1>
+      <p class="lead">We don't push one platform. We pick the right tool for each outcome and build the expertise to go deep on all of them.</p>
+    </section>
+
+    <!-- Three example stacks -->
+    <div class="stack-intro-section">
+      <p>Below are three common stack configurations we build for clients. Every engagement is different - your stack will be scoped to what your business actually needs, not a pre-packaged bundle.</p>
+    </div>
+
+    <div class="stack-panels">
+
+      <div class="stack-panel" style="--accent:#2563eb">
+        <div class="stack-panel-top">
+          <span class="stack-panel-label">Example Stack</span>
+          <h3 class="stack-panel-name">Microsoft Cloud</h3>
+          <p class="stack-panel-desc">Full Microsoft environment - email, identity, security, and cloud infrastructure managed from one place at a flat monthly rate.</p>
+        </div>
+        <ul class="stack-panel-tools">
+          <li>Microsoft 365 - Email, Teams, SharePoint</li>
+          <li>Azure Cloud - hosting, functions, storage</li>
+          <li>Entra ID - identity, MFA, conditional access</li>
+          <li>Microsoft Defender - endpoint security</li>
+          <li>Intune MDM - device management</li>
+          <li>Microsoft Sentinel - SIEM monitoring</li>
+        </ul>
+        <a href="/services/microsoft-cloud/" class="stack-panel-link">See Microsoft services →</a>
+      </div>
+
+      <div class="stack-panel" style="--accent:#7c3aed">
+        <div class="stack-panel-top">
+          <span class="stack-panel-label">Example Stack</span>
+          <h3 class="stack-panel-name">AI &amp; Automation</h3>
+          <p class="stack-panel-desc">Voice agents that answer calls, workflows that route leads, and AI that reads your documents - all running 24/7 without staff overhead.</p>
+        </div>
+        <ul class="stack-panel-tools">
+          <li>Vapi - inbound/outbound voice agents</li>
+          <li>Make - no-code workflow automation</li>
+          <li>n8n - self-hosted pipeline automation</li>
+          <li>OpenAI GPT-4o - language &amp; reasoning</li>
+          <li>Azure AI Vision - OCR, document reads</li>
+          <li>Webhook integrations - any platform</li>
+        </ul>
+        <a href="/services/automation/" class="stack-panel-link">See automation services →</a>
+      </div>
+
+      <div class="stack-panel" style="--accent:#16a34a">
+        <div class="stack-panel-top">
+          <span class="stack-panel-label">Example Stack</span>
+          <h3 class="stack-panel-name">Online Presence</h3>
+          <p class="stack-panel-desc">Website design and hosting, Google Business optimization, SEO, and paid advertising - everything needed to get found and convert leads.</p>
+        </div>
+        <ul class="stack-panel-tools">
+          <li>Google Business Profile - maps &amp; search</li>
+          <li>Vercel - edge hosting, fast deploys</li>
+          <li>Google Analytics 4 - traffic &amp; conversions</li>
+          <li>SEO - on-page, technical, local</li>
+          <li>Google Ads - paid search campaigns</li>
+          <li>Search Console - indexing &amp; rankings</li>
+        </ul>
+        <a href="/services/seo-optimization/" class="stack-panel-link">See online presence services →</a>
+      </div>
+
+    </div>
+
+    <!-- Philosophy -->
+    <div class="philosophy-section">
+      <div>
+        <h2>Why we don't lock you into one platform.</h2>
+        <p>Most IT providers are resellers. Their recommendations are shaped by what they're certified in or what earns them the highest margins - not what's best for your business.</p>
+        <p>We're independent. That means we can tell you when Azure is the right call, when Vercel is cheaper and faster, when Make is the better automation tool, or when a combination of two platforms solves a problem neither could handle alone.</p>
+        <p>The result is a stack that's built around your outcomes - not around our vendor relationships.</p>
+      </div>
+      <div class="philosophy-right">
+        <h3>How we choose tools</h3>
+        <ul class="principle-list">
+          <li>
+            <strong>Cost efficiency</strong>
+            <span>We look at total cost including licensing, overhead, and time - not just the sticker price.</span>
+          </li>
+          <li>
+            <strong>Integration fit</strong>
+            <span>The best tool is the one that connects to what you already use without adding friction.</span>
+          </li>
+          <li>
+            <strong>Maintainability</strong>
+            <span>If we build it, you should be able to understand it. We avoid over-engineered solutions.</span>
+          </li>
+          <li>
+            <strong>Scalability</strong>
+            <span>What works at 5 employees should still work at 50. We build for where you're going.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Full tool inventory -->
+    <div class="all-tools-section">
+      <h2>Everything we work with</h2>
+      <p>This isn't exhaustive - if you use a tool we haven't listed, ask us. We've likely integrated with it.</p>
+
+      <div class="tools-category">
+        <div class="tools-category-label">Microsoft Cloud</div>
+        <div class="tools-chips">
+          <span class="tool-chip">Microsoft 365</span>
+          <span class="tool-chip">Azure Cloud</span>
+          <span class="tool-chip">Entra ID</span>
+          <span class="tool-chip">Microsoft Defender</span>
+          <span class="tool-chip">Intune MDM</span>
+          <span class="tool-chip">Microsoft Sentinel</span>
+          <span class="tool-chip">Azure Lighthouse</span>
+          <span class="tool-chip">Azure AI Vision</span>
+          <span class="tool-chip">Azure Logic Apps</span>
+          <span class="tool-chip">SharePoint</span>
+          <span class="tool-chip">Teams</span>
+          <span class="tool-chip">OneDrive</span>
+          <span class="tool-chip">Dynamics 365</span>
+        </div>
+      </div>
+
+      <div class="tools-category">
+        <div class="tools-category-label">AI &amp; Automation</div>
+        <div class="tools-chips">
+          <span class="tool-chip">Vapi Voice Agents</span>
+          <span class="tool-chip">Make (Integromat)</span>
+          <span class="tool-chip">n8n</span>
+          <span class="tool-chip">OpenAI GPT-4o</span>
+          <span class="tool-chip">Power Automate</span>
+          <span class="tool-chip">Webhook Integrations</span>
+          <span class="tool-chip">REST APIs</span>
+          <span class="tool-chip">Zapier</span>
+        </div>
+      </div>
+
+      <div class="tools-category">
+        <div class="tools-category-label">Hosting &amp; Infrastructure</div>
+        <div class="tools-chips">
+          <span class="tool-chip">Vercel</span>
+          <span class="tool-chip">Azure Static Web Apps</span>
+          <span class="tool-chip">Azure Functions</span>
+          <span class="tool-chip">Cloudflare</span>
+          <span class="tool-chip">GitHub Actions</span>
+          <span class="tool-chip">Bicep / Terraform</span>
+        </div>
+      </div>
+
+      <div class="tools-category">
+        <div class="tools-category-label">Online Presence &amp; Marketing</div>
+        <div class="tools-chips">
+          <span class="tool-chip">Google Business Profile</span>
+          <span class="tool-chip">Google Analytics 4</span>
+          <span class="tool-chip">Google Ads</span>
+          <span class="tool-chip">Search Console</span>
+          <span class="tool-chip">SEMrush</span>
+          <span class="tool-chip">Schema Markup</span>
+          <span class="tool-chip">Core Web Vitals</span>
+        </div>
+      </div>
+
+      <div class="tools-category">
+        <div class="tools-category-label">Security &amp; Compliance</div>
+        <div class="tools-chips">
+          <span class="tool-chip">Microsoft Defender XDR</span>
+          <span class="tool-chip">Conditional Access</span>
+          <span class="tool-chip">MFA / Passwordless</span>
+          <span class="tool-chip">DMARC / DKIM / SPF</span>
+          <span class="tool-chip">Least-Privilege IAM</span>
+          <span class="tool-chip">Endpoint Compliance</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <section class="cta">
+    <div class="wrap">
+      <h2>Not sure which stack is right for you?</h2>
+      <p>That's exactly what the free assessment is for. We map your current setup and recommend the right tools for your goals and budget.</p>
+      <a class="button" href="/contact/">Get My Free Assessment</a>
+    </div>
+  </section>
+
+  <footer class="footer"><div class="wrap"><div class="footer-inner"><div class="footer-left"><span class="footer-name">ClearPath Technology Partners LLC</span><div class="footer-meta"><span>&copy; 2026 All rights reserved.</span><a href="/privacy/">Privacy Policy</a><a href="/sitemap/">Sitemap</a></div></div><div class="footer-contact"><a href="tel:+14404536752">440-453-6752</a><a href="mailto:info@clearpathtechnology.org">info@clearpathtechnology.org</a></div></div></div></footer>
+</body>
+</html>
