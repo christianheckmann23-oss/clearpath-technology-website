@@ -1,4 +1,5 @@
 {
+  "framework": "nextjs",
   "redirects": [
     {
       "source": "/Clearpath%20Website",
