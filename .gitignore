@@ -17,3 +17,9 @@ Thumbs.db
 
 # Editor
 .vscode/
+
+# Node.js / Next.js
+node_modules/
+.next/
+next-env.d.ts
+npm-debug.log*
