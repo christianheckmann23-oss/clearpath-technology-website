@@ -10,16 +10,20 @@ interface AIIntegrationHeroProps {
   eyebrow: string;
   title: ReactNode;
   lede: string;
+  /** Renders the dark tool-pill marquee below the copy. Only honest for
+      the two services that actually plug into third-party tools — the
+      other four service pages use this same shell without it. */
+  integrations?: boolean;
 }
 
 /**
- * Dark hero variant for the AI Call Agents / AI Automations service pages:
- * same shell as PageHero (glow, grid, WordReveal H1, "clear path" divider)
- * but the visual is a full-width dark-styled integrations pill carousel
- * instead of a split product card — the "plugs into your tools" story
- * told as the hero itself, not a section further down the page.
+ * Dark hero shared by every service detail page: same shell as PageHero
+ * (glow, grid, WordReveal H1, "clear path" divider) but centered copy and
+ * a single CTA baked in. On ai-call-agents/ai-automations it also carries
+ * a full-width dark-styled integrations pill carousel — the "plugs into
+ * your tools" story told as the hero itself.
  */
-export function AIIntegrationHero({ eyebrow, title, lede }: AIIntegrationHeroProps) {
+export function AIIntegrationHero({ eyebrow, title, lede, integrations = true }: AIIntegrationHeroProps) {
   const reduce = useReducedMotion();
 
   return (
@@ -59,16 +63,18 @@ export function AIIntegrationHero({ eyebrow, title, lede }: AIIntegrationHeroPro
         </div>
       </div>
 
-      <motion.div
-        className="int-carousel int-carousel-dark"
-        aria-hidden="true"
-        initial={reduce ? false : { opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ ...SPRING_SOFT, delay: 0.5 }}
-      >
-        <PillRow items={INT_ROW1} direction="left" dark />
-        <PillRow items={INT_ROW2} direction="right" dark />
-      </motion.div>
+      {integrations && (
+        <motion.div
+          className="int-carousel int-carousel-dark"
+          aria-hidden="true"
+          initial={reduce ? false : { opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ ...SPRING_SOFT, delay: 0.5 }}
+        >
+          <PillRow items={INT_ROW1} direction="left" dark />
+          <PillRow items={INT_ROW2} direction="right" dark />
+        </motion.div>
+      )}
 
       <div className="page-hero-divider" aria-hidden="true" />
     </section>

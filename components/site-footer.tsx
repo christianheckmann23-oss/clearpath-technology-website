@@ -3,7 +3,7 @@
 import { motion } from "motion/react";
 import { coreServices } from "@/lib/data/services";
 import { site } from "@/lib/data/site";
-import { staggerContainer, fadeUpItem } from "@/lib/motion-variants";
+import { staggerContainer, fadeUpItem, viewportOnce } from "@/lib/motion-variants";
 
 export function SiteFooter() {
   return (
@@ -14,7 +14,7 @@ export function SiteFooter() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={viewportOnce}
         >
           <motion.div variants={fadeUpItem}>
             <a href="/" className="nav-logo" aria-label="ClearPath Technology Partners home">

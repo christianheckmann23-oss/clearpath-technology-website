@@ -75,10 +75,11 @@
       justify-content: space-between;
       padding: 0 48px;
       height: 80px;
-      transition: background 0.3s, border-color 0.3s, height 0.2s;
+      background: var(--black);
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s, height 0.2s;
     }
     .site-nav.scrolled {
-      background: var(--black);
       border-bottom: 1px solid #222;
     }
     @media (max-width: 768px) { .site-nav { padding: 0 20px; } }
@@ -1405,52 +1406,37 @@
     .case-detail-section .metric-desc { color: var(--ink-soft); }
 
     /* ── SERVICE DETAIL (light) ── */
-    .service-detail-section { padding: 56px 0 120px; background: var(--white); }
-    @media (max-width: 640px) { .service-detail-section { padding: 40px 0 72px; } }
+    .service-detail-section { padding: 0 0 120px; background: var(--white); }
+    @media (max-width: 640px) { .service-detail-section { padding: 0 0 72px; } }
     .service-detail-grid {
       display: grid;
       grid-template-columns: 2fr 1fr;
       gap: 48px;
     }
     @media (max-width: 900px) { .service-detail-grid { grid-template-columns: 1fr; gap: 32px; } }
-    .service-detail-body p { font-size: 16px; line-height: 1.8; color: var(--ink-body); margin-bottom: 20px; }
-    .service-detail-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; }
-
-    /* "what you get" checklist, sharing the pricing checklist's visual language */
-    .service-feature-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin: 28px 0 8px;
-      padding: 22px 24px;
-      background: var(--off);
-      border-radius: 14px;
+    .service-detail-body-stack { display: flex; flex-direction: column; gap: 28px; }
+    .service-sidebar-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      background: var(--blue-bg);
+      color: var(--blue);
+      flex-shrink: 0;
     }
-    .service-feature-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-      font-size: 15px;
-      color: #374151;
-      line-height: 1.5;
+    .service-sidebar-link-main { display: flex; align-items: center; gap: 10px; }
+    .service-sidebar-viewall {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blue);
+      margin-top: 4px;
     }
-    .service-feature-list li svg { color: var(--blue); flex-shrink: 0; margin-top: 1px; }
-
-    /* "see it in action" supporting visual — currently used on the AI
-       pages, whose own transcript/pipeline choreography moved out of the
-       hero and lives here instead */
-    .service-detail-visual-card { margin-top: 40px; }
-    .service-detail-visual-label {
-      display: block;
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: var(--ink-soft);
-      margin-bottom: 14px;
-    }
-
+    .service-sidebar-viewall:hover { color: #1D4ED8; }
     .service-detail-sidebar {
       border: 1px solid var(--line-light);
       border-radius: 14px;
@@ -1917,4 +1903,301 @@
       }
       .page-hero { padding: 96px 0 80px; }
     }
+
+    /* ── SERVICE HERO (LIGHT) — replaces the dark PageHero on standard
+       service detail pages, per approved reference mockup. Nav stays
+       fixed/dark above this; this section just needs enough top padding
+       to clear it. On ai-call-agents/ai-automations it instead sits right
+       below the dark AIIntegrationHero, so the sibling override below
+       trims the redundant top padding. ── */
+    .service-hero-light {
+      background: var(--white);
+      padding: 132px 0 64px;
+    }
+    @media (max-width: 480px) { .service-hero-light { padding: 108px 0 48px; } }
+    .ai-hero + .service-hero-light { padding-top: 56px; }
+    @media (max-width: 480px) { .ai-hero + .service-hero-light { padding-top: 40px; } }
+
+    .service-hero-light-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+    @media (max-width: 980px) { .service-hero-light-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+    .service-pill-badge {
+      display: inline-block;
+      background: var(--blue-bg);
+      color: var(--blue);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .service-hero-light-title {
+      font-size: clamp(32px, 4.2vw, 52px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.08;
+      color: var(--ink);
+      margin-bottom: 20px;
+    }
+    .service-hero-light-accent {
+      background: var(--grad-blue);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .service-hero-light-desc {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink-body);
+      max-width: 560px;
+      margin-bottom: 32px;
+    }
+    .service-hero-light-ctas {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-bottom: 40px;
+    }
+    /* scoped override: .btn-solid is white-on-dark elsewhere; here the
+       section itself is light, so the primary CTA needs to be the blue
+       solid button from the reference mockup */
+    .service-hero-light .btn-solid {
+      background: var(--blue);
+      color: var(--white);
+      padding: 15px 28px;
+    }
+    .service-hero-light .btn-solid:hover { background: #1D4ED8; transform: translateY(-1px); }
+    .service-hero-light-secondary-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--blue);
+    }
+    .service-hero-light-stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px 28px;
+    }
+    .service-hero-light-stat {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .service-hero-light-stat svg {
+      color: var(--blue);
+      background: var(--blue-bg);
+      border-radius: 8px;
+      padding: 6px;
+      width: 30px;
+      height: 30px;
+      flex-shrink: 0;
+      box-sizing: border-box;
+    }
+    .service-hero-light-stat strong { display: block; font-size: 14px; font-weight: 800; color: var(--ink); }
+    .service-hero-light-stat span { display: block; font-size: 12px; color: var(--ink-soft); }
+
+    .service-hero-light-visual { display: flex; justify-content: center; }
+    @media (max-width: 980px) { .service-hero-light-visual { order: -1; } }
+
+    /* ── AUTOMATION WORKFLOW VISUAL (flowchart) ── */
+    .wf-card {
+      position: relative;
+      background: var(--white);
+      border: 1px solid var(--line-light);
+      border-radius: 20px;
+      box-shadow: 0 30px 80px -30px rgba(0,0,0,0.25);
+      padding: 28px 24px 56px;
+      width: 100%;
+      max-width: 460px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+    }
+    .wf-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      align-self: flex-start;
+      background: #ECFDF5;
+      color: #047857;
+      font-size: 11px;
+      font-weight: 800;
+      padding: 6px 12px;
+      border-radius: 999px;
+      margin-bottom: 20px;
+    }
+    .wf-live-dot { width: 6px; height: 6px; border-radius: 50%; background: #10B981; }
+    .wf-node {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--white);
+      border: 1px solid var(--line-light);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: var(--shadow-card);
+    }
+    .wf-node-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: var(--blue-bg);
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .wf-node-title { font-size: 13px; font-weight: 800; color: var(--ink); }
+    .wf-node-sub { font-size: 11px; color: var(--ink-soft); margin: 2px 0 6px; }
+    .wf-node-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 10px;
+      font-weight: 700;
+      color: #047857;
+      background: #ECFDF5;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+    .wf-node-status.scheduled { color: var(--blue); background: var(--blue-bg); }
+    .wf-connector {
+      width: 2px;
+      height: 20px;
+      background: var(--line-light);
+      margin: 4px 0 4px 33px;
+    }
+    .wf-branch { display: flex; justify-content: center; }
+    .wf-branch-line { width: 80%; height: 2px; background: var(--line-light); margin: 10px 0; }
+    .wf-branch-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .wf-branch-col { display: flex; flex-direction: column; align-items: stretch; }
+    .wf-branch-stub { width: 2px; height: 10px; background: var(--line-light); margin: 0 auto; }
+    .wf-branch-row .wf-node { padding: 10px; flex-direction: column; align-items: flex-start; gap: 8px; }
+    .wf-branch-row .wf-node-icon { width: 28px; height: 28px; }
+    .wf-branch-row .wf-node-title { font-size: 11px; }
+    .wf-complete-badge {
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      background: var(--white);
+      border: 1px solid var(--line-light);
+      box-shadow: var(--shadow-card-hover);
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink-soft);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 2px;
+    }
+    .wf-complete-num { font-size: 18px; font-weight: 900; color: var(--blue); }
+    @media (max-width: 480px) {
+      .wf-branch-row { grid-template-columns: 1fr; }
+      .wf-branch-line { width: 2px; height: 16px; }
+    }
+
+    /* ── PROCESS STEPPER ("See It In Action") ── */
+    .process-stepper-card {
+      background: var(--white);
+      border: 1px solid var(--line-light);
+      border-radius: 20px;
+      box-shadow: var(--shadow-card);
+      padding: 32px 28px;
+    }
+    .process-stepper-eyebrow { margin-bottom: 24px; }
+    .process-stepper {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    @media (max-width: 860px) { .process-stepper { flex-direction: column; gap: 32px; } }
+    .process-stepper-item {
+      position: relative;
+      flex: 1;
+      text-align: center;
+      padding: 0 6px;
+    }
+    @media (max-width: 860px) { .process-stepper-item { text-align: left; padding: 0; display: flex; flex-direction: column; align-items: flex-start; } }
+    .process-stepper-node {
+      position: relative;
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: var(--blue-bg);
+      color: var(--blue);
+      display: grid;
+      place-items: center;
+      margin: 0 auto 16px;
+    }
+    @media (max-width: 860px) { .process-stepper-node { margin: 0 0 12px; } }
+    .process-stepper-num {
+      position: absolute;
+      top: -8px;
+      left: -8px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--grad-blue);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 800;
+      display: grid;
+      place-items: center;
+    }
+    .process-stepper-title { font-size: 14px; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
+    .process-stepper-desc { font-size: 12.5px; color: var(--ink-soft); line-height: 1.5; }
+    .process-stepper-arrow {
+      position: absolute;
+      top: 22px;
+      right: -6px;
+      color: var(--gray-lt);
+      font-size: 16px;
+    }
+    @media (max-width: 860px) { .process-stepper-arrow { display: none; } }
+
+    /* ── STATS BAR ── */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+      background: var(--white);
+      border: 1px solid var(--line-light);
+      border-radius: 16px;
+      box-shadow: var(--shadow-card);
+      padding: 26px 20px;
+    }
+    @media (max-width: 900px) { .stats-bar { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .stats-bar { grid-template-columns: 1fr; } }
+    .stats-bar-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 8px;
+      border-left: 1px solid var(--line-light);
+    }
+    .stats-bar-item:first-child,
+    .stats-bar { }
+    .stats-bar-item:nth-child(1) { border-left: 0; }
+    @media (max-width: 900px) { .stats-bar-item:nth-child(odd) { border-left: 0; } }
+    @media (max-width: 480px) { .stats-bar-item { border-left: 0; padding: 0; } }
+    .stats-bar-item svg { color: var(--blue); flex-shrink: 0; }
+    .stats-bar-value { font-size: 16px; font-weight: 900; color: var(--ink); line-height: 1.2; }
+    .stats-bar-label { font-size: 11px; color: var(--ink-soft); line-height: 1.3; }
 

@@ -33,7 +33,11 @@ export const staggerContainer: Variants = {
   },
 };
 
-export const viewportOnce = { once: true, amount: 0.3 } as const;
+// Fires as content approaches rather than after it's already centered on
+// screen — a low `amount` plus a bottom margin that extends the trigger
+// zone below the fold, so reveals land slightly early instead of leaving
+// a beat of blank space while the user is already looking at the spot.
+export const viewportOnce = { once: true, amount: 0.1, margin: "0px 0px 150px 0px" } as const;
 
 export const navLinkReveal: Variants = {
   hidden: { y: "100%" },

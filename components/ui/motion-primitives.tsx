@@ -206,7 +206,7 @@ interface CountUpProps {
 
 export function CountUp({ value, prefix = "", suffix = "", decimals = 0, className }: CountUpProps) {
   const ref = useRef<HTMLSpanElement>(null);
-  const inView = useInView(ref, { once: true, amount: 0.6 });
+  const inView = useInView(ref, { once: true, amount: 0.1, margin: "0px 0px 150px 0px" });
   const reduce = useReducedMotion();
   const [display, setDisplay] = useState(reduce ? value : 0);
 
