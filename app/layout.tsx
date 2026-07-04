@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
+import { ScrollProgress } from "@/components/ui/scroll-progress";
+import { site } from "@/lib/data/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "ClearPath Technology Partners | Microsoft Cloud MSP for Regional Businesses",
+  title: "ClearPath Technology Partners | Websites, AI Search & Automation for Small Business",
   description:
-    "ClearPath Technology Partners migrates contractors, logistics firms, and retailers to Microsoft Azure, Microsoft 365, Entra ID, Defender, and automation with flat-rate managed services.",
+    "ClearPath builds websites, SEO, AI search optimization, AI call agents, and automation for small businesses — fixed packages, flat monthly pricing, no long-term contracts.",
   robots: "index, follow, max-image-preview:large",
-  authors: [{ name: "ClearPath Technology Partners LLC" }],
+  authors: [{ name: site.legalName }],
   alternates: {
-    canonical: "https://www.clearpathtechnology.com/",
+    canonical: site.url,
   },
   icons: {
     icon: [
@@ -20,14 +24,14 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
-    siteName: "ClearPath Technology Partners",
-    title: "ClearPath Technology Partners | Microsoft Cloud MSP",
+    siteName: site.name,
+    title: "ClearPath Technology Partners | Websites, AI Search & Automation for Small Business",
     description:
-      "Flat-rate Microsoft Cloud managed services: Azure migration, Microsoft 365, Entra ID, Defender, automation, and zero-downtime SEO-preserving migrations.",
-    url: "https://www.clearpathtechnology.com/",
+      "Fixed packages for web design, SEO, AI search optimization, AI call agents, and automation — priced flat, scoped upfront.",
+    url: site.url,
     images: [
       {
-        url: "https://www.clearpathtechnology.com/assets/clearpath-og.svg",
+        url: `${site.url}/assets/clearpath-og.svg`,
         width: 1200,
         height: 630,
       },
@@ -35,10 +39,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClearPath Technology Partners | Microsoft Cloud MSP",
-    description:
-      "Microsoft Cloud migrations, automation, security, and managed services for regional businesses.",
-    images: ["https://www.clearpathtechnology.com/assets/clearpath-og.svg"],
+    title: "ClearPath Technology Partners | Websites, AI Search & Automation",
+    description: "Fixed packages for web design, SEO, AI search optimization, AI call agents, and automation for small businesses.",
+    images: [`${site.url}/assets/clearpath-og.svg`],
   },
   other: {
     "theme-color": "#000000",
@@ -50,56 +53,46 @@ const ldJson = {
   "@graph": [
     {
       "@type": "Organization",
-      "@id": "https://www.clearpathtechnology.com/#organization",
-      name: "ClearPath Technology Partners LLC",
-      url: "https://www.clearpathtechnology.com/",
-      logo: "https://www.clearpathtechnology.com/assets/clearpath-logo.svg",
-      email: "info@clearpathtechnology.org",
-      telephone: "+1-440-453-6752",
+      "@id": `${site.url}/#organization`,
+      name: site.legalName,
+      url: site.url,
+      logo: `${site.url}/assets/clearpath-logo.svg`,
+      email: site.email,
+      telephone: site.phoneHref.replace("tel:", ""),
       description:
-        "Microsoft Cloud managed services provider specializing in Azure migrations, Microsoft 365, identity, security, automation, and infrastructure as code.",
+        "ClearPath Technology Partners builds websites, SEO, AI search optimization, AI call agents, and automation for small businesses.",
     },
     {
       "@type": "WebSite",
-      "@id": "https://www.clearpathtechnology.com/#website",
-      url: "https://www.clearpathtechnology.com/",
-      name: "ClearPath Technology Partners",
-      publisher: { "@id": "https://www.clearpathtechnology.com/#organization" },
+      "@id": `${site.url}/#website`,
+      url: site.url,
+      name: site.name,
+      publisher: { "@id": `${site.url}/#organization` },
       inLanguage: "en-US",
     },
     {
       "@type": "ProfessionalService",
-      "@id": "https://www.clearpathtechnology.com/#business",
-      name: "ClearPath Technology Partners",
-      url: "https://www.clearpathtechnology.com/",
-      image: "https://www.clearpathtechnology.com/assets/clearpath-og.svg",
-      email: "info@clearpathtechnology.org",
-      telephone: "+1-440-453-6752",
-      areaServed: "United States",
+      "@id": `${site.url}/#business`,
+      name: site.name,
+      url: site.url,
+      image: `${site.url}/assets/clearpath-og.svg`,
+      email: site.email,
+      telephone: site.phoneHref.replace("tel:", ""),
+      areaServed: site.areaServed,
       priceRange: "$$",
       knowsAbout: [
-        "Microsoft Azure",
-        "Microsoft 365",
-        "Entra ID",
-        "Microsoft Defender",
-        "Azure Lighthouse",
-        "Power Automate",
-        "Infrastructure as Code",
+        "Web Design",
+        "Website Hosting",
+        "SEO",
+        "AI Search Optimization",
+        "AI Call Agents",
+        "AI Automations",
       ],
-    },
-    {
-      "@type": "Service",
-      "@id": "https://www.clearpathtechnology.com/#managed-cloud-service",
-      name: "Microsoft Cloud Managed Services",
-      provider: { "@id": "https://www.clearpathtechnology.com/#organization" },
-      areaServed: "United States",
-      serviceType:
-        "Azure migration, Microsoft 365 management, identity, security, automation, and managed IT services",
-      description:
-        "Flat-rate Microsoft Cloud MSP services for regional contractors, logistics firms, and retailers.",
     },
   ],
 };
+
+const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
 export default function RootLayout({
   children,
@@ -113,7 +106,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(ldJson) }}
         />
+        <ScrollProgress />
         {children}
+        <Analytics />
+        {gaId && <GoogleAnalytics gaId={gaId} />}
       </body>
     </html>
   );

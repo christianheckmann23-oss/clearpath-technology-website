@@ -13,17 +13,72 @@
     },
     {
       "source": "/case-study",
-      "destination": "/case-studies/just-windows/",
+      "destination": "/case-studies/just-windows-usa",
+      "permanent": true
+    },
+    {
+      "source": "/case-studies/just-windows",
+      "destination": "/case-studies/just-windows-usa",
       "permanent": true
     },
     {
       "source": "/services/website-seo",
-      "destination": "/services/seo-optimization/",
+      "destination": "/services/seo",
       "permanent": true
     },
     {
-      "source": "/services/website-seo/",
-      "destination": "/services/seo-optimization/",
+      "source": "/services/seo-optimization",
+      "destination": "/services/seo",
+      "permanent": true
+    },
+    {
+      "source": "/services/microsoft-cloud",
+      "destination": "/cloud-advisory",
+      "permanent": true
+    },
+    {
+      "source": "/services/microsoft-365",
+      "destination": "/cloud-advisory",
+      "permanent": true
+    },
+    {
+      "source": "/services/managed-security",
+      "destination": "/cloud-advisory",
+      "permanent": true
+    },
+    {
+      "source": "/services/cloud-migration",
+      "destination": "/cloud-advisory",
+      "permanent": true
+    },
+    {
+      "source": "/services/workflow-automation-ai",
+      "destination": "/services/ai-automations",
+      "permanent": true
+    },
+    {
+      "source": "/services/automation",
+      "destination": "/services/ai-automations",
+      "permanent": true
+    },
+    {
+      "source": "/services/website-design-hosting",
+      "destination": "/services/web-design",
+      "permanent": true
+    },
+    {
+      "source": "/services/analytics-advertising",
+      "destination": "/packages",
+      "permanent": true
+    },
+    {
+      "source": "/stack",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap",
+      "destination": "/sitemap.xml",
       "permanent": true
     }
   ],

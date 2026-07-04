@@ -1,6 +1,9 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { motion } from "motion/react";
+import { coreServices } from "@/lib/data/services";
+import { buttonHover, buttonTap } from "@/lib/motion-variants";
 
 const MAKE_WEBHOOK = "https://hook.us2.make.com/e4ytnr0cmszo7claksslcnwhjaasrmlz";
 
@@ -58,7 +61,7 @@ export function HeroForm() {
   return (
     <>
       <h3 className="hfc-title">Get your free assessment</h3>
-      <p className="hfc-sub">No commitment. We&apos;ll map your stack and hand you a written plan.</p>
+      <p className="hfc-sub">No commitment. We&apos;ll map what your business needs and hand you a written plan.</p>
       <form id="hero-form" className="hfc-form" ref={formRef} onSubmit={handleSubmit}>
         <div className="hfc-row">
           <input type="text" name="name" placeholder="Your name" required />
@@ -69,34 +72,12 @@ export function HeroForm() {
         <div>
           <p className="hfc-label">Services you&apos;re interested in</p>
           <div className="hfc-chips">
-            <label className="hfc-chip">
-              <input type="checkbox" name="services" value="Microsoft 365" />
-              Microsoft 365
-            </label>
-            <label className="hfc-chip">
-              <input type="checkbox" name="services" value="Azure Migration" />
-              Azure Migration
-            </label>
-            <label className="hfc-chip">
-              <input type="checkbox" name="services" value="Managed Security" />
-              Managed Security
-            </label>
-            <label className="hfc-chip">
-              <input type="checkbox" name="services" value="Automation & AI" />
-              Automation &amp; AI
-            </label>
-            <label className="hfc-chip">
-              <input type="checkbox" name="services" value="Website & SEO" />
-              Website &amp; SEO
-            </label>
-            <label className="hfc-chip">
-              <input type="checkbox" name="services" value="Google Business Page" />
-              Google Business
-            </label>
-            <label className="hfc-chip">
-              <input type="checkbox" name="services" value="Advertising" />
-              Advertising
-            </label>
+            {coreServices.map((service) => (
+              <label className="hfc-chip" key={service.slug}>
+                <input type="checkbox" name="services" value={service.name} />
+                {service.name}
+              </label>
+            ))}
             <label className="hfc-chip">
               <input type="checkbox" name="services" value="Not sure" />
               Not sure yet
@@ -104,9 +85,15 @@ export function HeroForm() {
           </div>
         </div>
         <textarea name="message" placeholder="What are you looking to improve?" rows={2}></textarea>
-        <button type="submit" className="hfc-btn" disabled={status === "sending"}>
+        <motion.button
+          type="submit"
+          className="hfc-btn"
+          disabled={status === "sending"}
+          whileHover={status === "sending" ? undefined : buttonHover}
+          whileTap={status === "sending" ? undefined : buttonTap}
+        >
           {status === "sending" ? "Sending..." : "Get My Free Assessment →"}
-        </button>
+        </motion.button>
         <p className="hfc-note">No spam. No commitment. Just a clear picture.</p>
       </form>
     </>

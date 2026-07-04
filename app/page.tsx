@@ -5,7 +5,6 @@ import { IntroStatement } from "@/components/intro-statement";
 import { ServicesSection } from "@/components/services-section";
 import { CaseStudySection } from "@/components/case-study-section";
 import { ProcessSection } from "@/components/process-section";
-import { StackSection } from "@/components/stack-section";
 import { WhySection } from "@/components/why-section";
 import { CtaSection } from "@/components/cta-section";
 import { SiteFooter } from "@/components/site-footer";
@@ -24,7 +23,6 @@ export default function Home() {
         <ServicesSection />
         <CaseStudySection />
         <ProcessSection />
-        <StackSection />
         <WhySection />
         <CtaSection />
       </main>

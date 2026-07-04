@@ -52,6 +52,15 @@ export function ClearPathHeroBackground({ className }: { className?: string }) {
             animation: none;
           }
         }
+
+        /* On narrow viewports the hero copy stacks full-width, so the large
+           decorative cloud (positioned for the desktop two-column layout)
+           would otherwise sit directly behind the headline. Shrink and fade
+           it back so it reads as a subtle backdrop instead of overlapping text. */
+        @media (max-width: 640px) {
+          .cph-cloud-a-glow, .cph-cloud-a-icon { opacity: 0.25; }
+          .cph-cloud-b-glow, .cph-cloud-b-icon { opacity: 0.2; }
+        }
       `}</style>
 
       <div className="cph-glow cph-cloud-a-glow" />

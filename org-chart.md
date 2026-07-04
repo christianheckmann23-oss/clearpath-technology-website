@@ -34,42 +34,24 @@ Responsibilities:
 
 ClearPath operates as a boutique consulting firm with a lean core team and specialized contractor network for project delivery:
 
-### Primary Service Lines
+### Primary Service Lines (public-facing, productized)
 
-1. **Microsoft Cloud & Security**
-   - Azure migrations and architecture
-   - Microsoft 365 deployment
-   - Entra ID, Defender, Intune management
-   - Infrastructure as Code deployments
-   - Point Contact: Principal Founder
+As of the July 2026 repositioning, ClearPath's public brand and packages (Foundation/Growth/Accelerate) are built around six core services:
 
-2. **Automation & AI**
-   - Power Automate workflows
-   - Logic Apps design
-   - AI agent implementation
-   - Lead response automation
-   - Point Contact: Principal Founder
+1. **Web Design** — Custom and templated site builds, conversion-focused
+2. **Website Hosting** — Hosting, uptime monitoring, SSL, backups
+3. **SEO** — Technical, on-page, and local SEO
+4. **AI Search Optimization (GEO)** — Visibility in ChatGPT, Google AI Overviews, Perplexity
+5. **AI Call Agents & Receptionists** — 24/7 lead capture via AI voice agents
+6. **AI Automations** — Workflow automation, scoped via free consultation
 
-3. **SEO & Digital Growth**
-   - Technical SEO audits
-   - On-page optimization
-   - Local authority building
-   - Performance optimization
-   - Point Contact: Principal Founder
+Google Business Profile + Gmail/Workspace setup is bundled into packages as an onboarding item, not a standalone service line. Social Media Management and Advertising are metered add-ons, not core packages.
 
-4. **Web Design & Hosting**
-   - Static site architecture
-   - Azure/Vercel hosting
-   - Form automation
-   - Performance engineering
-   - Point Contact: Principal Founder
+Point Contact for all lines above: Principal Founder.
 
-5. **Analytics & Advertising**
-   - GA4 implementation
-   - Conversion tracking
-   - Dashboard design
-   - Campaign measurement
-   - Point Contact: Principal Founder
+### Cloud & IT Advisory (separate, custom-quoted lane)
+
+**Microsoft Cloud & Security** (Azure migrations, Microsoft 365, Entra ID, Defender, Intune, Infrastructure as Code) has been spun off the public homepage and package ladder. It's now a standalone, off-nav, custom-quoted offering (site page: `/cloud-advisory`) for existing relationships and direct referrals — not part of the productized SMB packages. Point Contact: Principal Founder.
 
 ---
 
@@ -107,4 +89,4 @@ Current model is sustainable for regional market penetration and allows rapid pi
 
 ---
 
-**Last Updated:** May 23, 2026
+**Last Updated:** July 4, 2026
