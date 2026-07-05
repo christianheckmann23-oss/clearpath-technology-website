@@ -3,8 +3,10 @@
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
 import { PlayCircle } from "lucide-react";
+import { track } from "@vercel/analytics";
 import { WordReveal, Magnetic } from "@/components/ui/motion-primitives";
-import { SPRING_SOFT, buttonHover, buttonTap } from "@/lib/motion-variants";
+import { SPRING, SPRING_SOFT, buttonHover, buttonTap } from "@/lib/motion-variants";
+import { AnalyticsEvent } from "@/lib/analytics";
 
 export interface RenderedStatChip {
   icon: ReactNode;
@@ -19,6 +21,7 @@ interface ServiceHeroLightProps {
   description: string;
   heroStats: RenderedStatChip[];
   visual: ReactNode;
+  serviceSlug: string;
 }
 
 /**
@@ -28,8 +31,12 @@ interface ServiceHeroLightProps {
  * the dark PageHero/AIIntegrationHero specifically on service detail
  * pages, per the approved reference mockup.
  */
-export function ServiceHeroLight({ eyebrow, titleMain, titleAccent, description, heroStats, visual }: ServiceHeroLightProps) {
+export function ServiceHeroLight({ eyebrow, titleMain, titleAccent, description, heroStats, visual, serviceSlug }: ServiceHeroLightProps) {
   const reduce = useReducedMotion();
+  // Times the accent line's entrance to land right as the black line's
+  // per-word reveal finishes, so the two read as one continuous motion.
+  const mainWordCount = titleMain.trim().split(/\s+/).length;
+  const accentDelay = mainWordCount * 0.06 + 0.05;
 
   return (
     <section className="service-hero-light">
@@ -47,8 +54,15 @@ export function ServiceHeroLight({ eyebrow, titleMain, titleAccent, description,
             <h1 className="service-hero-light-title">
               <WordReveal>{titleMain}</WordReveal>
               <br />
-              <span className="service-hero-light-accent">
-                <WordReveal stagger={0.07}>{titleAccent}</WordReveal>
+              <span className="service-hero-light-accent-clip">
+                <motion.span
+                  className="service-hero-light-accent"
+                  initial={reduce ? false : { opacity: 0, y: "100%" }}
+                  animate={{ opacity: 1, y: "0%" }}
+                  transition={{ ...SPRING, delay: accentDelay }}
+                >
+                  {titleAccent}
+                </motion.span>
               </span>
             </h1>
             <motion.p
@@ -66,7 +80,15 @@ export function ServiceHeroLight({ eyebrow, titleMain, titleAccent, description,
               transition={{ ...SPRING_SOFT, delay: 0.3 }}
             >
               <Magnetic>
-                <motion.a href="/contact" className="btn-solid" whileHover={buttonHover} whileTap={buttonTap}>
+                <motion.a
+                  href="/contact"
+                  className="btn-solid"
+                  whileHover={buttonHover}
+                  whileTap={buttonTap}
+                  onClick={() =>
+                    track(AnalyticsEvent.ContactCtaClick, { location: "service_hero", service: serviceSlug })
+                  }
+                >
                   Start Free Consultation →
                 </motion.a>
               </Magnetic>

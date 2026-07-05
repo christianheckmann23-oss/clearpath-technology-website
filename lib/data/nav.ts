@@ -47,9 +47,10 @@ export const primaryNav: NavLink[] = [
   { label: "About", href: "/about" },
 ];
 
-// Primary tier: large type in the mobile fullscreen menu.
+// Primary tier: large type in the mobile fullscreen menu. Individual
+// services are listed in the secondary tier below (mobileServiceLinks) —
+// there's no standalone services index page to link to.
 export const mobilePrimaryLinks: NavLink[] = [
-  { label: "Services", href: "/services" },
   ...primaryNav,
   { label: "Contact", href: "/contact" },
 ];

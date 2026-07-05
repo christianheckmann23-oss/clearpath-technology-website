@@ -10,6 +10,7 @@ import {
   useMotionValue,
   useAnimationFrame,
   useReducedMotion,
+  useInView,
 } from "motion/react";
 
 const TAGS = [
@@ -44,10 +45,17 @@ export function MarqueeBar() {
   const smoothVelocity = useSpring(scrollVelocity, { damping: 50, stiffness: 400 });
   const velocityFactor = useTransform(smoothVelocity, [-1000, 1000], [-4, 4], { clamp: false });
   const directionRef = useRef(1);
+  const containerRef = useRef<HTMLDivElement>(null);
+  // Once the marquee has scrolled out of view (e.g. user is deep in the
+  // footer), there's no reason to keep recomputing its position every
+  // frame — that's ongoing main-thread work competing with everything
+  // else on the page for no visible benefit.
+  const inView = useInView(containerRef, { margin: "200px 0px 200px 0px" });
 
   const x = useTransform(baseX, (v) => `${wrap(-50, 0, v)}%`);
 
   useAnimationFrame((_t, delta) => {
+    if (!inView) return;
     let moveBy = directionRef.current * -1.5 * (delta / 1000);
     const vf = velocityFactor.get();
     if (vf < 0) directionRef.current = 1;
@@ -72,7 +80,7 @@ export function MarqueeBar() {
   }
 
   return (
-    <div className="marquee-bar" aria-hidden="true">
+    <div className="marquee-bar" aria-hidden="true" ref={containerRef}>
       <motion.div className="marquee-track marquee-track-js" style={{ x }}>
         {tags.map((tag, i) => (
           <span key={`${tag}-${i}`}>{tag}</span>

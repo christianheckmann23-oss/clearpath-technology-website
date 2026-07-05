@@ -9,6 +9,7 @@ import { AIIntegrationHero } from "@/components/ai-integration-hero";
 import { ProcessStepper } from "@/components/ui/process-stepper";
 import { StatsBar } from "@/components/ui/stats-bar";
 import { ServiceVisual } from "@/components/ui/service-visuals";
+import { ServicesDisplayCards } from "@/components/services-display-cards";
 import { AutomationWorkflowVisual } from "@/components/ui/automation-workflow-visual";
 import { coreServices, getServiceBySlug } from "@/lib/data/services";
 import { servicePageContent, serviceIcon } from "@/lib/data/service-page-content";
@@ -77,6 +78,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           description={content.description}
           heroStats={heroStats}
           visual={visual}
+          serviceSlug={service.slug}
         />
         <section className="service-detail-section">
           <div className="container">
@@ -120,11 +122,25 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                     );
                   })}
                 </ul>
-                <a href="/services" className="service-sidebar-viewall">
+                <a href="/#services" className="service-sidebar-viewall">
                   View all services <ArrowRight size={14} strokeWidth={2} aria-hidden="true" />
                 </a>
               </div>
             </div>
+          </div>
+        </section>
+        <section className="border-t border-[#E8E8E4] bg-white py-24 md:py-28" aria-labelledby="more-services-heading">
+          <div className="container">
+            <div className="mb-14 text-center">
+              <span className="eyebrow">Keep Exploring</span>
+              <h2
+                id="more-services-heading"
+                className="text-[clamp(30px,3.5vw,44px)] font-extrabold tracking-[-1.5px] text-[#0A0A0A]"
+              >
+                More ways we can help.
+              </h2>
+            </div>
+            <ServicesDisplayCards services={otherServices} />
           </div>
         </section>
         <CtaSection />

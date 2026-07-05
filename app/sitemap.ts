@@ -5,7 +5,7 @@ import { publishedCaseStudies } from "@/lib/data/case-studies";
 import { getAllPosts } from "@/lib/blog";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/about", "/services", "/packages", "/case-studies", "/blog", "/contact", "/faq"];
+  const staticRoutes = ["", "/about", "/packages", "/case-studies", "/blog", "/contact", "/faq"];
 
   const serviceRoutes = coreServices.map((service) => `/services/${service.slug}`);
   const caseStudyRoutes = publishedCaseStudies.map((cs) => `/case-studies/${cs.slug}`);

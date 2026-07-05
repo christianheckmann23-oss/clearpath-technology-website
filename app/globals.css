@@ -126,7 +126,21 @@
     }
     .nav-links a:hover, .nav-links a:focus-visible { color: var(--white); }
     .nav-services { height: 80px; display: flex; align-items: center; }
-    .nav-services-trigger { display: inline-flex; align-items: center; gap: 6px; }
+    .nav-services-trigger {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      padding: 0;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.6);
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .nav-services-trigger:hover, .nav-services-trigger:focus-visible { color: var(--white); }
     .nav-services-trigger::after {
       content: "";
       width: 6px;
@@ -309,10 +323,19 @@
 
     /* secondary tier: individual services, deliberately quieter than the
        primary nav so the mobile menu isn't 12 giant links deep */
-    .fullscreen-menu-secondary {
+    .fullscreen-menu-label {
+      display: block;
       margin-top: 28px;
       padding-top: 20px;
       border-top: 1px solid #222;
+      color: var(--blue-lt);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+    .fullscreen-menu-secondary {
+      margin-top: 14px;
     }
     .fullscreen-menu-secondary li { margin-bottom: 0; }
     .fullscreen-menu-secondary li a {
@@ -1238,13 +1261,23 @@
       border-color: var(--blue);
       box-shadow: 0 20px 60px -20px rgba(37,99,235,0.35);
     }
-    /* slow ambient glow on the recommended tier */
-    @keyframes glow-pulse {
-      0%, 100% { box-shadow: 0 20px 60px -20px rgba(37,99,235,0.35); }
-      50%      { box-shadow: 0 24px 70px -18px rgba(37,99,235,0.6); }
+    /* Slow ambient glow on the recommended tier. Animates opacity on a
+       layered ::after (compositor-only) instead of the box-shadow itself
+       — animating box-shadow directly forces a full repaint every frame
+       for as long as the card is mounted, which is a real source of
+       scroll jank on /packages. */
+    .glow-pulse::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      box-shadow: 0 24px 70px -18px rgba(37,99,235,0.6);
+      opacity: 0;
+      pointer-events: none;
+      animation: glow-pulse-opacity 4s ease-in-out infinite;
     }
-    .glow-pulse { animation: glow-pulse 4s ease-in-out infinite; }
-    @media (prefers-reduced-motion: reduce) { .glow-pulse { animation: none; } }
+    @keyframes glow-pulse-opacity { 0%, 100% { opacity: 0; } 50% { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) { .glow-pulse::after { animation: none; } }
     @media (min-width: 901px) {
       .pricing-card.highlight { transform: scale(1.03); }
     }
@@ -1946,7 +1979,13 @@
       color: var(--ink);
       margin-bottom: 20px;
     }
+    .service-hero-light-accent-clip {
+      display: inline-block;
+      overflow: hidden;
+      vertical-align: bottom;
+    }
     .service-hero-light-accent {
+      display: inline-block;
       background: var(--grad-blue);
       -webkit-background-clip: text;
       background-clip: text;

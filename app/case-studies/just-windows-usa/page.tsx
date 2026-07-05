@@ -36,6 +36,7 @@ export default function JustWindowsCaseStudyPage() {
                 phoneSrc="/assets/case-jw-services.jpg"
                 alt={`${caseStudy.clientName} website`}
                 url={caseStudy.clientUrl?.replace(/^https?:\/\//, "")}
+                priority
               />
             ) : undefined
           }

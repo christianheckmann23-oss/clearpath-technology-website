@@ -1,15 +1,21 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
+import { track } from "@vercel/analytics";
 import { megaMenuGroups, mobilePrimaryLinks, mobileServiceLinks, primaryNav } from "@/lib/data/nav";
 import { site } from "@/lib/data/site";
 import { overlayFade, dropdownFade, navLinkReveal, staggerContainer, buttonHover, buttonTap } from "@/lib/motion-variants";
+import { useHasHover } from "@/components/ui/motion-primitives";
+import { AnalyticsEvent } from "@/lib/analytics";
 
 export function SiteNav() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const servicesRef = useRef<HTMLLIElement>(null);
+  const hasHover = useHasHover();
 
   useEffect(() => {
     document.body.classList.toggle("menu-open", isOpen);
@@ -20,6 +26,17 @@ export function SiteNav() {
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // Click-outside close — needed because the trigger is click-toggled
+  // (no page to navigate to anymore) rather than only hover-driven.
+  useEffect(() => {
+    if (!servicesOpen) return;
+    const onClick = (e: MouseEvent) => {
+      if (servicesRef.current && !servicesRef.current.contains(e.target as Node)) setServicesOpen(false);
+    };
+    document.addEventListener("mousedown", onClick);
+    return () => document.removeEventListener("mousedown", onClick);
+  }, [servicesOpen]);
 
   return (
     <>
@@ -51,6 +68,7 @@ export function SiteNav() {
                   </li>
                 ))}
               </motion.ul>
+              <span className="fullscreen-menu-label">Services</span>
               <motion.ul
                 className="fullscreen-menu-secondary"
                 variants={staggerContainer}
@@ -67,7 +85,13 @@ export function SiteNav() {
                 ))}
               </motion.ul>
             </div>
-            <a className="fullscreen-menu-footer" href={site.phoneHref}>{site.phone}</a>
+            <a
+              className="fullscreen-menu-footer"
+              href={site.phoneHref}
+              onClick={() => track(AnalyticsEvent.PhoneClick, { location: "nav_mobile" })}
+            >
+              {site.phone}
+            </a>
           </motion.nav>
         )}
       </AnimatePresence>
@@ -75,21 +99,27 @@ export function SiteNav() {
       {/* ── NAV ────────────────────────────────── */}
       <nav className={`site-nav${scrolled ? " scrolled" : ""}`} id="sitenav">
         <a href="/" className="nav-logo" aria-label="ClearPath Technology Partners home">
-          <img src="/assets/clearpath-logo.png" alt="ClearPath Technology Partners" />
+          <Image src="/assets/clearpath-logo.png" alt="ClearPath Technology Partners" width={224} height={56} priority />
         </a>
         <ul className="nav-links">
           <li
             className="nav-services"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
+            ref={servicesRef}
+            onMouseEnter={hasHover ? () => setServicesOpen(true) : undefined}
+            onMouseLeave={hasHover ? () => setServicesOpen(false) : undefined}
             onFocus={() => setServicesOpen(true)}
             onBlur={(e) => {
               if (!e.currentTarget.contains(e.relatedTarget as Node)) setServicesOpen(false);
             }}
           >
-            <a href="/services" className="nav-services-trigger" aria-expanded={servicesOpen}>
+            <button
+              type="button"
+              className="nav-services-trigger"
+              aria-expanded={servicesOpen}
+              onClick={() => setServicesOpen((open) => (hasHover ? true : !open))}
+            >
               Services
-            </a>
+            </button>
             <AnimatePresence>
               {servicesOpen && (
                 <motion.div
@@ -103,9 +133,9 @@ export function SiteNav() {
                   <div className="services-mega-inner">
                     <div className="services-mega-intro">
                       <span className="services-mega-kicker">ClearPath Services</span>
-                      <a href="/services" className="services-mega-title">
+                      <span className="services-mega-title">
                         Explore every way we help you grow.
-                      </a>
+                      </span>
                       <p className="services-mega-text">
                         Grouped by outcome: build your website, get found, and automate the busywork.
                       </p>
@@ -114,7 +144,7 @@ export function SiteNav() {
                       <div className="mega-group" key={group.title}>
                         <div className="mega-group-title">{group.title}</div>
                         {group.links.map((link) => (
-                          <a href={link.href} key={link.href}>
+                          <a href={link.href} key={link.href} onClick={() => setServicesOpen(false)}>
                             <strong>{link.label}</strong>
                             <span>{link.description}</span>
                           </a>
@@ -133,7 +163,13 @@ export function SiteNav() {
           ))}
         </ul>
         <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
-          <motion.a href="/contact" className="nav-cta-btn" whileHover={buttonHover} whileTap={buttonTap}>
+          <motion.a
+            href="/contact"
+            className="nav-cta-btn"
+            whileHover={buttonHover}
+            whileTap={buttonTap}
+            onClick={() => track(AnalyticsEvent.ContactCtaClick, { location: "nav" })}
+          >
             Start the Conversation →
           </motion.a>
           <motion.button

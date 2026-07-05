@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "motion/react";
+import { track } from "@vercel/analytics";
 import { coreServices } from "@/lib/data/services";
 import { site } from "@/lib/data/site";
 import { staggerContainer, fadeUpItem, viewportOnce } from "@/lib/motion-variants";
+import { AnalyticsEvent } from "@/lib/analytics";
 
 export function SiteFooter() {
   return (
@@ -33,7 +35,6 @@ export function SiteFooter() {
           <motion.div className="footer-col" variants={fadeUpItem}>
             <h4>Services</h4>
             <ul>
-              <li><a href="/services">All Services</a></li>
               {coreServices.map((service) => (
                 <li key={service.slug}>
                   <a href={`/services/${service.slug}`}>{service.name}</a>
@@ -54,10 +55,21 @@ export function SiteFooter() {
           <motion.div className="footer-col" variants={fadeUpItem}>
             <h4>Resources</h4>
             <ul>
-              <li><a href="/contact">Start the Conversation</a></li>
+              <li>
+                <a href="/contact" onClick={() => track(AnalyticsEvent.ContactCtaClick, { location: "footer" })}>
+                  Start the Conversation
+                </a>
+              </li>
               <li><a href="/faq">FAQ</a></li>
               <li><a href="/privacy">Privacy Policy</a></li>
-              <li><a href={`tel:${site.phoneHref.replace("tel:", "")}`}>{site.phone}</a></li>
+              <li>
+                <a
+                  href={`tel:${site.phoneHref.replace("tel:", "")}`}
+                  onClick={() => track(AnalyticsEvent.PhoneClick, { location: "footer" })}
+                >
+                  {site.phone}
+                </a>
+              </li>
             </ul>
           </motion.div>
         </motion.div>

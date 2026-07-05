@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Image from "next/image";
 import {
   motion,
   useScroll,
@@ -53,7 +54,7 @@ export const HeroParallax = ({ tiles }: { tiles: ShowcaseTile[] }) => {
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.2], [-700, 400]),
+    useTransform(scrollYProgress, [0, 0.2], [-500, 80]),
     springConfig
   );
 
@@ -63,8 +64,8 @@ export const HeroParallax = ({ tiles }: { tiles: ShowcaseTile[] }) => {
       <div className="bg-black pb-24">
         <ShowcaseHeader />
         <div className="container" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))", gap: "20px" }}>
-          {tiles.map((tile) => (
-            <StaticTile tile={tile} key={tile.title + tile.link} />
+          {tiles.map((tile, index) => (
+            <StaticTile tile={tile} priority={index < third} key={tile.title + tile.link} />
           ))}
         </div>
       </div>
@@ -74,13 +75,13 @@ export const HeroParallax = ({ tiles }: { tiles: ShowcaseTile[] }) => {
   return (
     <div
       ref={ref}
-      className="h-[280vh] py-32 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d] bg-black"
+      className="min-h-[280vh] py-32 overflow-x-hidden overflow-y-clip antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d] bg-black"
     >
       <ShowcaseHeader />
       <motion.div style={{ rotateX, rotateZ, translateY, opacity }}>
         <motion.div className="flex flex-row-reverse space-x-reverse space-x-8 md:space-x-20 mb-10 md:mb-20">
           {firstRow.map((tile) => (
-            <TileCard tile={tile} translate={translateX} key={`r1-${tile.title}`} />
+            <TileCard tile={tile} translate={translateX} priority key={`r1-${tile.title}`} />
           ))}
         </motion.div>
         <motion.div className="flex flex-row mb-10 md:mb-20 space-x-8 md:space-x-20">
@@ -125,15 +126,17 @@ export const ShowcaseHeader = () => {
   );
 };
 
-function TileInner({ tile }: { tile: ShowcaseTile }) {
+function TileInner({ tile, priority }: { tile: ShowcaseTile; priority?: boolean }) {
   if (tile.thumbnail) {
     return (
       <>
-        <img
+        <Image
           src={tile.thumbnail}
           className="object-cover object-left-top absolute h-full w-full inset-0"
           alt={tile.title}
-          loading="lazy"
+          fill
+          sizes="(max-width: 768px) 320px, 480px"
+          priority={priority}
         />
         <div className="absolute inset-0 h-full w-full opacity-0 group-hover/tile:opacity-70 bg-black transition-opacity pointer-events-none" />
         <h2 className="absolute bottom-4 left-4 opacity-0 group-hover/tile:opacity-100 transition-opacity text-white font-bold">
@@ -157,9 +160,11 @@ function TileInner({ tile }: { tile: ShowcaseTile }) {
 export const TileCard = ({
   tile,
   translate,
+  priority,
 }: {
   tile: ShowcaseTile;
   translate: MotionValue<number>;
+  priority?: boolean;
 }) => {
   return (
     <motion.div
@@ -168,20 +173,20 @@ export const TileCard = ({
       className="group/tile h-64 w-[20rem] md:h-96 md:w-[30rem] relative flex-shrink-0 rounded-xl overflow-hidden border border-white/10 shadow-2xl"
     >
       <a href={tile.link} className="block absolute inset-0" aria-label={tile.title}>
-        <TileInner tile={tile} />
+        <TileInner tile={tile} priority={priority} />
       </a>
     </motion.div>
   );
 };
 
-function StaticTile({ tile }: { tile: ShowcaseTile }) {
+function StaticTile({ tile, priority }: { tile: ShowcaseTile; priority?: boolean }) {
   return (
     <a
       href={tile.link}
       className="group/tile relative block h-56 rounded-xl overflow-hidden border border-white/10"
       aria-label={tile.title}
     >
-      <TileInner tile={tile} />
+      <TileInner tile={tile} priority={priority} />
     </a>
   );
 }

@@ -2,9 +2,11 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform, useSpring, useReducedMotion } from "motion/react";
+import { track } from "@vercel/analytics";
 import { site } from "@/lib/data/site";
 import { Magnetic } from "@/components/ui/motion-primitives";
 import { fadeUp, viewportOnce, buttonHover, buttonTap, SPRING } from "@/lib/motion-variants";
+import { AnalyticsEvent } from "@/lib/analytics";
 
 export function CtaSection() {
   const ref = useRef<HTMLElement>(null);
@@ -35,11 +37,22 @@ export function CtaSection() {
             </p>
             <div className="cta-actions-group">
               <Magnetic strength={14}>
-                <motion.a href="/contact" className="btn-cta-primary" whileHover={buttonHover} whileTap={buttonTap}>
+                <motion.a
+                  href="/contact"
+                  className="btn-cta-primary"
+                  whileHover={buttonHover}
+                  whileTap={buttonTap}
+                  onClick={() => track(AnalyticsEvent.ContactCtaClick, { location: "cta_section" })}
+                >
                   Get My Free Assessment →
                 </motion.a>
               </Magnetic>
-              <p className="cta-phone">Or call us: <a href={site.phoneHref}>{site.phone}</a></p>
+              <p className="cta-phone">
+                Or call us:{" "}
+                <a href={site.phoneHref} onClick={() => track(AnalyticsEvent.PhoneClick, { location: "cta_section" })}>
+                  {site.phone}
+                </a>
+              </p>
               <p className="cta-fine">No commitment. No spam. Just a clear picture of where you can grow.</p>
             </div>
           </div>

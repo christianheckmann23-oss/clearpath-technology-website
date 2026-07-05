@@ -1,9 +1,12 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { motion } from "motion/react";
+import { track } from "@vercel/analytics";
 import { coreServices } from "@/lib/data/services";
 import { buttonHover, buttonTap } from "@/lib/motion-variants";
+import { AnalyticsEvent } from "@/lib/analytics";
 
 const MAKE_WEBHOOK = "https://hook.us2.make.com/e4ytnr0cmszo7claksslcnwhjaasrmlz";
 
@@ -12,6 +15,8 @@ type Status = "idle" | "sending" | "success" | "error";
 export function HeroForm() {
   const formRef = useRef<HTMLFormElement>(null);
   const [status, setStatus] = useState<Status>("idle");
+  const pathname = usePathname();
+  const page = pathname === "/" ? "home" : "contact";
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -39,8 +44,16 @@ export function HeroForm() {
         body: JSON.stringify(data),
       });
       if (!res.ok) throw new Error();
+      track(AnalyticsEvent.LeadFormSubmit, {
+        page,
+        servicesCount: services.length,
+        hasCompany: data.company.length > 0,
+        hasPhone: data.phone.length > 0,
+        hasMessage: data.message.length > 0,
+      });
       setStatus("success");
     } catch {
+      track(AnalyticsEvent.LeadFormError, { page });
       setStatus("error");
     }
   }

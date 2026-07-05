@@ -17,7 +17,7 @@ import { SPRING } from "@/lib/motion-variants";
 
 /** True on devices with a real pointer (desktop) — pointer-tracking
     effects are wasted battery + jank on touch screens. */
-function useHasHover() {
+export function useHasHover() {
   const [hasHover, setHasHover] = useState(false);
   useEffect(() => {
     const mq = window.matchMedia("(hover: hover) and (pointer: fine)");

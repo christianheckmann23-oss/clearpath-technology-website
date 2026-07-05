@@ -1,9 +1,11 @@
 "use client";
 
 import { motion } from "motion/react";
+import { track } from "@vercel/analytics";
 import { packages, addOns, scalesNote } from "@/lib/data/packages";
 import { TiltCard, Magnetic, CountUp } from "@/components/ui/motion-primitives";
 import { staggerContainer, flattenIn, fadeUpItem, viewportOnce, buttonHover, buttonTap } from "@/lib/motion-variants";
+import { AnalyticsEvent } from "@/lib/analytics";
 
 export function PackagesSection() {
   return (
@@ -49,6 +51,7 @@ export function PackagesSection() {
                       style={{ display: "block" }}
                       whileHover={buttonHover}
                       whileTap={buttonTap}
+                      onClick={() => track(AnalyticsEvent.ContactCtaClick, { location: "packages", tier: pkg.name })}
                     >
                       Get Started →
                     </motion.a>

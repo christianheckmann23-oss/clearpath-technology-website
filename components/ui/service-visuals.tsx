@@ -223,6 +223,7 @@ function WebDesignVisual() {
       phoneSrc="/assets/case-jw-services.jpg"
       alt="Website built by ClearPath shown on desktop and mobile"
       url="justwindowsusa.com"
+      priority
     />
   );
 }
