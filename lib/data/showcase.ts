@@ -35,9 +35,9 @@ export const showcaseTiles: ShowcaseTile[] = [
     cta: { eyebrow: "Coming Soon", label: "Healthcare & Wellness case study in progress." },
   },
   {
-    title: "Just Windows USA — Home",
-    link: "/case-studies/just-windows-usa",
-    thumbnail: "/assets/case-jw-hero.jpg",
+    title: "Apex Strength Club — Home",
+    link: "https://apexstrengthclub.com",
+    thumbnail: "/assets/case-apex-hero.jpg",
   },
   {
     title: "General Small Business",
@@ -55,8 +55,8 @@ export const showcaseTiles: ShowcaseTile[] = [
     cta: { eyebrow: "Packages", label: "Foundation · Growth · Accelerate — from $199." },
   },
   {
-    title: "Just Windows USA — Home",
-    link: "/case-studies/just-windows-usa",
-    thumbnail: "/assets/case-jw-hero.jpg",
+    title: "Apex Strength Club — Home",
+    link: "https://apexstrengthclub.com",
+    thumbnail: "/assets/case-apex-hero.jpg",
   },
 ];
