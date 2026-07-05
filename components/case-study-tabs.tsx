@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { AnimatePresence, motion, type Variants } from "motion/react";
 import { industries, getCaseStudiesByIndustry } from "@/lib/data/case-studies";
 import { BrowserMockup } from "@/components/ui/browser-mockup";
@@ -58,11 +59,22 @@ export function CaseStudyTabs() {
                     whileHover={buttonHover}
                     whileTap={buttonTap}
                   >
-                    {cs.heroImage && (
+                    {cs.cardImage ? (
+                      <div className="browser-mockup-tile">
+                        <Image
+                          src={cs.cardImage}
+                          alt={`${cs.clientName} website shown across devices`}
+                          width={1672}
+                          height={941}
+                          sizes="(max-width: 900px) 100vw, 640px"
+                          style={{ width: "100%", height: "auto", borderRadius: "12px" }}
+                        />
+                      </div>
+                    ) : cs.heroImage ? (
                       <div className="browser-mockup-tile">
                         <BrowserMockup src={cs.heroImage} alt={`${cs.clientName} website`} url={cs.clientUrl?.replace(/^https?:\/\//, "")} />
                       </div>
-                    )}
+                    ) : null}
                     <div className="case-study-card-client">
                       {cs.clientName}
                       {cs.clientLocation ? ` · ${cs.clientLocation}` : ""}

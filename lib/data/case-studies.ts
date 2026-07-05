@@ -37,10 +37,14 @@ export interface CaseStudy {
   clientUrl?: string;
   status: "published" | "coming-soon";
   headline: string;
+  /** Rendered directly after the linked client name — start mid-sentence ("had a...", "is a..."). */
   challenge: string;
   solution: string;
   metrics: CaseStudyMetric[];
   heroImage?: string;
+  /** Optional card image for the industry tabs — a composite/device shot shown
+      as-is instead of wrapping heroImage in a browser frame. */
+  cardImage?: string;
 }
 
 export const caseStudies: CaseStudy[] = [
@@ -53,7 +57,7 @@ export const caseStudies: CaseStudy[] = [
     status: "published",
     headline: "232 SEO issues cleared in 4 days. Leads automated.",
     challenge:
-      "Just Windows USA had a WordPress site carrying 235 SEO issues — 7 pages with no H1, 8 pages Google couldn't read, and a quote form with no automated follow-up. Every unanswered lead was a potential job going to a competitor.",
+      "had a WordPress site carrying 235 SEO issues — 7 pages with no H1, 8 pages Google couldn't read, and a quote form with no automated follow-up. Every unanswered lead was a potential job going to a competitor.",
     solution:
       "ClearPath rebuilt the site as a clean, fast website, ran a Semrush-driven SEO optimization across every page, and wired up an automation that sends an instant confirmation to every customer and an instant alert to the owner the moment a form is submitted.",
     metrics: [
@@ -63,6 +67,27 @@ export const caseStudies: CaseStudy[] = [
       { value: "0s", label: "Lead response delay — automation fires instantly on every form submission" },
     ],
     heroImage: "/assets/case-jw-hero.jpg",
+  },
+  {
+    slug: "apex-strength-club",
+    industry: "general-business",
+    clientName: "Apex Strength Club",
+    clientLocation: "Vermilion, OH",
+    clientUrl: "https://apexstrengthclub.com",
+    status: "published",
+    headline: "Launch-ready before the doors open.",
+    challenge:
+      "is a family-owned, premium 24/7 strength gym opening in Vermilion, Ohio. With opening day approaching and the space still under construction, the club had no website and no search presence — locals couldn't find it, and there was nowhere to send interested members.",
+    solution:
+      "ClearPath designed and built a premium dark-and-gold website to match the gym floor — memberships, amenities, and a build-progress page that turns the construction phase into anticipation — and laid the local search groundwork so the club is indexed and findable before opening day.",
+    metrics: [
+      { value: "0", label: "Days open at launch — website and memberships live while the gym was still under construction" },
+      { value: "24/7", label: "Always-open positioning carried through the whole site, from hero to memberships" },
+      { value: "100%", label: "Mobile-first build — most members will find and browse the gym from a phone" },
+      { value: "Day 1", label: "Local search groundwork done during the build-out — indexed and findable from day one" },
+    ],
+    heroImage: "/assets/case-apex-hero.jpg",
+    cardImage: "/assets/case-apex-devices.jpg",
   },
 ];
 

@@ -4,7 +4,7 @@ export interface ShowcaseTile {
   /** Real screenshot tile */
   thumbnail?: string;
   /** CTA tile (no screenshot yet) — rendered as a designed gradient card */
-  cta?: { eyebrow: string; label: string };
+  cta?: { eyebrow: string; label: string; action?: string };
 }
 
 /**
@@ -36,13 +36,13 @@ export const showcaseTiles: ShowcaseTile[] = [
   },
   {
     title: "Apex Strength Club — Home",
-    link: "https://apexstrengthclub.com",
+    link: "/case-studies/apex-strength-club",
     thumbnail: "/assets/case-apex-hero.jpg",
   },
   {
     title: "General Small Business",
-    link: "/contact",
-    cta: { eyebrow: "Coming Soon", label: "Fresh gym site write-up on the way." },
+    link: "/case-studies/apex-strength-club",
+    cta: { eyebrow: "New Case Study", label: "Apex Strength Club — launch-ready before the doors open.", action: "Read the case study →" },
   },
   {
     title: "Just Windows USA — Services",
@@ -56,7 +56,7 @@ export const showcaseTiles: ShowcaseTile[] = [
   },
   {
     title: "Apex Strength Club — Home",
-    link: "https://apexstrengthclub.com",
+    link: "/case-studies/apex-strength-club",
     thumbnail: "/assets/case-apex-hero.jpg",
   },
 ];

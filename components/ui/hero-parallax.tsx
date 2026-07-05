@@ -79,17 +79,17 @@ export const HeroParallax = ({ tiles }: { tiles: ShowcaseTile[] }) => {
     >
       <ShowcaseHeader />
       <motion.div style={{ rotateX, rotateZ, translateY, opacity }}>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-8 md:space-x-20 mb-10 md:mb-20">
+        <motion.div className="flex flex-row-reverse gap-8 md:gap-20 mb-10 md:mb-20">
           {firstRow.map((tile) => (
             <TileCard tile={tile} translate={translateX} priority key={`r1-${tile.title}`} />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row mb-10 md:mb-20 space-x-8 md:space-x-20">
+        <motion.div className="flex flex-row gap-8 md:gap-20 mb-10 md:mb-20">
           {secondRow.map((tile) => (
             <TileCard tile={tile} translate={translateXReverse} key={`r2-${tile.title}`} />
           ))}
         </motion.div>
-        <motion.div className="flex flex-row-reverse space-x-reverse space-x-8 md:space-x-20">
+        <motion.div className="flex flex-row-reverse gap-8 md:gap-20">
           {thirdRow.map((tile) => (
             <TileCard tile={tile} translate={translateX} key={`r3-${tile.title}`} />
           ))}
@@ -152,7 +152,7 @@ function TileInner({ tile, priority }: { tile: ShowcaseTile; priority?: boolean 
         {tile.cta?.eyebrow}
       </span>
       <span className="text-white text-xl md:text-2xl font-black leading-tight">{tile.cta?.label}</span>
-      <span className="text-white/80 text-sm font-bold mt-4">Start the conversation →</span>
+      <span className="text-white/80 text-sm font-bold mt-4">{tile.cta?.action ?? "Start the conversation →"}</span>
     </div>
   );
 }
