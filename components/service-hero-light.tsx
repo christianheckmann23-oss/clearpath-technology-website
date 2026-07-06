@@ -2,7 +2,6 @@
 
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
-import { PlayCircle } from "lucide-react";
 import { track } from "@vercel/analytics";
 import { WordReveal, Magnetic } from "@/components/ui/motion-primitives";
 import { SPRING, SPRING_SOFT, buttonHover, buttonTap } from "@/lib/motion-variants";
@@ -44,7 +43,7 @@ export function ServiceHeroLight({ eyebrow, titleMain, titleAccent, description,
         <div className="service-hero-light-grid">
           <div>
             <motion.span
-              className="service-pill-badge"
+              className="eyebrow"
               initial={reduce ? false : { opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={SPRING_SOFT}
@@ -92,10 +91,6 @@ export function ServiceHeroLight({ eyebrow, titleMain, titleAccent, description,
                   Start Free Consultation →
                 </motion.a>
               </Magnetic>
-              <motion.a href="#see-it-in-action" className="service-hero-light-secondary-cta" whileHover={{ x: 2 }}>
-                <PlayCircle size={18} strokeWidth={2} aria-hidden="true" />
-                See How It Works
-              </motion.a>
             </motion.div>
             <motion.div
               className="service-hero-light-stats"

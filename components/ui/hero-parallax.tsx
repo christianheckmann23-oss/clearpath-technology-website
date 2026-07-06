@@ -18,6 +18,7 @@ import { buttonHover, buttonTap } from "@/lib/motion-variants";
  * from a 3D perspective as you scroll. Adapted for ClearPath — motion/react
  * imports, plain <img>/<a>, brand gradient keyword, and honest tiles only
  * (real screenshots or clearly-labeled CTA cards, never fake client work).
+ * Serves as the landing-page hero, so the header carries the brand headline.
  */
 export const HeroParallax = ({ tiles }: { tiles: ShowcaseTile[] }) => {
   const third = Math.ceil(tiles.length / 3);
@@ -102,24 +103,26 @@ export const HeroParallax = ({ tiles }: { tiles: ShowcaseTile[] }) => {
 export const ShowcaseHeader = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-32 px-6 md:px-12 w-full left-0 top-0 z-10">
-      <span className="eyebrow" style={{ color: "var(--blue-lt)" }}>Case Studies</span>
+      <span className="eyebrow" style={{ color: "var(--blue-lt)" }}>ClearPath Technology Partners</span>
       <h1 className="text-4xl md:text-7xl font-black text-white leading-none tracking-tight">
-        Real work,
+        A ClearPath
         <br />
+        to{" "}
         <span className="bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#60A5FA] bg-clip-text text-transparent">
-          built to convert.
+          growth.
         </span>
       </h1>
       <p className="max-w-2xl text-base md:text-xl mt-8 text-white/60 leading-relaxed">
-        Websites, search visibility, and automation we&apos;ve shipped for real businesses — plus the spots we&apos;re
-        saving for yours. Scroll to explore.
+        We help small businesses <strong className="text-white/90 font-semibold">look credible online, get found in
+        Google and AI search, and stop losing leads to slow follow-up.</strong> Flat monthly pricing. Real results
+        from day one — scroll to see the work.
       </p>
       <div className="flex gap-4 mt-10 flex-wrap">
         <motion.a href="/packages" className="btn-solid" whileHover={buttonHover} whileTap={buttonTap}>
           See Our Packages →
         </motion.a>
-        <motion.a href="/contact" className="btn-ghost" whileHover={buttonHover} whileTap={buttonTap}>
-          Start Your Project
+        <motion.a href="/case-studies" className="btn-ghost" whileHover={buttonHover} whileTap={buttonTap}>
+          Explore Our Work
         </motion.a>
       </div>
     </div>

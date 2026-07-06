@@ -17,9 +17,9 @@ interface AIIntegrationHeroProps {
 }
 
 /**
- * Dark hero shared by every service detail page: same shell as PageHero
- * (glow, grid, WordReveal H1, "clear path" divider) but centered copy and
- * a single CTA baked in. On ai-call-agents/ai-automations it also carries
+ * Dark hero shared by every service detail page: same shell, band size,
+ * and left-aligned copy as PageHero (glow, grid, WordReveal H1, "clear
+ * path" divider) with a single CTA baked in. On ai-call-agents/ai-automations it also carries
  * a full-width dark-styled integrations pill carousel — the "plugs into
  * your tools" story told as the hero itself.
  */
@@ -27,7 +27,7 @@ export function AIIntegrationHero({ eyebrow, title, lede, integrations = true }:
   const reduce = useReducedMotion();
 
   return (
-    <section className="page-hero ai-hero">
+    <section className={`page-hero ai-hero${integrations ? " ai-hero-integrations" : ""}`}>
       <div className="page-hero-glow" aria-hidden="true" />
       <div className="container">
         <div className="page-hero-copy ai-hero-copy">

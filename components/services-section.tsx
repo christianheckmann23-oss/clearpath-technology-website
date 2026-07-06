@@ -1,7 +1,7 @@
 "use client";
 
 import { coreServices } from "@/lib/data/services";
-import { ServicesDisplayCards } from "@/components/services-display-cards";
+import { ServicesGrid } from "@/components/services-grid";
 
 export function ServicesSection() {
   return (
@@ -15,7 +15,7 @@ export function ServicesSection() {
           <p>Not a do-everything agency — a focused set of services that gets you found and turns visitors into customers.</p>
         </div>
 
-        <ServicesDisplayCards services={coreServices} />
+        <ServicesGrid services={coreServices} />
       </div>
     </section>
   );

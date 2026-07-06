@@ -613,6 +613,184 @@
       line-height: 1.7;
     }
 
+    /* filter chips */
+    .svc-filter {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin: -32px 0 36px;
+    }
+    .svc-filter-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-right: 6px;
+    }
+    .svc-chip {
+      border: 1px solid var(--line-light);
+      background: var(--white);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 600;
+      padding: 9px 18px;
+      border-radius: 100px;
+      cursor: pointer;
+      font-family: inherit;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+    .svc-chip:hover { border-color: var(--blue); color: var(--blue); }
+    .svc-chip.active { background: var(--blue); border-color: var(--blue); color: var(--white); }
+    .svc-chip:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+    /* service card grid */
+    .svc-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 1024px) { .svc-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px)  { .svc-grid { grid-template-columns: 1fr; } }
+
+    .svc-card {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      background: var(--white);
+      border: 1px solid var(--line-light);
+      border-radius: 12px;
+      padding: 28px;
+      box-shadow: var(--shadow-card);
+      transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s, border-color 0.35s;
+    }
+    /* Entrance animation, plain CSS rather than Motion-driven. Cards fully
+       unmount/remount on a filter change with no `layout` prop, so there's
+       nothing to reposition and a native animation plays cleanly on every
+       insertion with no JS coordination. (An earlier version used Motion's
+       layout FLIP animation here, which fought with the :hover transform
+       transition below whenever a filter click reflowed the grid — the
+       "cards twitching into place" bug.) */
+    @keyframes svc-card-in {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .svc-card-in {
+      animation: svc-card-in 0.5s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .svc-card-in { animation: none; }
+    }
+    .svc-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(37, 99, 235, 0.06), transparent 35%);
+      opacity: 0;
+      transition: opacity 0.35s;
+      pointer-events: none;
+    }
+    .svc-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(37, 99, 235, 0.45);
+      box-shadow: var(--shadow-card-hover);
+    }
+    .svc-card:hover::before { opacity: 1; }
+    .svc-card:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+    .svc-card-top {
+      display: flex;
+      width: 100%;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 22px;
+    }
+    .svc-card-icon {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 10px;
+      background: var(--blue-bg);
+      color: var(--blue);
+      transition: background 0.35s, color 0.35s, transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1);
+    }
+    .svc-card:hover .svc-card-icon {
+      background: var(--blue);
+      color: var(--white);
+      transform: rotate(-3deg) scale(1.05);
+    }
+    .svc-card-num {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--ink-soft);
+      font-variant-numeric: tabular-nums;
+      transition: color 0.35s;
+    }
+    .svc-card:hover .svc-card-num { color: var(--blue); }
+
+    .svc-card h3 {
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      color: var(--ink);
+    }
+    .svc-card > p {
+      margin-top: 10px;
+      font-size: 14px;
+      line-height: 1.65;
+      color: var(--ink-body);
+    }
+    .svc-card-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 18px;
+    }
+    .svc-card-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: auto;
+      padding-top: 22px;
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--ink);
+      transition: color 0.3s, gap 0.3s;
+    }
+    .svc-card:hover .svc-card-link { color: var(--blue); gap: 12px; }
+
+    /* honest-capability stats strip under the grid */
+    .svc-stats { margin-top: 72px; }
+    .svc-stats-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--line-light), transparent);
+    }
+    .svc-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      padding-top: 40px;
+    }
+    @media (max-width: 768px) { .svc-stats-grid { grid-template-columns: 1fr; gap: 24px; } }
+    .svc-stats-grid strong {
+      display: block;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      color: var(--blue);
+    }
+    .svc-stats-grid span {
+      display: block;
+      margin-top: 6px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.6;
+    }
+
     .services-list { border-top: 1px solid #E5E5E5; }
     .service-row {
       border-bottom: 1px solid #E5E5E5;
@@ -1074,11 +1252,25 @@
        Dark band with blue glow + grid, ending in the "clear path" divider:
        a white band cutting diagonally through the dark with a thin
        blue-gradient edge — the road-through-the-cloud from the logo. ── */
+    /* Fixed-height band with vertically centered content so every inner
+       page's dark hero renders the same size regardless of copy length
+       (legal pages' short titles, split heroes with visuals, etc.). */
     .page-hero {
       position: relative;
-      padding: 150px 0 150px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 620px;
+      padding: 140px 0 150px;
       background: var(--black);
       overflow: hidden;
+    }
+    /* Flex items with auto side margins shrink-wrap instead of stretching;
+       force full width so .container's max-width + auto margins behave the
+       same as in block flow. */
+    .page-hero > .container,
+    .page-hero > .int-carousel {
+      width: 100%;
     }
     .page-hero::before {
       content: '';
@@ -1306,7 +1498,22 @@
     .addon-desc { font-size: 13px; color: var(--ink-body); line-height: 1.6; }
 
     /* ── CASE STUDIES: GALLERY (light) ── */
-    .case-studies-section { padding: 56px 0 120px; background: var(--white); }
+    .case-studies-section { padding: 96px 0 120px; background: var(--white); }
+
+    .case-studies-header { max-width: 720px; margin-bottom: 56px; }
+    .case-studies-header h2 {
+      font-size: clamp(32px, 4vw, 52px);
+      font-weight: 900;
+      letter-spacing: -1.5px;
+      line-height: 1.05;
+      color: var(--ink);
+    }
+    .case-studies-header p {
+      margin-top: 18px;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink-body);
+    }
 
     .case-gallery-nav {
       display: flex;
@@ -1441,18 +1648,6 @@
     }
     @media (max-width: 900px) { .service-detail-grid { grid-template-columns: 1fr; gap: 32px; } }
     .service-detail-body-stack { display: flex; flex-direction: column; gap: 28px; }
-    .service-sidebar-icon {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 30px;
-      height: 30px;
-      border-radius: 8px;
-      background: var(--blue-bg);
-      color: var(--blue);
-      flex-shrink: 0;
-    }
-    .service-sidebar-link-main { display: flex; align-items: center; gap: 10px; }
     .service-sidebar-viewall {
       display: inline-flex;
       align-items: center;
@@ -1889,20 +2084,18 @@
     }
     .int-pill svg { color: var(--blue); flex-shrink: 0; }
 
-    /* ── AI HERO (dark variant of PageHero + integrations carousel) ── */
-    .ai-hero { padding-bottom: 72px; }
-    .ai-hero-copy {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto;
-    }
-    .ai-hero-copy .eyebrow { margin-left: auto; margin-right: auto; }
-    .ai-hero-copy h1 { margin-left: auto; margin-right: auto; }
-    .ai-hero-copy p { margin: 0 auto 28px; }
-    .ai-hero-copy .btn-solid { display: inline-block; }
+    /* ── AI HERO (dark variant of PageHero + integrations carousel) ──
+       Copy is left-aligned and unpadded so the band matches PageHero
+       exactly; only the CTA spacing and carousel styling differ. */
+    .ai-hero-copy p { margin-bottom: 28px; max-width: 640px; }
+
+    /* Carousel variant: trim vertical spacing so the extra pill rows fit
+       inside the same 620px band as every other page's dark hero. */
+    .ai-hero-integrations { padding-bottom: 90px; }
+    @media (max-width: 640px) { .ai-hero-integrations { padding-bottom: 64px; } }
 
     .int-carousel-dark {
-      margin-top: 56px;
+      margin-top: 40px;
     }
     .int-carousel-dark::before { background: linear-gradient(90deg, var(--black), transparent); }
     .int-carousel-dark::after { background: linear-gradient(270deg, var(--black), transparent); }
@@ -1913,7 +2106,6 @@
       box-shadow: none;
     }
     .int-pill-dark svg { color: var(--blue-lt); }
-    @media (max-width: 640px) { .ai-hero { padding-bottom: 48px; } }
 
     /* ── MOBILE SECTION RHYTHM ──────────────────
        Several sections carry the same 160px desktop vertical padding
@@ -1927,7 +2119,7 @@
       .cta-section {
         padding: 80px 0;
       }
-      .page-hero { padding: 96px 0 80px; }
+      .page-hero { padding: 96px 0 80px; min-height: 0; }
     }
 
     /* ── SERVICE HERO (LIGHT) — replaces the dark PageHero on standard
@@ -1952,18 +2144,6 @@
     }
     @media (max-width: 980px) { .service-hero-light-grid { grid-template-columns: 1fr; gap: 40px; } }
 
-    .service-pill-badge {
-      display: inline-block;
-      background: var(--blue-bg);
-      color: var(--blue);
-      font-size: 11px;
-      font-weight: 800;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      padding: 7px 16px;
-      border-radius: 999px;
-      margin-bottom: 20px;
-    }
     .service-hero-light-title {
       font-size: clamp(32px, 4.2vw, 52px);
       font-weight: 900;
@@ -2027,13 +2207,7 @@
     }
     .service-hero-light-stat svg {
       color: var(--blue);
-      background: var(--blue-bg);
-      border-radius: 8px;
-      padding: 6px;
-      width: 30px;
-      height: 30px;
       flex-shrink: 0;
-      box-sizing: border-box;
     }
     .service-hero-light-stat strong { display: block; font-size: 14px; font-weight: 800; color: var(--ink); }
     .service-hero-light-stat span { display: block; font-size: 12px; color: var(--ink-soft); }
@@ -2144,65 +2318,6 @@
       .wf-branch-row { grid-template-columns: 1fr; }
       .wf-branch-line { width: 2px; height: 16px; }
     }
-
-    /* ── PROCESS STEPPER ("See It In Action") ── */
-    .process-stepper-card {
-      background: var(--white);
-      border: 1px solid var(--line-light);
-      border-radius: 20px;
-      box-shadow: var(--shadow-card);
-      padding: 32px 28px;
-    }
-    .process-stepper-eyebrow { margin-bottom: 24px; }
-    .process-stepper {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-    }
-    @media (max-width: 860px) { .process-stepper { flex-direction: column; gap: 32px; } }
-    .process-stepper-item {
-      position: relative;
-      flex: 1;
-      text-align: center;
-      padding: 0 6px;
-    }
-    @media (max-width: 860px) { .process-stepper-item { text-align: left; padding: 0; display: flex; flex-direction: column; align-items: flex-start; } }
-    .process-stepper-node {
-      position: relative;
-      width: 56px;
-      height: 56px;
-      border-radius: 14px;
-      background: var(--blue-bg);
-      color: var(--blue);
-      display: grid;
-      place-items: center;
-      margin: 0 auto 16px;
-    }
-    @media (max-width: 860px) { .process-stepper-node { margin: 0 0 12px; } }
-    .process-stepper-num {
-      position: absolute;
-      top: -8px;
-      left: -8px;
-      width: 22px;
-      height: 22px;
-      border-radius: 50%;
-      background: var(--grad-blue);
-      color: var(--white);
-      font-size: 11px;
-      font-weight: 800;
-      display: grid;
-      place-items: center;
-    }
-    .process-stepper-title { font-size: 14px; font-weight: 800; color: var(--ink); margin-bottom: 6px; }
-    .process-stepper-desc { font-size: 12.5px; color: var(--ink-soft); line-height: 1.5; }
-    .process-stepper-arrow {
-      position: absolute;
-      top: 22px;
-      right: -6px;
-      color: var(--gray-lt);
-      font-size: 16px;
-    }
-    @media (max-width: 860px) { .process-stepper-arrow { display: none; } }
 
     /* ── STATS BAR ── */
     .stats-bar {

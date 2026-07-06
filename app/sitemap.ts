@@ -9,12 +9,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const serviceRoutes = coreServices.map((service) => `/services/${service.slug}`);
   const caseStudyRoutes = publishedCaseStudies.map((cs) => `/case-studies/${cs.slug}`);
-  const blogRoutes = getAllPosts().map((post) => `/blog/${post.slug}`);
 
-  const allRoutes = [...staticRoutes, ...serviceRoutes, ...caseStudyRoutes, ...blogRoutes];
-
-  return allRoutes.map((route) => ({
+  // Routes with no tracked content-modification date are left without
+  // `lastModified` rather than stamping build time — a fabricated "changed
+  // today" on every deploy is a worse crawl signal than omitting it.
+  const undated = [...staticRoutes, ...serviceRoutes, ...caseStudyRoutes].map((route) => ({
     url: `${site.url}${route}`,
-    lastModified: new Date(),
   }));
+
+  const blogRoutes = getAllPosts().map((post) => ({
+    url: `${site.url}/blog/${post.slug}`,
+    lastModified: new Date(post.date),
+  }));
+
+  return [...undated, ...blogRoutes];
 }

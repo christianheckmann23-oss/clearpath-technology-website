@@ -6,13 +6,12 @@ import { SiteFooter } from "@/components/site-footer";
 import { CtaSection } from "@/components/cta-section";
 import { ServiceHeroLight } from "@/components/service-hero-light";
 import { AIIntegrationHero } from "@/components/ai-integration-hero";
-import { ProcessStepper } from "@/components/ui/process-stepper";
 import { StatsBar } from "@/components/ui/stats-bar";
 import { ServiceVisual } from "@/components/ui/service-visuals";
 import { ServicesDisplayCards } from "@/components/services-display-cards";
 import { AutomationWorkflowVisual } from "@/components/ui/automation-workflow-visual";
 import { coreServices, getServiceBySlug } from "@/lib/data/services";
-import { servicePageContent, serviceIcon } from "@/lib/data/service-page-content";
+import { servicePageContent } from "@/lib/data/service-page-content";
 import { packages } from "@/lib/data/packages";
 
 /** These two pages additionally show the dark tool-pill integrations
@@ -46,14 +45,9 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
   const visual = service.slug === "ai-automations" ? <AutomationWorkflowVisual /> : <ServiceVisual slug={service.slug} />;
 
   const heroStats = content.heroStats.map(({ icon: Icon, value, label }) => ({
-    icon: <Icon size={16} strokeWidth={2} aria-hidden="true" />,
+    icon: <Icon size={20} strokeWidth={2} aria-hidden="true" />,
     value,
     label,
-  }));
-  const processSteps = content.processSteps.map(({ icon: Icon, title, desc }) => ({
-    icon: <Icon size={20} strokeWidth={2} aria-hidden="true" />,
-    title,
-    desc,
   }));
   const bottomStats = content.bottomStats.map(({ icon: Icon, value, label }) => ({
     icon: <Icon size={20} strokeWidth={2} aria-hidden="true" />,
@@ -84,7 +78,6 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           <div className="container">
             <div className="service-detail-grid">
               <div className="service-detail-body-stack">
-                <ProcessStepper steps={processSteps} id="see-it-in-action" />
                 <StatsBar stats={bottomStats} />
               </div>
               <div className="service-detail-sidebar">
@@ -100,27 +93,6 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
                       </a>
                     </li>
                   ))}
-                </ul>
-                <h4>Other Services</h4>
-                <ul>
-                  {otherServices.map((s) => {
-                    const Icon = serviceIcon[s.slug];
-                    return (
-                      <li key={s.slug}>
-                        <a href={`/services/${s.slug}`}>
-                          <span className="service-sidebar-link-main">
-                            {Icon && (
-                              <span className="service-sidebar-icon">
-                                <Icon size={16} strokeWidth={2} aria-hidden="true" />
-                              </span>
-                            )}
-                            {s.name}
-                          </span>
-                          <ArrowRight size={15} strokeWidth={2} aria-hidden="true" />
-                        </a>
-                      </li>
-                    );
-                  })}
                 </ul>
                 <a href="/#services" className="service-sidebar-viewall">
                   View all services <ArrowRight size={14} strokeWidth={2} aria-hidden="true" />

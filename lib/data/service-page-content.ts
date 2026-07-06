@@ -28,19 +28,12 @@ export interface StatChip {
   label: string;
 }
 
-export interface ProcessStep {
-  icon: LucideIcon;
-  title: string;
-  desc: string;
-}
-
 export interface ServicePageContent {
   eyebrow: string;
   titleMain: string;
   titleAccent: string;
   description: string;
   heroStats: StatChip[];
-  processSteps: ProcessStep[];
   /** Honest, capability-framed stats — never fabricated track-record
       numbers ClearPath can't back up (no fake "100+ clients" claims). */
   bottomStats: StatChip[];
@@ -69,13 +62,6 @@ export const servicePageContent: Record<string, ServicePageContent> = {
       { icon: Layout, value: "Custom", label: "not a template" },
       { icon: Rocket, value: "1-2 wks", label: "typical launch" },
     ],
-    processSteps: [
-      { icon: MessageSquare, title: "Discovery Call", desc: "We learn your business, services, and goals" },
-      { icon: Layout, title: "Design Draft", desc: "A custom layout built around what you actually do" },
-      { icon: FileText, title: "Content & Copy", desc: "We write or refine your messaging" },
-      { icon: ShieldCheck, title: "Build & Test", desc: "Mobile, forms, and speed all verified" },
-      { icon: Rocket, title: "Launch", desc: "Site goes live and starts generating leads" },
-    ],
     bottomStats: [
       { icon: Rocket, value: "1-2 wks", label: "Typical launch timeline" },
       { icon: Smartphone, value: "100%", label: "Mobile-responsive builds" },
@@ -95,13 +81,6 @@ export const servicePageContent: Record<string, ServicePageContent> = {
       { icon: RefreshCw, value: "Auto Backups", label: "restorable any time" },
       { icon: Clock, value: "24/7", label: "uptime monitoring" },
       { icon: Database, value: "One Bill", label: "no separate host" },
-    ],
-    processSteps: [
-      { icon: Rocket, title: "Migration & Setup", desc: "Your site deployed on modern, fast infrastructure" },
-      { icon: ShieldCheck, title: "SSL & Security", desc: "Certificate and security headers configured" },
-      { icon: Clock, title: "Monitoring Live", desc: "Uptime checked around the clock" },
-      { icon: RefreshCw, title: "Automatic Backups", desc: "Scheduled and restorable any time" },
-      { icon: Users, title: "Ongoing Maintenance", desc: "Updates and upkeep handled for you" },
     ],
     bottomStats: [
       { icon: Clock, value: "99.9%", label: "Uptime target" },
@@ -123,13 +102,6 @@ export const servicePageContent: Record<string, ServicePageContent> = {
       { icon: TrendingUp, value: "Monthly", label: "ranking reports" },
       { icon: FileText, value: "On-Page", label: "content optimization" },
     ],
-    processSteps: [
-      { icon: Search, title: "Technical Audit", desc: "Crawl health, speed, and schema checked" },
-      { icon: FileText, title: "On-Page Fixes", desc: "Headers, meta, and structure corrected" },
-      { icon: MapPin, title: "Local Signals", desc: "Google Business Profile and citations aligned" },
-      { icon: TrendingUp, title: "Content Plan", desc: "Pages built to target real searches" },
-      { icon: RefreshCw, title: "Monthly Reporting", desc: "Rankings tracked and shared with you" },
-    ],
     bottomStats: [
       { icon: Search, value: "Full", label: "Technical + on-page audit" },
       { icon: MapPin, value: "Local", label: "Map pack targeting" },
@@ -150,13 +122,6 @@ export const servicePageContent: Record<string, ServicePageContent> = {
       { icon: Star, value: "Reviews", label: "trust signals built" },
       { icon: Globe, value: "3 Platforms", label: "ChatGPT, Google AI, Perplexity" },
     ],
-    processSteps: [
-      { icon: Search, title: "AI Visibility Audit", desc: "Where your business shows up today" },
-      { icon: FileText, title: "Content Structuring", desc: "Written the way models actually cite sources" },
-      { icon: Star, title: "Signal Building", desc: "Reviews and reputation reinforced" },
-      { icon: Sparkles, title: "Citation Tracking", desc: "Monitored across AI tools over time" },
-      { icon: RefreshCw, title: "Ongoing Tuning", desc: "Adjusted as models change" },
-    ],
     bottomStats: [
       { icon: Sparkles, value: "Emerging", label: "Category most competitors ignore" },
       { icon: Globe, value: "3 Platforms", label: "ChatGPT, Google AI, Perplexity" },
@@ -170,19 +135,12 @@ export const servicePageContent: Record<string, ServicePageContent> = {
     titleMain: "Never Miss a Call.",
     titleAccent: "Never Miss a Lead.",
     description:
-      "Our AI call agents answer instantly, capture caller details, and text you the lead — day or night, weekends included. Your business never looks closed.",
+      "Our AI call agents answer instantly, capture caller details, and text you the lead — day or night, weekends included. Your business never looks closed. Monthly cost varies depending on call minutes used.",
     heroStats: [
       { icon: PhoneCall, value: "24/7", label: "always answers" },
       { icon: Zap, value: "Instant", label: "lead capture" },
       { icon: MessageSquare, value: "Auto-Text", label: "you get notified" },
       { icon: Users, value: "Sounds Human", label: "not a phone tree" },
-    ],
-    processSteps: [
-      { icon: PhoneCall, title: "Call Comes In", desc: "Anytime, any day of the week" },
-      { icon: Sparkles, title: "AI Answers Instantly", desc: "Greets the caller, no hold music" },
-      { icon: FileText, title: "Details Captured", desc: "Name, number, and job needs" },
-      { icon: MessageSquare, title: "You're Notified", desc: "Texted or emailed the moment it ends" },
-      { icon: Zap, title: "Lead Ready", desc: "Follow up while it's still hot" },
     ],
     bottomStats: [
       { icon: PhoneCall, value: "24/7", label: "Availability, every day" },
@@ -204,13 +162,6 @@ export const servicePageContent: Record<string, ServicePageContent> = {
       { icon: Database, value: "CRM", label: "sync" },
       { icon: Star, value: "Reviews", label: "on autopilot" },
       { icon: Users, value: "Leads", label: "captured" },
-    ],
-    processSteps: [
-      { icon: FileText, title: "Form Submitted", desc: "Visitor submits a form on your website" },
-      { icon: Sparkles, title: "AI / Automation Trigger", desc: "We qualify the lead and route it instantly" },
-      { icon: MessageSquare, title: "Instant Reply Sent", desc: "Confirmation and next steps sent in seconds" },
-      { icon: Database, title: "CRM Updated", desc: "Lead is saved, tagged, and tracked" },
-      { icon: Star, title: "Owner Notified", desc: "You get an alert so you stay in the loop" },
     ],
     bottomStats: [
       { icon: Workflow, value: "Built On", label: "Make & n8n" },
