@@ -3,7 +3,9 @@ import { SiteNav } from "@/components/site-nav";
 import { SiteFooter } from "@/components/site-footer";
 import { HeroForm } from "@/components/hero-form";
 import { PageHero } from "@/components/page-hero";
+import { TrackedLink } from "@/components/ui/tracked-link";
 import { site } from "@/lib/data/site";
+import { AnalyticsEvent } from "@/lib/analytics";
 
 export const metadata: Metadata = {
   title: "Contact | ClearPath Technology Partners",
@@ -31,11 +33,23 @@ export default function ContactPage() {
                 </p>
                 <div className="contact-info-row">
                   <span>Phone</span>
-                  <a href={site.phoneHref}>{site.phone}</a>
+                  <TrackedLink
+                    href={site.phoneHref}
+                    event={AnalyticsEvent.PhoneClick}
+                    properties={{ location: "contact_page" }}
+                  >
+                    {site.phone}
+                  </TrackedLink>
                 </div>
                 <div className="contact-info-row">
                   <span>Email</span>
-                  <a href={`mailto:${site.email}`}>{site.email}</a>
+                  <TrackedLink
+                    href={`mailto:${site.email}`}
+                    event={AnalyticsEvent.EmailClick}
+                    properties={{ location: "contact_page" }}
+                  >
+                    {site.email}
+                  </TrackedLink>
                 </div>
               </div>
               <div className="contact-form-card">

@@ -70,6 +70,7 @@ export default async function ServiceDetailPage({ params }: { params: Promise<{ 
           title={service.name}
           lede={service.shortDesc}
           integrations={INTEGRATION_SLUGS.has(service.slug)}
+          serviceSlug={service.slug}
         />
         <ServiceHeroLight
           eyebrow={content.eyebrow}

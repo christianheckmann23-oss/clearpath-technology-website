@@ -9,8 +9,10 @@ import {
   useReducedMotion,
   MotionValue,
 } from "motion/react";
+import { track } from "@vercel/analytics";
 import type { ShowcaseTile } from "@/lib/data/showcase";
 import { buttonHover, buttonTap } from "@/lib/motion-variants";
+import { AnalyticsEvent } from "@/lib/analytics";
 
 /**
  * Scroll-driven parallax showcase (adapted from Aceternity's HeroParallax):
@@ -118,7 +120,13 @@ export const ShowcaseHeader = () => {
         <motion.a href="/packages" className="btn-solid" whileHover={buttonHover} whileTap={buttonTap}>
           See Our Packages →
         </motion.a>
-        <motion.a href="/contact" className="btn-ghost" whileHover={buttonHover} whileTap={buttonTap}>
+        <motion.a
+          href="/contact"
+          className="btn-ghost"
+          whileHover={buttonHover}
+          whileTap={buttonTap}
+          onClick={() => track(AnalyticsEvent.ContactCtaClick, { location: "case_studies_hero" })}
+        >
           Start Your Project
         </motion.a>
       </div>

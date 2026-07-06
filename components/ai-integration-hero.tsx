@@ -2,9 +2,11 @@
 
 import type { ReactNode } from "react";
 import { motion, useReducedMotion } from "motion/react";
+import { track } from "@vercel/analytics";
 import { WordReveal, Magnetic } from "@/components/ui/motion-primitives";
 import { PillRow, INT_ROW1, INT_ROW2 } from "@/components/ui/integration-marquee";
 import { SPRING_SOFT, buttonHover, buttonTap } from "@/lib/motion-variants";
+import { AnalyticsEvent } from "@/lib/analytics";
 
 interface AIIntegrationHeroProps {
   eyebrow: string;
@@ -14,6 +16,7 @@ interface AIIntegrationHeroProps {
       the two services that actually plug into third-party tools — the
       other four service pages use this same shell without it. */
   integrations?: boolean;
+  serviceSlug: string;
 }
 
 /**
@@ -23,7 +26,7 @@ interface AIIntegrationHeroProps {
  * a full-width dark-styled integrations pill carousel — the "plugs into
  * your tools" story told as the hero itself.
  */
-export function AIIntegrationHero({ eyebrow, title, lede, integrations = true }: AIIntegrationHeroProps) {
+export function AIIntegrationHero({ eyebrow, title, lede, integrations = true, serviceSlug }: AIIntegrationHeroProps) {
   const reduce = useReducedMotion();
 
   return (
@@ -55,7 +58,15 @@ export function AIIntegrationHero({ eyebrow, title, lede, integrations = true }:
             transition={{ ...SPRING_SOFT, delay: 0.35 }}
           >
             <Magnetic>
-              <motion.a href="/contact" className="btn-solid" whileHover={buttonHover} whileTap={buttonTap}>
+              <motion.a
+                href="/contact"
+                className="btn-solid"
+                whileHover={buttonHover}
+                whileTap={buttonTap}
+                onClick={() =>
+                  track(AnalyticsEvent.ContactCtaClick, { location: "service_dark_hero", service: serviceSlug })
+                }
+              >
                 Start the Conversation →
               </motion.a>
             </Magnetic>
