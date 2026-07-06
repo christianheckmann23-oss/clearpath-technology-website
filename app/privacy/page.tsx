@@ -71,7 +71,7 @@ export default function PrivacyPage() {
               <li><strong>Essential cookies</strong> — Required for the website to function correctly. These cannot be disabled.</li>
               <li><strong>Analytics cookies</strong> — Set by Vercel Analytics or Google Analytics to track page views and events. These are anonymous and aggregated.</li>
             </ul>
-            <p>You can control non-essential cookies through your browser settings. Disabling analytics cookies will not affect your ability to use the site.</p>
+            <p>You can control non-essential cookies through your browser settings. Disabling analytics cookies will not affect your ability to use the site. For a full list of the cookies we use and how to opt out, see our <a href="/cookies">Cookie Policy</a>.</p>
 
             <h2>6. Data Retention</h2>
             <p>We retain contact form submissions and inquiry data for up to 24 months, or longer if an active client relationship exists. You may request deletion of your data at any time by contacting us at the address below.</p>
