@@ -4,6 +4,9 @@
 # Lead reports (sensitive prospect data)
 lead-reports/
 
+# Internal working docs (audits, notes) - not deployed site content
+docs/
+
 # Large icon asset packs (not needed for deployment)
 Azure_Public_Service_Icons_V23/
 official-icon-downloads/

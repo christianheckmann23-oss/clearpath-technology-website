@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import { track } from "@vercel/analytics";
 import { coreServices } from "@/lib/data/services";
@@ -20,9 +21,10 @@ export function SiteFooter() {
         >
           <motion.div variants={fadeUpItem}>
             <a href="/" className="nav-logo" aria-label="ClearPath Technology Partners home">
-              <img
+              <Image
                 src="/assets/clearpath-logo.png"
                 alt="ClearPath Technology Partners"
+                width={224}
                 height={56}
                 style={{ display: "block" }}
               />
@@ -62,6 +64,8 @@ export function SiteFooter() {
               </li>
               <li><a href="/faq">FAQ</a></li>
               <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/terms">Terms of Service</a></li>
+              <li><a href="/cookies">Cookie Policy</a></li>
               <li>
                 <a
                   href={`tel:${site.phoneHref.replace("tel:", "")}`}

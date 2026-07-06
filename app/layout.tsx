@@ -6,6 +6,7 @@ import { site } from "@/lib/data/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
   title: "ClearPath Technology Partners | Websites, AI Search & Automation for Small Business",
   description:
     "ClearPath builds websites, SEO, AI search optimization, AI call agents, and automation for small businesses — fixed packages, flat monthly pricing, no long-term contracts.",

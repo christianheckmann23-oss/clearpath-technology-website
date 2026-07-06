@@ -109,7 +109,7 @@ export const services: Service[] = [
     shortDesc:
       "We offer free consultations to identify areas of your business that can be improved or automated with artificial intelligence.",
     longDesc:
-      "Most small businesses are running on manual busywork that a well-built automation could handle in seconds — lead follow-up, review requests, document handling, CRM updates. We start with a free consultation to map where automation actually pays for itself, then build it scoped to your business and scale it as you grow.",
+      "Most small businesses are running on manual busywork that a well-built automation could handle in seconds — lead follow-up, review requests, document handling, CRM updates. We start with a free consultation to map where automation actually pays for itself, then build it scoped to your business and scale it as you grow. Baseline automation is included with Accelerate; larger or more complex automation builds are scoped and quoted separately.",
     features: [
       "Free consultation to map what's actually worth automating",
       "Instant lead follow-up — no more \"we'll call you back tomorrow\"",
@@ -130,7 +130,7 @@ export const services: Service[] = [
     tags: ["Social Media"],
     bundledIn: [],
     isAddOn: true,
-    addOnPricing: "$59.99/mo + $15/page",
+    addOnPricing: "$59.99/mo base + $20 per additional account managed",
   },
 ];
 

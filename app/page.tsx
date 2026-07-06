@@ -1,5 +1,6 @@
 import { SiteNav } from "@/components/site-nav";
-import { HeroSection } from "@/components/hero-section";
+import { HeroParallax } from "@/components/ui/hero-parallax";
+import { showcaseTiles } from "@/lib/data/showcase";
 import { MarqueeBar } from "@/components/marquee-bar";
 import { ServicesSection } from "@/components/services-section";
 import { CaseStudySection } from "@/components/case-study-section";
@@ -16,7 +17,7 @@ export default function Home() {
       <SiteNav />
 
       <main id="main-content">
-        <HeroSection />
+        <HeroParallax tiles={showcaseTiles} />
         <MarqueeBar />
         <ServicesSection />
         <CaseStudySection />
