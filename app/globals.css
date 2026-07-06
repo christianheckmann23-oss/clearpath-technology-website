@@ -1145,8 +1145,13 @@
     .cta-section h2 {
       font-size: clamp(40px, 6.5vw, 100px);
       font-weight: 900;
-      letter-spacing: -4px;
-      line-height: 0.92;
+      /* em-based, not a fixed px, so tracking scales with the clamped
+         font-size — a flat -4px reads as tight-but-fine at the 100px
+         desktop size but is ~10% negative tracking at the 40px mobile
+         size, crowding the letters together. -0.04em keeps the same -4px
+         look at 100px while easing off proportionally as the text shrinks. */
+      letter-spacing: -0.04em;
+      line-height: 1.05;
       color: var(--black);
       max-width: 900px;
       margin-bottom: 48px;
@@ -1577,10 +1582,16 @@
     .case-gallery-card:hover .case-gallery-img { transform: scale(1.04); }
     .case-gallery-card-soon { background: var(--grad-blue); }
 
+    /* Never fades to fully transparent — .case-gallery-copy's height
+       varies with headline length, and real client screenshots often
+       have their own bold white headline text baked in (a website's own
+       hero banner), which can visually collide with our overlaid title
+       unless it's crushed dark enough to read as a faint background
+       texture rather than competing text. */
     .case-gallery-scrim {
       position: absolute;
       inset: 0;
-      background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.45) 42%, rgba(0,0,0,0) 72%);
+      background: linear-gradient(to top, rgba(0,0,0,0.97) 0%, rgba(0,0,0,0.9) 55%, rgba(0,0,0,0.6) 100%);
     }
 
     .case-gallery-copy {

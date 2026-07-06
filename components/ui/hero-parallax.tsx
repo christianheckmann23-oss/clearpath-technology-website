@@ -103,27 +103,34 @@ export const HeroParallax = ({ tiles }: { tiles: ShowcaseTile[] }) => {
 export const ShowcaseHeader = () => {
   return (
     <div className="max-w-7xl relative mx-auto py-20 md:py-32 px-6 md:px-12 w-full left-0 top-0 z-10">
-      <span className="eyebrow" style={{ color: "var(--blue-lt)" }}>ClearPath Technology Partners</span>
-      <h1 className="text-4xl md:text-7xl font-black text-white leading-none tracking-tight">
-        A ClearPath
-        <br />
-        to{" "}
-        <span className="bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#60A5FA] bg-clip-text text-transparent">
-          growth.
-        </span>
-      </h1>
-      <p className="max-w-2xl text-base md:text-xl mt-8 text-white/60 leading-relaxed">
-        We help small businesses <strong className="text-white/90 font-semibold">look credible online, get found in
-        Google and AI search, and stop losing leads to slow follow-up.</strong> Flat monthly pricing. Real results
-        from day one — scroll to see the work.
-      </p>
-      <div className="flex gap-4 mt-10 flex-wrap">
-        <motion.a href="/packages" className="btn-solid" whileHover={buttonHover} whileTap={buttonTap}>
-          See Our Packages →
-        </motion.a>
-        <motion.a href="/case-studies" className="btn-ghost" whileHover={buttonHover} whileTap={buttonTap}>
-          Explore Our Work
-        </motion.a>
+      {/* On mobile the tilted screenshot tiles rest directly behind this
+          text (no side-by-side room like desktop has), and a real website
+          screenshot is often light-colored right where the copy sits —
+          this backdrop guarantees contrast regardless of what's behind it.
+          Fully transparent from md: up, where the layout already clears. */}
+      <div className="-m-5 rounded-[28px] bg-black/70 p-5 backdrop-blur-sm md:m-0 md:rounded-none md:bg-transparent md:p-0 md:backdrop-blur-none">
+        <span className="eyebrow" style={{ color: "var(--blue-lt)" }}>ClearPath Technology Partners</span>
+        <h1 className="text-4xl md:text-7xl font-black text-white leading-none tracking-tight">
+          A ClearPath
+          <br />
+          to{" "}
+          <span className="bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#60A5FA] bg-clip-text text-transparent">
+            growth.
+          </span>
+        </h1>
+        <p className="max-w-2xl text-base md:text-xl mt-8 text-white/60 leading-relaxed">
+          We help small businesses <strong className="text-white/90 font-semibold">look credible online, get found in
+          Google and AI search, and stop losing leads to slow follow-up.</strong> Flat monthly pricing. Real results
+          from day one — scroll to see the work.
+        </p>
+        <div className="flex gap-4 mt-10 flex-wrap">
+          <motion.a href="/packages" className="btn-solid" whileHover={buttonHover} whileTap={buttonTap}>
+            See Our Packages →
+          </motion.a>
+          <motion.a href="/case-studies" className="btn-ghost" whileHover={buttonHover} whileTap={buttonTap}>
+            Explore Our Work
+          </motion.a>
+        </div>
       </div>
     </div>
   );
