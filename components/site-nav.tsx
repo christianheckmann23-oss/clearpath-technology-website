@@ -99,7 +99,7 @@ export function SiteNav() {
       {/* ── NAV ────────────────────────────────── */}
       <nav className={`site-nav${scrolled ? " scrolled" : ""}`} id="sitenav">
         <a href="/" className="nav-logo" aria-label="CirroFlow Technologies home">
-          <BrandLogo idSuffix="-nav" />
+          <BrandLogo priority />
         </a>
         <ul className="nav-links">
           <li

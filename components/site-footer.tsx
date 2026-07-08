@@ -21,7 +21,7 @@ export function SiteFooter() {
         >
           <motion.div variants={fadeUpItem}>
             <a href="/" className="nav-logo" aria-label="CirroFlow Technologies home">
-              <BrandLogo idSuffix="-footer" />
+              <BrandLogo />
             </a>
             <p className="footer-brand-desc">
               Websites, AI search visibility, and automation for small businesses that want to look credible online

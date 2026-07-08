@@ -16,8 +16,8 @@ export const metadata: Metadata = {
     canonical: site.url,
   },
   icons: {
-    icon: [{ url: "/assets/cirroflow-icon.svg", type: "image/svg+xml" }],
-    apple: [{ url: "/assets/cirroflow-icon.svg" }],
+    icon: [{ url: "/assets/cirroflow-icon.png", type: "image/png", sizes: "512x512" }],
+    apple: [{ url: "/assets/cirroflow-icon.png" }],
   },
   manifest: "/site.webmanifest",
   openGraph: {
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: site.url,
     images: [
       {
-        url: `${site.url}/assets/cirroflow-og.svg`,
+        url: `${site.url}/assets/cirroflow-og.png`,
         width: 1200,
         height: 630,
       },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "CirroFlow Technologies | Websites, AI Search & Automation",
     description: "Fixed packages for web design, SEO, AI search optimization, AI call agents, and automation for small businesses.",
-    images: [`${site.url}/assets/cirroflow-og.svg`],
+    images: [`${site.url}/assets/cirroflow-og.png`],
   },
   other: {
     "theme-color": "#000000",
@@ -54,7 +54,7 @@ const ldJson = {
       "@id": `${site.url}/#organization`,
       name: site.legalName,
       url: site.url,
-      logo: `${site.url}/assets/cirroflow-icon.svg`,
+      logo: `${site.url}/assets/cirroflow-icon.png`,
       email: site.email,
       telephone: site.phoneHref.replace("tel:", ""),
       description:
@@ -73,7 +73,7 @@ const ldJson = {
       "@id": `${site.url}/#business`,
       name: site.name,
       url: site.url,
-      image: `${site.url}/assets/cirroflow-og.svg`,
+      image: `${site.url}/assets/cirroflow-og.png`,
       email: site.email,
       telephone: site.phoneHref.replace("tel:", ""),
       areaServed: site.areaServed,
