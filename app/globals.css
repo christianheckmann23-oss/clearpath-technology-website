@@ -1885,6 +1885,19 @@
     .image-placeholder-label { font-size: 14px; font-weight: 700; color: #374151; }
     .image-placeholder-sub { font-size: 12px; color: var(--ink-soft); }
 
+    /* ── FOUNDER PHOTO (about page) ── */
+    .founder-photo-frame {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--line-light);
+      aspect-ratio: 4 / 5;
+      position: relative;
+    }
+    .founder-photo-frame img { object-fit: cover; }
+    .founder-caption { margin-top: 12px; text-align: center; }
+    .founder-caption .founder-name { font-size: 15px; font-weight: 800; color: var(--ink); }
+    .founder-caption .founder-title { display: block; font-size: 13px; color: var(--ink-soft); margin-top: 2px; }
+
     /* ── DEVICE SHOWCASE (browser mockup + overlapping phone frame) ── */
     .device-showcase { position: relative; }
     .device-showcase .browser-mockup { margin-right: 10%; }

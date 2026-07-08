@@ -14,7 +14,7 @@ Principal Founder & Chief Technology Officer
 
 ## Principal Founder & Chief Technology Officer
 
-**Chris [Last Name]**  
+**Christian Heckmann**  
 Principal Founder & Chief Technology Officer  
 Email: hello@clearpathtechnology.com  
 Phone: 1-888-000-0000
