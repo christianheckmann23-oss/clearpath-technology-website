@@ -8,7 +8,7 @@ import { TiltCard } from "@/components/ui/motion-primitives";
 import { getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog | ClearPath Technology Partners",
+  title: "Blog | CirroFlow Technology Partners",
   description: "Practical writing on web design, SEO, AI search optimization, and automation for small businesses.",
 };
 

@@ -5,7 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | ClearPath Technology Partners",
+  title: "Terms of Service | CirroFlow Technology Partners",
   robots: "noindex, follow",
 };
 
@@ -23,14 +23,14 @@ export default function TermsPage() {
             <h2>1. Agreement to These Terms</h2>
             <p>
               These Terms of Service (&quot;Terms&quot;) govern your use of the website located at {site.url} (the
-              &quot;Site&quot;), operated by {site.legalName} (&quot;ClearPath,&quot; &quot;we,&quot; &quot;our,&quot; or
+              &quot;Site&quot;), operated by {site.legalName} (&quot;CirroFlow,&quot; &quot;we,&quot; &quot;our,&quot; or
               &quot;us&quot;), an Ohio limited liability company. By accessing or using the Site, you agree to be bound
               by these Terms. If you do not agree, please do not use the Site.
             </p>
 
             <h2>2. Who We Are</h2>
             <p>
-              ClearPath is a small business growth partner based in Ohio. We provide website design and hosting, SEO,
+              CirroFlow is a small business growth partner based in Ohio. We provide website design and hosting, SEO,
               AI search optimization, AI call agents, and automation services to small businesses.
             </p>
 
@@ -66,14 +66,14 @@ export default function TermsPage() {
             <h2>6. Intellectual Property</h2>
             <p>
               The Site and its contents — including text, graphics, logos, page designs, and code — are owned by
-              ClearPath or its licensors and are protected by copyright, trademark, and other intellectual property
+              CirroFlow or its licensors and are protected by copyright, trademark, and other intellectual property
               laws. You may view and print pages for your own business evaluation purposes, but you may not otherwise
               copy, modify, distribute, or create derivative works from the Site without our written consent.
             </p>
             <p>
               Third-party product and company names mentioned on the Site — including Google, Microsoft, Vercel, and
               others — are trademarks of their respective owners. Their appearance on the Site does not imply
-              endorsement of ClearPath by those companies.
+              endorsement of CirroFlow by those companies.
             </p>
 
             <h2>7. Case Studies and Results</h2>
@@ -101,7 +101,7 @@ export default function TermsPage() {
 
             <h2>10. Limitation of Liability</h2>
             <p>
-              TO THE FULLEST EXTENT PERMITTED BY LAW, CLEARPATH AND ITS MEMBERS, OFFICERS, EMPLOYEES, AND AGENTS WILL
+              TO THE FULLEST EXTENT PERMITTED BY LAW, CIRROFLOW AND ITS MEMBERS, OFFICERS, EMPLOYEES, AND AGENTS WILL
               NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES — INCLUDING LOST
               PROFITS, LOST DATA, OR BUSINESS INTERRUPTION — ARISING OUT OF OR RELATED TO YOUR USE OF THE SITE, EVEN IF
               WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. OUR TOTAL LIABILITY ARISING OUT OF OR RELATED TO
@@ -115,7 +115,7 @@ export default function TermsPage() {
 
             <h2>11. Indemnification</h2>
             <p>
-              You agree to indemnify and hold harmless ClearPath and its members, officers, employees, and agents from
+              You agree to indemnify and hold harmless CirroFlow and its members, officers, employees, and agents from
               any claims, damages, losses, and expenses (including reasonable attorneys&apos; fees) arising out of your
               violation of these Terms or your misuse of the Site.
             </p>
@@ -144,7 +144,7 @@ export default function TermsPage() {
             <p>
               If any provision of these Terms is found unenforceable, the remaining provisions will remain in full
               effect. These Terms, together with the Privacy Policy and Cookie Policy, are the entire agreement between
-              you and ClearPath regarding use of the Site, and supersede any prior understandings on that subject.
+              you and CirroFlow regarding use of the Site, and supersede any prior understandings on that subject.
             </p>
 
             <h2>16. Contact Us</h2>

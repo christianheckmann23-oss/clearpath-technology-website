@@ -7,32 +7,29 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: "ClearPath Technology Partners | Websites, AI Search & Automation for Small Business",
+  title: "CirroFlow Technology Partners | Websites, AI Search & Automation for Small Business",
   description:
-    "ClearPath builds websites, SEO, AI search optimization, AI call agents, and automation for small businesses — fixed packages, flat monthly pricing, no long-term contracts.",
+    "CirroFlow builds websites, SEO, AI search optimization, AI call agents, and automation for small businesses — fixed packages, flat monthly pricing, no long-term contracts.",
   robots: "index, follow, max-image-preview:large",
   authors: [{ name: site.legalName }],
   alternates: {
     canonical: site.url,
   },
   icons: {
-    icon: [
-      { url: "/assets/clearpath-logo.svg", type: "image/svg+xml" },
-      { url: "/assets/favicon.svg", type: "image/svg+xml" },
-    ],
-    apple: [{ url: "/assets/favicon.svg" }],
+    icon: [{ url: "/assets/cirroflow-icon.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/assets/cirroflow-icon.svg" }],
   },
   manifest: "/site.webmanifest",
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: "ClearPath Technology Partners | Websites, AI Search & Automation for Small Business",
+    title: "CirroFlow Technology Partners | Websites, AI Search & Automation for Small Business",
     description:
       "Fixed packages for web design, SEO, AI search optimization, AI call agents, and automation — priced flat, scoped upfront.",
     url: site.url,
     images: [
       {
-        url: `${site.url}/assets/clearpath-og.svg`,
+        url: `${site.url}/assets/cirroflow-og.svg`,
         width: 1200,
         height: 630,
       },
@@ -40,9 +37,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "ClearPath Technology Partners | Websites, AI Search & Automation",
+    title: "CirroFlow Technology Partners | Websites, AI Search & Automation",
     description: "Fixed packages for web design, SEO, AI search optimization, AI call agents, and automation for small businesses.",
-    images: [`${site.url}/assets/clearpath-og.svg`],
+    images: [`${site.url}/assets/cirroflow-og.svg`],
   },
   other: {
     "theme-color": "#000000",
@@ -57,11 +54,11 @@ const ldJson = {
       "@id": `${site.url}/#organization`,
       name: site.legalName,
       url: site.url,
-      logo: `${site.url}/assets/clearpath-logo.svg`,
+      logo: `${site.url}/assets/cirroflow-icon.svg`,
       email: site.email,
       telephone: site.phoneHref.replace("tel:", ""),
       description:
-        "ClearPath Technology Partners builds websites, SEO, AI search optimization, AI call agents, and automation for small businesses.",
+        "CirroFlow Technology Partners builds websites, SEO, AI search optimization, AI call agents, and automation for small businesses.",
     },
     {
       "@type": "WebSite",
@@ -76,7 +73,7 @@ const ldJson = {
       "@id": `${site.url}/#business`,
       name: site.name,
       url: site.url,
-      image: `${site.url}/assets/clearpath-og.svg`,
+      image: `${site.url}/assets/cirroflow-og.svg`,
       email: site.email,
       telephone: site.phoneHref.replace("tel:", ""),
       areaServed: site.areaServed,

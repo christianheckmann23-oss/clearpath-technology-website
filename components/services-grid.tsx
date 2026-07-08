@@ -19,7 +19,7 @@ const FILTERS: { label: string; value: Filter }[] = [
 ];
 
 /* Honest capability stats — same rule as service-page-content.ts: never
-   fabricated track-record numbers ClearPath can't back up. */
+   fabricated track-record numbers CirroFlow can't back up. */
 const STATS = [
   {
     value: "1–2 wks",

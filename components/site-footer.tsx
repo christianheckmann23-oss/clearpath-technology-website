@@ -1,7 +1,7 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "motion/react";
+import { BrandLogo } from "@/components/brand-logo";
 import { track } from "@vercel/analytics";
 import { coreServices } from "@/lib/data/services";
 import { site } from "@/lib/data/site";
@@ -20,14 +20,8 @@ export function SiteFooter() {
           viewport={viewportOnce}
         >
           <motion.div variants={fadeUpItem}>
-            <a href="/" className="nav-logo" aria-label="ClearPath Technology Partners home">
-              <Image
-                src="/assets/clearpath-logo.png"
-                alt="ClearPath Technology Partners"
-                width={224}
-                height={56}
-                style={{ display: "block" }}
-              />
+            <a href="/" className="nav-logo" aria-label="CirroFlow Technology Partners home">
+              <BrandLogo idSuffix="-footer" />
             </a>
             <p className="footer-brand-desc">
               Websites, AI search visibility, and automation for small businesses that want to look credible online

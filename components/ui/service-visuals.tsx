@@ -221,7 +221,7 @@ function WebDesignVisual() {
     <DeviceShowcase
       desktopSrc="/assets/case-jw-hero.jpg"
       phoneSrc="/assets/case-jw-services.jpg"
-      alt="Website built by ClearPath shown on desktop and mobile"
+      alt="Website built by CirroFlow shown on desktop and mobile"
       url="justwindowsusa.com"
       priority
     />

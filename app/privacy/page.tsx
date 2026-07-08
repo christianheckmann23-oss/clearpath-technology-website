@@ -5,7 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | ClearPath Technology Partners",
+  title: "Privacy Policy | CirroFlow Technology Partners",
   robots: "noindex, follow",
 };
 
@@ -22,7 +22,7 @@ export default function PrivacyPage() {
 
             <h2>1. Who We Are</h2>
             <p>
-              {site.legalName} (&quot;ClearPath,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is a
+              {site.legalName} (&quot;CirroFlow,&quot; &quot;we,&quot; &quot;our,&quot; or &quot;us&quot;) is a
               small business growth partner based in Ohio. We provide website design and hosting, SEO, AI search
               optimization, AI call agents, and automation services. Our website is located at {site.url}.
             </p>
@@ -50,7 +50,7 @@ export default function PrivacyPage() {
               <li>To respond to your assessment or inquiry request within one business day</li>
               <li>To prepare a written plan tailored to your business</li>
               <li>To follow up regarding services you checked or described</li>
-              <li>To send relevant information about ClearPath services you have indicated interest in</li>
+              <li>To send relevant information about CirroFlow services you have indicated interest in</li>
               <li>To improve our website content, page performance, and conversion experience</li>
               <li>To comply with legal obligations</li>
             </ul>
@@ -64,7 +64,7 @@ export default function PrivacyPage() {
               <li><strong>Google Analytics 4</strong> — Used on some client engagements and our own site to understand visitor behavior. Google Analytics collects anonymized usage data. You can opt out via Google&apos;s opt-out tool.</li>
               <li><strong>Google Business Profile</strong> — If you contact us through Google Search or Google Maps, your message is handled through Google&apos;s platform under their privacy policy.</li>
             </ul>
-            <p>We may also disclose your information if required by law, court order, or to protect the rights, safety, or property of ClearPath, our clients, or the public.</p>
+            <p>We may also disclose your information if required by law, court order, or to protect the rights, safety, or property of CirroFlow, our clients, or the public.</p>
 
             <h2>5. Cookies and Tracking</h2>
             <ul>

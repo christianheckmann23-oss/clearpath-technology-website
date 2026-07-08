@@ -35,7 +35,7 @@ export interface ServicePageContent {
   description: string;
   heroStats: StatChip[];
   /** Honest, capability-framed stats — never fabricated track-record
-      numbers ClearPath can't back up (no fake "100+ clients" claims). */
+      numbers CirroFlow can't back up (no fake "100+ clients" claims). */
   bottomStats: StatChip[];
 }
 

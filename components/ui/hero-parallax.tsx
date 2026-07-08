@@ -15,7 +15,7 @@ import { buttonHover, buttonTap } from "@/lib/motion-variants";
 /**
  * Scroll-driven parallax showcase (adapted from Aceternity's HeroParallax):
  * three rows of site tiles sweep sideways while the whole plane tilts up
- * from a 3D perspective as you scroll. Adapted for ClearPath — motion/react
+ * from a 3D perspective as you scroll. Adapted for CirroFlow — motion/react
  * imports, plain <img>/<a>, brand gradient keyword, and honest tiles only
  * (real screenshots or clearly-labeled CTA cards, never fake client work).
  * Serves as the landing-page hero, so the header carries the brand headline.
@@ -109,13 +109,13 @@ export const ShowcaseHeader = () => {
           this backdrop guarantees contrast regardless of what's behind it.
           Fully transparent from md: up, where the layout already clears. */}
       <div className="-m-5 rounded-[28px] bg-black/70 p-5 backdrop-blur-sm md:m-0 md:rounded-none md:bg-transparent md:p-0 md:backdrop-blur-none">
-        <span className="eyebrow" style={{ color: "var(--blue-lt)" }}>ClearPath Technology Partners</span>
+        <span className="eyebrow" style={{ color: "var(--blue-lt)" }}>CirroFlow Technology Partners</span>
         <h1 className="text-4xl md:text-7xl font-black text-white leading-none tracking-tight">
-          A ClearPath
+          Get found.
           <br />
-          to{" "}
+          Stay{" "}
           <span className="bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#60A5FA] bg-clip-text text-transparent">
-            growth.
+            booked.
           </span>
         </h1>
         <p className="max-w-2xl text-base md:text-xl mt-8 text-white/60 leading-relaxed">

@@ -20,6 +20,10 @@ export const FAQS = [
     a: "No long-term contracts. Packages are billed as a one-time setup fee plus a month-to-month retainer you can cancel anytime.",
   },
   {
+    q: "Weren't you called ClearPath?",
+    a: "Yes — ClearPath Technology Partners became CirroFlow in 2026. Same founder, same services, same pricing. Only the name changed.",
+  },
+  {
     q: "What's the difference between SEO and AI Search Optimization?",
     a: "Traditional SEO gets you ranked in Google's search results. AI Search Optimization (GEO) gets your business recommended directly inside AI tools like ChatGPT, Google AI Overviews, and Perplexity — a newer, fast-growing channel most small businesses haven't touched yet.",
   },

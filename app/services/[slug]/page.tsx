@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const service = getServiceBySlug(slug);
   if (!service) return {};
   return {
-    title: `${service.name} | ClearPath Technology Partners`,
+    title: `${service.name} | CirroFlow Technology Partners`,
     description: service.shortDesc,
   };
 }

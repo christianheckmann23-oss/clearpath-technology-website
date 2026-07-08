@@ -12,9 +12,9 @@ import { getCaseStudyBySlug } from "@/lib/data/case-studies";
 const SLUG = "just-windows-usa";
 
 export const metadata: Metadata = {
-  title: "Just Windows USA Case Study | ClearPath Technology Partners",
+  title: "Just Windows USA Case Study | CirroFlow Technology Partners",
   description:
-    "How ClearPath cleared 232 SEO issues in 4 days and automated lead response for Just Windows USA, a window contractor in Mentor, OH.",
+    "How CirroFlow cleared 232 SEO issues in 4 days and automated lead response for Just Windows USA, a window contractor in Mentor, OH.",
 };
 
 export default function JustWindowsCaseStudyPage() {

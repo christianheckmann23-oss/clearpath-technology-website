@@ -1,4 +1,4 @@
-# ClearPath Technology Partners — Organizational Structure
+# CirroFlow Technology Partners — Organizational Structure
 
 ## Executive Leadership
 
@@ -32,11 +32,11 @@ Responsibilities:
 
 ## Service Delivery Model
 
-ClearPath operates as a boutique consulting firm with a lean core team and specialized contractor network for project delivery:
+CirroFlow operates as a boutique consulting firm with a lean core team and specialized contractor network for project delivery:
 
 ### Primary Service Lines (public-facing, productized)
 
-As of the July 2026 repositioning, ClearPath's public brand and packages (Foundation/Growth/Accelerate) are built around six core services:
+As of the July 2026 repositioning, CirroFlow's public brand and packages (Foundation/Growth/Accelerate) are built around six core services:
 
 1. **Web Design** — Custom and templated site builds, conversion-focused
 2. **Website Hosting** — Hosting, uptime monitoring, SSL, backups
@@ -57,7 +57,7 @@ Point Contact for all lines above: Principal Founder.
 
 ## Contractor & Partner Network
 
-For specialized or high-volume projects, ClearPath engages qualified contractors in:
+For specialized or high-volume projects, CirroFlow engages qualified contractors in:
 
 - **Web Development** — React, Next.js, Vue.js, static site builders
 - **Content Creation** — Technical copywriting, service page optimization
@@ -79,7 +79,7 @@ For specialized or high-volume projects, ClearPath engages qualified contractors
 
 ## Growth Strategy
 
-As ClearPath scales, the organization is structured to add:
+As CirroFlow scales, the organization is structured to add:
 1. **Senior Consultant** — Second principal-level technical resource
 2. **Account Manager** — Client success and relationship specialist
 3. **Delivery Engineers** — Full-time staff for Azure migrations and automation projects

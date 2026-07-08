@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { AnimatePresence, motion } from "motion/react";
 import { track } from "@vercel/analytics";
 import { megaMenuGroups, mobilePrimaryLinks, mobileServiceLinks, primaryNav } from "@/lib/data/nav";
@@ -9,6 +8,7 @@ import { site } from "@/lib/data/site";
 import { overlayFade, dropdownFade, navLinkReveal, staggerContainer, buttonHover, buttonTap } from "@/lib/motion-variants";
 import { useHasHover } from "@/components/ui/motion-primitives";
 import { AnalyticsEvent } from "@/lib/analytics";
+import { BrandLogo } from "@/components/brand-logo";
 
 export function SiteNav() {
   const [isOpen, setIsOpen] = useState(false);
@@ -98,8 +98,8 @@ export function SiteNav() {
 
       {/* ── NAV ────────────────────────────────── */}
       <nav className={`site-nav${scrolled ? " scrolled" : ""}`} id="sitenav">
-        <a href="/" className="nav-logo" aria-label="ClearPath Technology Partners home">
-          <Image src="/assets/clearpath-logo.png" alt="ClearPath Technology Partners" width={224} height={56} priority />
+        <a href="/" className="nav-logo" aria-label="CirroFlow Technology Partners home">
+          <BrandLogo idSuffix="-nav" />
         </a>
         <ul className="nav-links">
           <li
@@ -124,7 +124,7 @@ export function SiteNav() {
               {servicesOpen && (
                 <motion.div
                   className="services-mega"
-                  aria-label="ClearPath services menu"
+                  aria-label="CirroFlow services menu"
                   variants={dropdownFade}
                   initial="hidden"
                   animate="visible"
@@ -132,7 +132,7 @@ export function SiteNav() {
                 >
                   <div className="services-mega-inner">
                     <div className="services-mega-intro">
-                      <span className="services-mega-kicker">ClearPath Services</span>
+                      <span className="services-mega-kicker">CirroFlow Services</span>
                       <span className="services-mega-title">
                         Explore every way we help you grow.
                       </span>

@@ -91,13 +91,12 @@
       gap: 12px;
       z-index: 210;
     }
-    /* width: auto is required here — next/image renders an explicit HTML
-       width="224" attribute on the nav logo, which pins the box's width
-       independent of this rule's height override. Without it, mobile's
-       height:38px squishes the image into a 224x38 box (object-fit:fill
-       stretches to match) instead of scaling proportionally. */
-    .nav-logo img { height: 56px; width: auto; display: block; }
-    @media (max-width: 480px) { .nav-logo img { height: 38px; width: auto; } }
+    /* width: auto is required here — the logo carries explicit width/height
+       attributes, which pin the box's width independent of this rule's height
+       override. Without it, mobile's height:38px squishes the logo into a
+       stretched box instead of scaling proportionally. */
+    .nav-logo img, .nav-logo svg { height: 56px; width: auto; display: block; }
+    @media (max-width: 480px) { .nav-logo img, .nav-logo svg { height: 38px; width: auto; } }
     .nav-logo-mark {
       width: 36px; height: 36px;
       background: var(--blue);

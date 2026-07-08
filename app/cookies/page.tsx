@@ -5,7 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
-  title: "Cookie Policy | ClearPath Technology Partners",
+  title: "Cookie Policy | CirroFlow Technology Partners",
   robots: "noindex, follow",
 };
 

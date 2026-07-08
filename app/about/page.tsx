@@ -6,8 +6,8 @@ import { CtaSection } from "@/components/cta-section";
 import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
-  title: "About | ClearPath Technology Partners",
-  description: "Why ClearPath exists, how we work, and the founder's background in healthcare, IT managed services, and ERP implementation.",
+  title: "About | CirroFlow Technology Partners",
+  description: "Why CirroFlow exists, how we work, and the founder's background in healthcare, IT managed services, and ERP implementation.",
 };
 
 export default function AboutPage() {
@@ -18,7 +18,7 @@ export default function AboutPage() {
         <PageHero
           eyebrow="About"
           title={<>A partner who <em>builds</em>, not just advises.</>}
-          lede="ClearPath Technology Partners is a boutique growth partner for small business owners. Websites, search visibility, and automation, built and delivered by people who actually roll up their sleeves and implement it."
+          lede="CirroFlow Technology Partners is a boutique growth partner for small business owners. Websites, search visibility, and automation, built and delivered by people who actually roll up their sleeves and implement it."
         />
         <section className="about-section">
           <div className="container">
@@ -30,7 +30,7 @@ export default function AboutPage() {
                   in Strategic Leadership &amp; Management and Business Analytics.
                 </p>
                 <p>
-                  Before ClearPath, I worked as a certified pharmacy technician, then moved into business
+                  Before CirroFlow, I worked as a certified pharmacy technician, then moved into business
                   development for an IT managed services company, and later worked as an ERP implementation
                   consultant, helping businesses stand up the systems that actually run their day-to-day
                   operations. Healthcare, IT sales, enterprise software: three very different rooms, but the same
@@ -38,7 +38,7 @@ export default function AboutPage() {
                   built for them, set up years ago by someone who&apos;s long gone.
                 </p>
                 <p>
-                  That&apos;s why I started ClearPath with home services and contractor businesses: window,
+                  That&apos;s why I started CirroFlow with home services and contractor businesses: window,
                   roofing, and companies just like them that live or die on how fast they respond to a lead. It&apos;s
                   still where a lot of my work lives today, and I take that responsibility seriously. Your next
                   lead shouldn&apos;t slip through the cracks because your website or follow-up couldn&apos;t
@@ -47,9 +47,12 @@ export default function AboutPage() {
                 <p>
                   It&apos;s also why I&apos;m so driven on AI. We&apos;re still early in the adoption curve. Most
                   small business owners have heard about AI, maybe messed around with a chatbot, but haven&apos;t
-                  actually put it to work inside their business yet. That&apos;s the gap I built ClearPath to
+                  actually put it to work inside their business yet. That&apos;s the gap I built CirroFlow to
                   close: bringing you the same AI capabilities that larger companies are quietly rolling out
-                  in-house, without you needing an IT department of your own to make it happen.
+                  in-house, without you needing an IT department of your own to make it happen. That&apos;s the
+                  mission in one sentence: put the technology big companies take for granted — a great website,
+                  AI search visibility, automation that answers every call — within reach of every small
+                  business, at a fixed price you can see up front.
                 </p>
                 <p>
                   However your business generates leads today, whether it&apos;s a website that just sits there,
@@ -61,7 +64,7 @@ export default function AboutPage() {
                 <div className="founder-photo-frame">
                   <Image
                     src="/assets/founder-photo.jpg"
-                    alt="Christian Heckmann, founder of ClearPath Technology Partners"
+                    alt="Christian Heckmann, founder of CirroFlow Technology Partners"
                     fill
                     sizes="(max-width: 900px) 100vw, 360px"
                     priority
@@ -69,7 +72,7 @@ export default function AboutPage() {
                 </div>
                 <div className="founder-caption">
                   <span className="founder-name">Christian Heckmann</span>
-                  <span className="founder-title">Founder, ClearPath Technology Partners</span>
+                  <span className="founder-title">Founder, CirroFlow Technology Partners</span>
                 </div>
                 <div className="about-fact-box">
                   <h4>How We Work</h4>

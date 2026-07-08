@@ -65,7 +65,7 @@ export function HeroForm() {
           Request received.
         </p>
         <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "13px", margin: 0 }}>
-          A ClearPath advisor will follow up within one business day.
+          A CirroFlow advisor will follow up within one business day.
         </p>
       </div>
     );

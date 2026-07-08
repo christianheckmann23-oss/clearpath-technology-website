@@ -59,7 +59,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "had a WordPress site carrying 235 SEO issues — 7 pages with no H1, 8 pages Google couldn't read, and a quote form with no automated follow-up. Every unanswered lead was a potential job going to a competitor.",
     solution:
-      "ClearPath rebuilt the site as a clean, fast website, ran a Semrush-driven SEO optimization across every page, and wired up an automation that sends an instant confirmation to every customer and an instant alert to the owner the moment a form is submitted.",
+      "CirroFlow rebuilt the site as a clean, fast website, ran a Semrush-driven SEO optimization across every page, and wired up an automation that sends an instant confirmation to every customer and an instant alert to the owner the moment a form is submitted.",
     metrics: [
       { value: "232", label: "SEO issues resolved — 235 down to 3 in 4 days" },
       { value: "97%", label: "Semrush site health score after rebuild" },
@@ -79,7 +79,7 @@ export const caseStudies: CaseStudy[] = [
     challenge:
       "is a family-owned, premium 24/7 strength gym opening in Vermilion, Ohio. With opening day approaching and the space still under construction, the club had no website and no search presence — locals couldn't find it, and there was nowhere to send interested members.",
     solution:
-      "ClearPath designed and built a premium dark-and-gold website to match the gym floor — memberships, amenities, and a build-progress page that turns the construction phase into anticipation — and laid the local search groundwork so the club is indexed and findable before opening day.",
+      "CirroFlow designed and built a premium dark-and-gold website to match the gym floor — memberships, amenities, and a build-progress page that turns the construction phase into anticipation — and laid the local search groundwork so the club is indexed and findable before opening day.",
     metrics: [
       { value: "0", label: "Days open at launch — website and memberships live while the gym was still under construction" },
       { value: "24/7", label: "Always-open positioning carried through the whole site, from hero to memberships" },
