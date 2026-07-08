@@ -1,4 +1,4 @@
-# CirroFlow Technology Partners — Organizational Structure
+# CirroFlow Technologies — Organizational Structure
 
 ## Executive Leadership
 

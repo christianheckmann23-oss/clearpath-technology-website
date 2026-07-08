@@ -20,7 +20,7 @@ export function SiteFooter() {
           viewport={viewportOnce}
         >
           <motion.div variants={fadeUpItem}>
-            <a href="/" className="nav-logo" aria-label="CirroFlow Technology Partners home">
+            <a href="/" className="nav-logo" aria-label="CirroFlow Technologies home">
               <BrandLogo idSuffix="-footer" />
             </a>
             <p className="footer-brand-desc">

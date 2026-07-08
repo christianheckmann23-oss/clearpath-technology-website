@@ -11,7 +11,7 @@ import { getCaseStudyBySlug } from "@/lib/data/case-studies";
 const SLUG = "apex-strength-club";
 
 export const metadata: Metadata = {
-  title: "Apex Strength Club Case Study | CirroFlow Technology Partners",
+  title: "Apex Strength Club Case Study | CirroFlow Technologies",
   description:
     "How CirroFlow built a premium website and local search presence for Apex Strength Club, a 24/7 gym in Vermilion, OH — launch-ready before the doors open.",
 };

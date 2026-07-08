@@ -7,7 +7,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
-  title: "CirroFlow Technology Partners | Websites, AI Search & Automation for Small Business",
+  title: "CirroFlow Technologies | Websites, AI Search & Automation for Small Business",
   description:
     "CirroFlow builds websites, SEO, AI search optimization, AI call agents, and automation for small businesses — fixed packages, flat monthly pricing, no long-term contracts.",
   robots: "index, follow, max-image-preview:large",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: site.name,
-    title: "CirroFlow Technology Partners | Websites, AI Search & Automation for Small Business",
+    title: "CirroFlow Technologies | Websites, AI Search & Automation for Small Business",
     description:
       "Fixed packages for web design, SEO, AI search optimization, AI call agents, and automation — priced flat, scoped upfront.",
     url: site.url,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CirroFlow Technology Partners | Websites, AI Search & Automation",
+    title: "CirroFlow Technologies | Websites, AI Search & Automation",
     description: "Fixed packages for web design, SEO, AI search optimization, AI call agents, and automation for small businesses.",
     images: [`${site.url}/assets/cirroflow-og.svg`],
   },
@@ -58,7 +58,7 @@ const ldJson = {
       email: site.email,
       telephone: site.phoneHref.replace("tel:", ""),
       description:
-        "CirroFlow Technology Partners builds websites, SEO, AI search optimization, AI call agents, and automation for small businesses.",
+        "CirroFlow Technologies builds websites, SEO, AI search optimization, AI call agents, and automation for small businesses.",
     },
     {
       "@type": "WebSite",

@@ -16,7 +16,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getPostBySlug(slug);
   if (!post) return {};
   return {
-    title: `${post.title} | CirroFlow Technology Partners`,
+    title: `${post.title} | CirroFlow Technologies`,
     description: post.excerpt,
   };
 }

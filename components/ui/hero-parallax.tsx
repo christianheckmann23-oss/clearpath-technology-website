@@ -109,7 +109,7 @@ export const ShowcaseHeader = () => {
           this backdrop guarantees contrast regardless of what's behind it.
           Fully transparent from md: up, where the layout already clears. */}
       <div className="-m-5 rounded-[28px] bg-black/70 p-5 backdrop-blur-sm md:m-0 md:rounded-none md:bg-transparent md:p-0 md:backdrop-blur-none">
-        <span className="eyebrow" style={{ color: "var(--blue-lt)" }}>CirroFlow Technology Partners</span>
+        <span className="eyebrow" style={{ color: "var(--blue-lt)" }}>CirroFlow Technologies</span>
         <h1 className="text-4xl md:text-7xl font-black text-white leading-none tracking-tight">
           Get found.
           <br />

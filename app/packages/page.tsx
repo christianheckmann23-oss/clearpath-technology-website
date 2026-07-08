@@ -6,7 +6,7 @@ import { PageHero } from "@/components/page-hero";
 import { PackagesSection, AddOnsSection } from "@/components/packages-section";
 
 export const metadata: Metadata = {
-  title: "Packages & Pricing | CirroFlow Technology Partners",
+  title: "Packages & Pricing | CirroFlow Technologies",
   description:
     "Three fixed packages for small business websites, SEO, AI search optimization, and automation — Foundation, Growth, and Accelerate. Pricing scales for larger projects.",
 };

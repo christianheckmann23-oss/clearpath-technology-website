@@ -63,9 +63,9 @@ export function BrandLogo({ idSuffix = "" }: { idSuffix?: string }) {
         fontFamily="Inter, Arial, Helvetica, sans-serif"
         fontSize="37"
         fontWeight="800"
-        letterSpacing="16"
+        letterSpacing="27"
       >
-        TECHNOLOGY PARTNERS
+        TECHNOLOGIES
       </text>
     </svg>
   );

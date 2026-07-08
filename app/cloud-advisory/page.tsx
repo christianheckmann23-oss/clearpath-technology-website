@@ -6,7 +6,7 @@ import { TapLink } from "@/components/ui/tap-link";
 import { site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
-  title: "Cloud & IT Advisory | CirroFlow Technology Partners",
+  title: "Cloud & IT Advisory | CirroFlow Technologies",
   description:
     "Microsoft Cloud advisory for businesses that need Azure, Microsoft 365, identity, and security managed as one platform. Custom-quoted, scoped to your environment.",
   robots: "noindex, follow",

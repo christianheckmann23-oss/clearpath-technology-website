@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1210" height="255" viewBox="85 150 1210 255" role="img" aria-labelledby="title desc">
-  <title id="title">CirroFlow Technology Partners Primary Horizontal Logo Dark</title>
-  <desc id="desc">Primary horizontal CirroFlow Technology Partners logo with electric blue cloud path mark on a dark background.</desc>
+  <title id="title">CirroFlow Technologies Primary Horizontal Logo Dark</title>
+  <desc id="desc">Primary horizontal CirroFlow Technologies logo with electric blue cloud path mark on a dark background.</desc>
   <defs>
     <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#4F8CFF"/>
@@ -23,5 +23,5 @@
   </g>
   <line x1="450" y1="165" x2="450" y2="435" stroke="#FFFFFF" stroke-opacity=".22" stroke-width="2"/>
   <text x="515" y="300" fill="#FFFFFF" font-family="Inter, Arial, Helvetica, sans-serif" font-size="112" font-weight="800" letter-spacing="-4">CirroFlow</text>
-  <text x="525" y="382" fill="#2F6DF6" font-family="Inter, Arial, Helvetica, sans-serif" font-size="37" font-weight="800" letter-spacing="16">TECHNOLOGY PARTNERS</text>
+  <text x="525" y="382" fill="#2F6DF6" font-family="Inter, Arial, Helvetica, sans-serif" font-size="37" font-weight="800" letter-spacing="27">TECHNOLOGIES</text>
 </svg>

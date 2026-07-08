@@ -5,7 +5,7 @@ import { PageHero } from "@/components/page-hero";
 import { site } from "@/lib/data/site";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | CirroFlow Technology Partners",
+  title: "Terms of Service | CirroFlow Technologies",
   robots: "noindex, follow",
 };
 

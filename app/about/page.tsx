@@ -6,7 +6,7 @@ import { CtaSection } from "@/components/cta-section";
 import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
-  title: "About | CirroFlow Technology Partners",
+  title: "About | CirroFlow Technologies",
   description: "Why CirroFlow exists, how we work, and the founder's background in healthcare, IT managed services, and ERP implementation.",
 };
 
@@ -18,7 +18,7 @@ export default function AboutPage() {
         <PageHero
           eyebrow="About"
           title={<>A partner who <em>builds</em>, not just advises.</>}
-          lede="CirroFlow Technology Partners is a boutique growth partner for small business owners. Websites, search visibility, and automation, built and delivered by people who actually roll up their sleeves and implement it."
+          lede="CirroFlow Technologies is a boutique growth partner for small business owners. Websites, search visibility, and automation, built and delivered by people who actually roll up their sleeves and implement it."
         />
         <section className="about-section">
           <div className="container">
@@ -64,7 +64,7 @@ export default function AboutPage() {
                 <div className="founder-photo-frame">
                   <Image
                     src="/assets/founder-photo.jpg"
-                    alt="Christian Heckmann, founder of CirroFlow Technology Partners"
+                    alt="Christian Heckmann, founder of CirroFlow Technologies"
                     fill
                     sizes="(max-width: 900px) 100vw, 360px"
                     priority
@@ -72,7 +72,7 @@ export default function AboutPage() {
                 </div>
                 <div className="founder-caption">
                   <span className="founder-name">Christian Heckmann</span>
-                  <span className="founder-title">Founder, CirroFlow Technology Partners</span>
+                  <span className="founder-title">Founder, CirroFlow Technologies</span>
                 </div>
                 <div className="about-fact-box">
                   <h4>How We Work</h4>

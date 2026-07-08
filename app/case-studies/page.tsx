@@ -6,7 +6,7 @@ import { CaseStudyGallery } from "@/components/case-study-gallery";
 import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
-  title: "Case Studies | CirroFlow Technology Partners",
+  title: "Case Studies | CirroFlow Technologies",
   description:
     "Real results by industry — home services, healthcare & wellness, and general small business — from websites and automation CirroFlow has built.",
 };

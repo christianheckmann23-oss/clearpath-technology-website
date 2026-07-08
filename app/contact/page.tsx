@@ -8,8 +8,8 @@ import { site } from "@/lib/data/site";
 import { AnalyticsEvent } from "@/lib/analytics";
 
 export const metadata: Metadata = {
-  title: "Contact | CirroFlow Technology Partners",
-  description: "Schedule a free 30-minute assessment with CirroFlow Technology Partners — no commitment, no sales pressure.",
+  title: "Contact | CirroFlow Technologies",
+  description: "Schedule a free 30-minute assessment with CirroFlow Technologies — no commitment, no sales pressure.",
 };
 
 export default function ContactPage() {

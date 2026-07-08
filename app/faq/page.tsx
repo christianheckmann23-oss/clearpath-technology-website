@@ -7,7 +7,7 @@ import { FaqAccordion } from "@/components/faq-accordion";
 import { FAQS } from "@/lib/data/faqs";
 
 export const metadata: Metadata = {
-  title: "FAQ | CirroFlow Technology Partners",
+  title: "FAQ | CirroFlow Technologies",
   description: "Common questions about our packages, pricing, timelines, and how AI Search Optimization differs from traditional SEO.",
 };
 
