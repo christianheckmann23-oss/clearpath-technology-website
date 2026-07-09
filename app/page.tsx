@@ -4,6 +4,7 @@ import { showcaseTiles } from "@/lib/data/showcase";
 import { MarqueeBar } from "@/components/marquee-bar";
 import { ServicesSection } from "@/components/services-section";
 import { CaseStudySection } from "@/components/case-study-section";
+import { SocialProofSection } from "@/components/social-proof-section";
 import { ProcessSection } from "@/components/process-section";
 import { WhySection } from "@/components/why-section";
 import { CtaSection } from "@/components/cta-section";
@@ -21,6 +22,7 @@ export default function Home() {
         <MarqueeBar />
         <ServicesSection />
         <CaseStudySection />
+        <SocialProofSection />
         <ProcessSection />
         <WhySection />
         <CtaSection />

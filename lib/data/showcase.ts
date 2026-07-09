@@ -50,9 +50,9 @@ export const showcaseTiles: ShowcaseTile[] = [
     thumbnail: "/assets/case-jw-services.jpg",
   },
   {
-    title: "See our packages",
+    title: "See our pricing",
     link: "/packages",
-    cta: { eyebrow: "Packages", label: "Foundation · Growth · Accelerate — from $199." },
+    cta: { eyebrow: "Pricing", label: "Foundation · Growth · Accelerate — from $199." },
   },
   {
     title: "Apex Strength Club — Home",

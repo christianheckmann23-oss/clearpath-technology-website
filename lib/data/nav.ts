@@ -41,8 +41,8 @@ export const megaMenuGroups: NavGroup[] = [
 ];
 
 export const primaryNav: NavLink[] = [
-  { label: "Packages", href: "/packages" },
-  { label: "Case Studies", href: "/case-studies" },
+  { label: "Pricing", href: "/packages" },
+  { label: "Our Work", href: "/case-studies" },
   { label: "Blog", href: "/blog" },
   { label: "About", href: "/about" },
 ];

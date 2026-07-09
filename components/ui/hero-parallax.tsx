@@ -114,7 +114,7 @@ export const ShowcaseHeader = () => {
           Get found.
           <br />
           Stay{" "}
-          <span className="bg-gradient-to-r from-[#1D4ED8] via-[#2563EB] to-[#60A5FA] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#BFDBFE] bg-clip-text text-transparent">
             booked.
           </span>
         </h1>
@@ -125,7 +125,7 @@ export const ShowcaseHeader = () => {
         </p>
         <div className="flex gap-4 mt-10 flex-wrap">
           <motion.a href="/packages" className="btn-solid" whileHover={buttonHover} whileTap={buttonTap}>
-            See Our Packages →
+            See Our Pricing →
           </motion.a>
           <motion.a href="/case-studies" className="btn-ghost" whileHover={buttonHover} whileTap={buttonTap}>
             Explore Our Work

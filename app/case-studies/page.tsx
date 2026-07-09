@@ -6,7 +6,7 @@ import { CaseStudyGallery } from "@/components/case-study-gallery";
 import { PageHero } from "@/components/page-hero";
 
 export const metadata: Metadata = {
-  title: "Case Studies | CirroFlow Technologies",
+  title: "Our Work | CirroFlow Technologies",
   description:
     "Real results by industry — home services, healthcare & wellness, and general small business — from websites and automation CirroFlow has built.",
 };
@@ -17,7 +17,7 @@ export default function CaseStudiesPage() {
       <SiteNav />
       <main id="main-content">
         <PageHero
-          eyebrow="Case Studies"
+          eyebrow="Our Work"
           title="Real work, built to convert."
           lede="Websites, search visibility, and automation we've shipped for real businesses — plus the spots we're saving for yours."
         />
