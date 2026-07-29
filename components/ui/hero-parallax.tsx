@@ -113,10 +113,7 @@ export const ShowcaseHeader = () => {
         <h1 className="text-4xl md:text-7xl font-black text-white leading-none tracking-tight">
           Get found.
           <br />
-          Stay{" "}
-          <span className="bg-gradient-to-r from-[#3B82F6] via-[#60A5FA] to-[#BFDBFE] bg-clip-text text-transparent">
-            booked.
-          </span>
+          Stay <span className="hero-accent-word">booked.</span>
         </h1>
         <p className="max-w-2xl text-base md:text-xl mt-8 text-white/60 leading-relaxed">
           We help small businesses <strong className="text-white/90 font-semibold">look credible online, get found in

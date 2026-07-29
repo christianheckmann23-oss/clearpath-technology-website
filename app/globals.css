@@ -895,6 +895,23 @@
       -webkit-text-stroke: 2px rgba(255,255,255,0.3);
     }
 
+    /* Accent word in the landing hero headline. The gradient is progressive
+       enhancement only — the solid color below is what renders if
+       background-clip:text is unsupported or fails, so the word is never
+       invisible. Stops stay in the light-blue range so it holds contrast on
+       black *and* over the pale site screenshots that scroll behind it. */
+    .hero-accent-word {
+      color: var(--blue-lt);
+    }
+    @supports (-webkit-background-clip: text) or (background-clip: text) {
+      .hero-accent-word {
+        background-image: linear-gradient(90deg, #93C5FD 0%, #BFDBFE 55%, #E6F1FE 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+
     .social-proof-section {
       background: var(--off);
       padding: 120px 0;
@@ -916,8 +933,16 @@
     .fb-embed-wrap {
       max-width: 560px;
       margin: 0 auto;
-      display: flex;
-      justify-content: center;
+    }
+    /* The SDK rewrites .fb-post into a fluid-width widget (div > span > iframe)
+       that has no intrinsic width. As a flex item it measured 0px, so Facebook
+       rendered the plugin at container_width=0 — a zero-width, 6000px-tall
+       blank column. Keep the chain block-level and force it to fill the wrap. */
+    .fb-embed-wrap .fb-post,
+    .fb-embed-wrap .fb-post > span,
+    .fb-embed-wrap .fb-post iframe {
+      width: 100% !important;
+      max-width: 100% !important;
     }
 
     .case-grid {
